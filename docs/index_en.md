@@ -20,17 +20,17 @@ The following tools are available in the form of guidelines, instructions, check
 
 [Em002-2 Anleitung zur Veroeffentlichung von Open Source Software](en/em002-2.md) (02.10.2024)
 
-[Em002-2.1 Checkliste Vorabklärung](https://github.com/olibrian/sandbox/issues/new?assignees=olibrian&labels=new+oss%2C+needs+triage&projects=&template=oss.yml&title=%5BDATE%5D%3A+%5BSOFTWARE+NAME%5D) (Github Issue 02.10.2024)
+[Em002-2.1 Checkliste Vorabklärung](en/Em002-2.1%20Checkliste%20Vorabklarung%20EN.odt) (ODT, 02.10.2024)
 
-Em002-2.2 Checkliste Analyse und Aufbereitung (DOCX, 92 kB, 02.10.2024)
+[Em002-2.2 Checkliste Analyse und Aufbereitung](en/Em002-2.2%20Checkliste%20Analyse%20und%20Aufbereitung%20EN.odt) (ODT, 92 kB, 02.10.2024)
 
-Em002-2.3 Checkliste-Freigabe-und-Publikation (DOCX, 93 kB, 02.10.2024)
+[Em002-2.3 Checkliste Freigabe und Publikation](en/Em002-2.3%20Checkliste%20Freigabe%20und%20Publikation%20EN.odt) (ODT, 93 kB, 02.10.2024)
 
 [Em002-3 Leitfaden OSS-Lizenzen](en/em002-3.md) (02.10.2024)
 
 [Em002-4 Leitfaden OSS-Community](en/em002-4.md) (02.10.2024)
 
-Em002-4.1 Checkliste_OSS-Community (DOCX, 94 kB, 02.10.2024)
+[Em002-4.1 Checkliste OSS-Community](en/Em002-4.1%20Checkliste%20OSS-Community%20EN.odt) (ODT, 94 kB, 02.10.2024)
 
 [Em002-5 Faktenblatt EMBAG und OSS](en/em002-5.md) (02.10.2024)
 

@@ -20,19 +20,19 @@ The following tools are available in the form of guidelines, instructions, check
 
 [Em002-2 Anleitung zur Veroeffentlichung von Open Source Software](en/em002-2.md) (02.10.2024)
 
-[Em002-2.1 Checkliste Vorabklärung](en/Em002-2.1%20Checkliste%20Vorabklarung%20EN.odt) (ODT, 02.10.2024)
+[[Em002-2.1 Checkliste Vorabklärung](em002-2.1.md)](en/Em002-2.1%20Checkliste%20Vorabklarung%20EN.odt) (ODT, 02.10.2024)
 
-[Em002-2.2 Checkliste Analyse und Aufbereitung](en/Em002-2.2%20Checkliste%20Analyse%20und%20Aufbereitung%20EN.odt) (ODT, 92 kB, 02.10.2024)
+[[Em002-2.2 Checkliste Analyse und Aufbereitung](em002-2.2.md)](en/Em002-2.2%20Checkliste%20Analyse%20und%20Aufbereitung%20EN.odt) (ODT, 92 kB, 02.10.2024)
 
-[Em002-2.3 Checkliste Freigabe und Publikation](en/Em002-2.3%20Checkliste%20Freigabe%20und%20Publikation%20EN.odt) (ODT, 93 kB, 02.10.2024)
+[[Em002-2.3 Checkliste Freigabe und Publikation](em002-2.3.md)](en/Em002-2.3%20Checkliste%20Freigabe%20und%20Publikation%20EN.odt) (ODT, 93 kB, 02.10.2024)
 
-[Em002-3 Leitfaden OSS-Lizenzen](en/em002-3.md) (02.10.2024)
+[[Em002-3 Leitfaden OSS-Lizenzen](em002-3.md)](en/em002-3.md) (02.10.2024)
 
-[Em002-4 Leitfaden OSS-Community](en/em002-4.md) (02.10.2024)
+[[Em002-4 Leitfaden OSS-Community](em002-4.md)](en/em002-4.md) (02.10.2024)
 
-[Em002-4.1 Checkliste OSS-Community](en/Em002-4.1%20Checkliste%20OSS-Community%20EN.odt) (ODT, 94 kB, 02.10.2024)
+[[Em002-4.1 Checkliste OSS-Community](em002-4.1.md)](en/Em002-4.1%20Checkliste%20OSS-Community%20EN.odt) (ODT, 94 kB, 02.10.2024)
 
-[Em002-5 Faktenblatt EMBAG und OSS](en/em002-5.md) (02.10.2024)
+[[Em002-5 Faktenblatt EMBAG und OSS](em002-5.md)](en/em002-5.md) (02.10.2024)
 
 [Em002-6 Häufig gestellte Fragen zur Veröffentlichung von OSS (OSS-FAQ)](en/em002-6.md) (02.10.2024)
 

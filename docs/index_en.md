@@ -34,6 +34,5 @@ The following tools are available in the form of guidelines, instructions, check
 
 [Em002-5 Faktenblatt EMBAG und OSS](en/em002-5.md) (02.10.2024)
 
-Em002-6 Häufig gestellte Fragen zur Veröffentlichung von OSS (OSS-FAQ) (PDF, 379 kB, 02.10.2024)
+[Em002-6 Häufig gestellte Fragen zur Veröffentlichung von OSS (OSS-FAQ)](en/em002-6.md) (02.10.2024)
 
-Ein weiteres Merkblatt zu Beschaffungen in Zusammenhang mit EMBAG Art. 9 ist in Arbeit.

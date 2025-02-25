@@ -56,7 +56,7 @@ maintenance:
 localisation:
   localisationReady: true
   availableLanguages:
-    - de
-    - fr
+    - de-CH
+    - fr-CH
     - it-CH
     - en

@@ -1,0 +1,62 @@
+publiccodeYmlVersion: "0.4"
+name: Open Source Guidelines
+url: https://github.com/swiss/opensource-guidelines/
+landingURL: https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html
+softwareVersion: "1.0"
+releaseDate: 2024-10-02
+platforms:
+  - web
+categories:
+  - document-management
+developmentStatus: stable
+softwareType: standalone/other
+description:
+  en:
+    localisedName: Open Source Guidelines
+    shortDescription: This repository contains evolving drafts of guidelines and
+      tools to support the Federal Administration in publishing open source
+      code.
+    longDescription: >-
+      **Tools for Publishing Open Source Software**
+
+      Federal agencies are required to disclose the source code of software they
+      develop or have developed to fulfill their duties. They must allow anyone
+      to use, further develop, and distribute the software without charging
+      licensing fees. This requirement is outlined in Article 9 of the Federal
+      Act on the Use of Electronic Means for Fulfilling Administrative Tasks
+      (EMOTA). Responsibility for implementation lies with the individual
+      agencies. The Federal Chancellery provides suitable tools to assist
+      federal agencies in meeting this requirement.
+
+
+      **What is it about?**
+
+      When publishing open-source software, questions regarding legal matters,
+      licenses, security, organization, and costs need to be addressed.
+      Depending on the specific use case, there are variations and limitations
+      to consider. The level of knowledge required to implement the legal
+      requirement varies within the federal administration based on experience.
+      For this reason, the Federal Chancellery has created tools and checklists
+      to provide support and guidance for decision-making.
+    features:
+      - Checklist
+      - Documentation
+      - Open Source Knowledge
+    screenshots:
+      - https://github.com/swiss/opensource-guidelines/blob/e173972f2119e46d38e017064544d179e69805eb/docs/en/assets/em002-1/media/image1.png
+legal:
+  license: CC0-1.0
+maintenance:
+  type: internal
+  contacts:
+    - name: Swiss Federal Chancellery
+      email: opensource@bk.admin.ch
+      phone: ""
+      affiliation: ""
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - de-CH
+    - fr-CH
+    - it-CH
+    - en

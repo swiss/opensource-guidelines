@@ -1,4 +1,5 @@
-# Guidelines to Open Source Software (according to EMBAG Art. 9)
+# Guidelines to open source software (according to EMBAG Art. 9)
+
 This repository contains **evolving drafts** of guidelines and tools to support the Federal Administration in publishing open source code. The **official and binding versions** are available in all official languages on the [Swiss Federal Chancellery website](https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html).
 
 For a complete list of documents, see:

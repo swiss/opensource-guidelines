@@ -35,3 +35,5 @@ The following tools are available in the form of guidelines, instructions, check
 [Em002-5 EMOTA and OSS Factsheet](en/em002-5.md) (02.10.2024)
 
 [Em002-6 FAQ on OSS and Art. 9 EMOTA](en/em002-6.md) (02.10.2024)
+
+[Em002-7 OSS Guideline: Applying Article 9 of Federal Act on the Use of Electronic Means for Fulfilling Administrative Tasks (EMOTA)](en/em002-7.md) (01.04.2025)

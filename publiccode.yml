@@ -1,4 +1,4 @@
-publiccodeYmlVersion: "0.4"
+publiccodeYmlVersion: 0.5.0
 name: Open Source Guidelines
 url: https://github.com/swiss/opensource-guidelines
 landingURL: https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html
@@ -10,6 +10,9 @@ categories:
   - document-management
 developmentStatus: stable
 softwareType: standalone/other
+organisation:
+  uri: https://ld.admin.ch/FCh
+  name: Bundeskanzlei
 description:
   en:
     localisedName: Open Source Guidelines
@@ -51,8 +54,6 @@ maintenance:
   contacts:
     - name: Swiss Federal Chancellery
       email: opensource@bk.admin.ch
-      phone: ""
-      affiliation: ""
 localisation:
   localisationReady: true
   availableLanguages:

@@ -1,0 +1,83 @@
+// Cfr. abbreviations.en.adoc per la motivazione di questa suddivisione.
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+ADS::
+Amministrazione digitale Svizzera (www.digital-public-services-switzerland.ch/strategy)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+BP::
+Beneficiario di prestazioni
+// end::abbr-em002[]
+// tag::abbr-em002[]
+CG::
+Condizioni generali
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+AO::
+Application owner
+BP::
+Beneficiario di prestazioni
+CaF::
+Cancelleria federale
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+CCAP::
+Centro di competenza per gli acquisti pubblici della Confederazione
+CLA::
+Contributor Licence Agreement
+DCO::
+Developer Certificate of Origin
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+FP::
+Fornitore di prestazioni
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+FP::
+Fornitore di prestazioni
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+FSF::
+Free Software Foundation
+HERMES::
+_Handbuch der Elektronischen Rechenzentren des Bundes_, un metodo per lo sviluppo di sistemi (www.hermes.admin.ch)
+IA::
+Intelligenza artificiale
+LMeCA::
+Legge federale concernente l'impiego di mezzi elettronici per l'adempimento dei compiti delle autorità
+LTras::
+Legge sulla trasparenza
+ODIC::
+Organo direzione informatica della Confederazione (fino al 2021)
+OSI::
+Open Source Initiative
+OSPO::
+Open Source Programme Office
+OSS::
+Software open source
+OSSD::
+Sviluppo di software open source
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+RA::
+Responsabile dell'applicazione
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+UFCL::
+Ufficio federale delle costruzioni e della logistica
+UO::
+Unità organizzativa (di regola un ufficio federale)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002-6[]

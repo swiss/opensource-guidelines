@@ -1,0 +1,259 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Guidelines to open source software (according to Article 9 EMOTA)
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Hilfsmittel zu Open-Source-Software (gemäss Artikel 9 EMBAG)
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Outils relatifs aux logiciels open source (selon l'article 9 LMETA)
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Strumenti per il software open source (secondo l'articolo 9 LMeCA)
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Meds per software open source (tenor l'artitgel 9 EMBAG)
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// Black, not the colour mark the guidelines carry: this page describes the
+// repository that holds them and is not itself one of them.
+:title-logo-base: black
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// The repository, written as `{url-repo}` throughout the body. open-govpress
+// reads nothing here; this is its own documented idiom for an author-defined
+// attribute that saves repetition (see the `showcase.adoc` it ships).
+:url-repo: https://github.com/swiss/opensource-guidelines
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+This repository contains *evolving drafts* of guidelines and tools to support the Federal Administration in publishing open source code. The *official and binding versions* are available in all official languages on the https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Swiss Federal Chancellery website].
+
+Every document in this repository carries all five languages -- English, German, French, Italian and Romansh -- in a single AsciiDoc file. The German, French, Italian and Romansh texts are *unreviewed translations*; see link:TRANSLATING.adoc[TRANSLATING.adoc] before editing them.
+
+For a complete list of documents, see: link:docs/index.adoc[Tools for Publishing Open Source Software]
+
+== Legal obligations and responsibility
+
+As outlined in https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[Article 9 EMOTA], the Federal Administration is *principally obligated to publish its software as open source.* Each federal authority holds independent responsibility for ensuring compliance, including making the source code publicly available.
+
+== Contributing
+
+Contributions from the open source community and other stakeholders to these guidelines are highly valued. Have a suggestion for improvement? You can:
+
+. Fork the repository
+. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+. Push to the branch (`git push origin feature/AmazingFeature`)
+. Open a pull request
+
+Alternatively, you can simply open an issue.
+
+To build and check the sources on your own machine, see link:DEVENV-SETUP.adoc[DEVENV-SETUP.adoc].
+
+NOTE: You can also write in *German, French, or Italian* and refer to the https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[official language documents] where relevant.
+
+== Changes
+
+When *major changes* are proposed, they undergo the Federal Chancellery's standard review process and, upon approval, are translated and published on the https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Swiss Federal Chancellery website]. The respective documents are then assigned a new version number. Major changes between versions can be followed using the {url-repo}/releases[release] notes.
+
+*Minor changes* are incorporated regularly into the official PDF publications on the https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Swiss Federal Chancellery website].
+
+== License
+
+These guidelines are licensed under the *CC0 1.0 Universal license*. For details, see the `LICENSE` file.
+
+== Contact
+
+mailto:opensource@bk.admin.ch[opensource@bk.admin.ch]
+endif::[]
+
+ifeval::["{lang}" == "de"]
+Dieses Repository enthält *laufend weiterentwickelte Entwürfe* von Hilfsmitteln, welche die Bundesverwaltung bei der Veröffentlichung von Open-Source-Code unterstützen. Die *offiziellen und verbindlichen Fassungen* sind in allen Amtssprachen auf der https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Website der Schweizerischen Bundeskanzlei] verfügbar.
+
+Jedes Dokument in diesem Repository enthält alle fünf Sprachen -- Englisch, Deutsch, Französisch, Italienisch und Rumantsch -- in einer einzigen AsciiDoc-Datei. Die deutschen, französischen, italienischen und rätoromanischen Texte sind *ungeprüfte Übersetzungen*; lesen Sie link:TRANSLATING.adoc[TRANSLATING.adoc], bevor Sie sie bearbeiten.
+
+Eine vollständige Liste der Dokumente finden Sie unter: link:docs/index.adoc[Hilfsmittel zur Veröffentlichung von Open-Source-Software]
+
+== Gesetzliche Pflichten und Verantwortung
+
+Gemäss https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[Artikel 9 EMBAG] ist die Bundesverwaltung *grundsätzlich verpflichtet, ihre Software als Open Source zu veröffentlichen.* Jede Bundesbehörde trägt eigenständig die Verantwortung für die Einhaltung dieser Pflicht, einschliesslich der öffentlichen Bereitstellung des Quellcodes.
+
+== Mitwirkung
+
+Beiträge aus der Open-Source-Community und von weiteren Interessierten zu diesen Hilfsmitteln sind sehr willkommen. Haben Sie einen Verbesserungsvorschlag? Sie können:
+
+. Das Repository forken
+. Ihren Feature-Branch erstellen (`git checkout -b feature/AmazingFeature`)
+. Ihre Änderungen committen (`git commit -m 'Add some AmazingFeature'`)
+. Auf den Branch pushen (`git push origin feature/AmazingFeature`)
+. Einen Pull Request eröffnen
+
+Alternativ können Sie auch einfach ein Issue eröffnen.
+
+Wie Sie die Quellen auf Ihrem eigenen Rechner bauen und prüfen, steht in link:DEVENV-SETUP.adoc[DEVENV-SETUP.adoc].
+
+NOTE: Sie können auch auf *Deutsch, Französisch oder Italienisch* schreiben und dort, wo es sinnvoll ist, auf die https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Dokumente in den Amtssprachen] verweisen.
+
+== Änderungen
+
+Werden *wesentliche Änderungen* vorgeschlagen, so durchlaufen sie das übliche Prüfverfahren der Bundeskanzlei und werden nach der Genehmigung übersetzt und auf der https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Website der Schweizerischen Bundeskanzlei] veröffentlicht. Die betreffenden Dokumente erhalten anschliessend eine neue Versionsnummer. Wesentliche Änderungen zwischen den Versionen lassen sich anhand der {url-repo}/releases[Release]-Notizen nachvollziehen.
+
+*Geringfügige Änderungen* fliessen regelmässig in die offiziellen PDF-Publikationen auf der https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[Website der Schweizerischen Bundeskanzlei] ein.
+
+== Lizenz
+
+Diese Hilfsmittel stehen unter der *CC0 1.0 Universal-Lizenz*. Einzelheiten finden Sie in der Datei `LICENSE`.
+
+== Kontakt
+
+mailto:opensource@bk.admin.ch[opensource@bk.admin.ch]
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+Ce dépôt contient des *projets en cours d'élaboration* d'outils destinés à soutenir l'administration fédérale dans la publication de code open source. Les *versions officielles et contraignantes* sont disponibles dans toutes les langues officielles sur le https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[site de la Chancellerie fédérale suisse].
+
+Chaque document de ce dépôt contient les cinq langues -- anglais, allemand, français, italien et romanche -- dans un seul fichier AsciiDoc. Les textes allemand, français, italien et romanche sont des *traductions non vérifiées* ; veuillez lire link:TRANSLATING.adoc[TRANSLATING.adoc] avant de les modifier.
+
+Pour la liste complète des documents, voir : link:docs/index.adoc[Outils pour la publication de logiciels open source]
+
+== Obligations légales et responsabilité
+
+Conformément à l'https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[article 9 LMETA], l'administration fédérale est *en principe tenue de publier ses logiciels en open source.* Chaque autorité fédérale est responsable de manière autonome du respect de cette obligation, y compris de la mise à disposition publique du code source.
+
+== Contribuer
+
+Les contributions de la communauté open source et des autres parties prenantes à ces outils sont très appréciées. Vous avez une suggestion d'amélioration ? Vous pouvez :
+
+. Forker le dépôt
+. Créer votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+. Valider vos modifications (`git commit -m 'Add some AmazingFeature'`)
+. Pousser la branche (`git push origin feature/AmazingFeature`)
+. Ouvrir une pull request
+
+Vous pouvez également ouvrir simplement une issue.
+
+Pour générer et vérifier les sources sur votre propre machine, voir link:DEVENV-SETUP.adoc[DEVENV-SETUP.adoc].
+
+NOTE: Vous pouvez aussi écrire en *allemand, français ou italien* et renvoyer, le cas échéant, aux https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[documents dans les langues officielles].
+
+== Modifications
+
+Lorsque des *modifications importantes* sont proposées, elles suivent la procédure d'examen habituelle de la Chancellerie fédérale et sont, après approbation, traduites et publiées sur le https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[site de la Chancellerie fédérale suisse]. Les documents concernés reçoivent ensuite un nouveau numéro de version. Les modifications importantes entre les versions peuvent être suivies au moyen des notes de {url-repo}/releases[publication].
+
+Les *modifications mineures* sont régulièrement intégrées aux publications PDF officielles sur le https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[site de la Chancellerie fédérale suisse].
+
+== Licence
+
+Ces outils sont placés sous la *licence CC0 1.0 Universal*. Pour les détails, voir le fichier `LICENSE`.
+
+== Contact
+
+mailto:opensource@bk.admin.ch[opensource@bk.admin.ch]
+endif::[]
+
+ifeval::["{lang}" == "it"]
+Questo repository contiene *bozze in continua evoluzione* di strumenti destinati a sostenere l'Amministrazione federale nella pubblicazione di codice open source. Le *versioni ufficiali e vincolanti* sono disponibili in tutte le lingue ufficiali sul https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[sito della Cancelleria federale svizzera].
+
+Ogni documento di questo repository contiene tutte e cinque le lingue -- inglese, tedesco, francese, italiano e romancio -- in un unico file AsciiDoc. I testi tedesco, francese, italiano e romancio sono *traduzioni non verificate*; consultate link:TRANSLATING.adoc[TRANSLATING.adoc] prima di modificarli.
+
+Per l'elenco completo dei documenti si veda: link:docs/index.adoc[Strumenti per la pubblicazione di software open source]
+
+== Obblighi legali e responsabilità
+
+Conformemente all'https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[articolo 9 LMeCA], l'Amministrazione federale è *tenuta in linea di principio a pubblicare il proprio software come open source.* Ogni autorità federale è responsabile in modo autonomo del rispetto di tale obbligo, compresa la messa a disposizione pubblica del codice sorgente.
+
+== Contribuire
+
+I contributi della community open source e delle altre parti interessate a questi strumenti sono molto apprezzati. Avete un suggerimento di miglioramento? Potete:
+
+. Forkare il repository
+. Creare il vostro feature branch (`git checkout -b feature/AmazingFeature`)
+. Eseguire il commit delle modifiche (`git commit -m 'Add some AmazingFeature'`)
+. Effettuare il push sul branch (`git push origin feature/AmazingFeature`)
+. Aprire una pull request
+
+In alternativa potete semplicemente aprire una issue.
+
+Per compilare e verificare i sorgenti sul vostro computer, si veda link:DEVENV-SETUP.adoc[DEVENV-SETUP.adoc].
+
+NOTE: Potete scrivere anche in *tedesco, francese o italiano* e rinviare, ove opportuno, ai https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[documenti nelle lingue ufficiali].
+
+== Modifiche
+
+Quando vengono proposte *modifiche sostanziali*, esse seguono la consueta procedura di esame della Cancelleria federale e, una volta approvate, vengono tradotte e pubblicate sul https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[sito della Cancelleria federale svizzera]. I documenti interessati ricevono poi un nuovo numero di versione. Le modifiche sostanziali tra le versioni possono essere seguite mediante le note di {url-repo}/releases[release].
+
+Le *modifiche minori* confluiscono regolarmente nelle pubblicazioni PDF ufficiali sul https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[sito della Cancelleria federale svizzera].
+
+== Licenza
+
+Questi strumenti sono pubblicati sotto la *licenza CC0 1.0 Universal*. Per i dettagli si veda il file `LICENSE`.
+
+== Contatto
+
+mailto:opensource@bk.admin.ch[opensource@bk.admin.ch]
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+Quest repositori cuntegna *sbozzas ch'èn vegnidas sviluppadas vinavant* da meds che sustegnan l'administraziun federala en la publicaziun da code open source. Las *versiuns ufficialas e liantas* èn disponiblas en tuttas linguas ufficialas sin la https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[pagina d'internet da la Chanzlia federala svizra].
+
+Mintga document da quest repositori cuntegna tuttas tschintg linguas -- englais, tudestg, franzos, talian e rumantsch -- en ina suletta datoteca AsciiDoc. Ils texts tudestg, franzos, talian e rumantsch èn *translaziuns betg verifitgadas*; legiai link:TRANSLATING.adoc[TRANSLATING.adoc] avant che elavurar els.
+
+Ina glista cumpletta dals documents chattais Vus sut: link:docs/index.adoc[Meds per publitgar software open source]
+
+== Obligaziuns legalas e responsabladad
+
+Tenor l'https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[artitgel 9 EMBAG] è l'administraziun federala *fundamentalmain obligada da publitgar ses software sco open source.* Mintga autoritad federala porta independentamain la responsabladad per l'observaziun da questa obligaziun, inclusiv la messa a disposiziun publica dal code da funtauna.
+
+== Cooperaziun
+
+Contribuziuns da la communitad open source e d'ulteriurs interessads a quests meds èn fitg bainvegnidas. Avais Vus ina proposta da meglierament? Vus pudais:
+
+. Forkar il repositori
+. Crear Voss feature-branch (`git checkout -b feature/AmazingFeature`)
+. Committar Vossas midadas (`git commit -m 'Add some AmazingFeature'`)
+. Pushar sin il branch (`git push origin feature/AmazingFeature`)
+. Avrir ina pull request
+
+Alternativamain pudais Vus era simplamain avrir in issue.
+
+Co ch'i vegn bajegià e controllà las funtaunas sin Voss agen computer, chattais Vus en link:DEVENV-SETUP.adoc[DEVENV-SETUP.adoc].
+
+NOTE: Vus pudais era scriver per *tudestg, franzos u talian* e renviar, nua ch'igl è sensa, als https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[documents en las linguas ufficialas].
+
+== Midadas
+
+Sche *midadas essenzialas* vegnan proponidas, passan ellas il process da controlla usità da la Chanzlia federala e vegnan, suenter l'approvaziun, translatadas e publitgadas sin la https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[pagina d'internet da la Chanzlia federala svizra]. Ils documents pertutgads survegnan lura in nov numer da versiun. Midadas essenzialas tranter las versiuns pon vegnir suandadas cun agid da las notizias da {url-repo}/releases[release].
+
+*Midadas pitschnas* fluescha regularmain en las publicaziuns PDF ufficialas sin la https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software/hilfsmittel_oss.html[pagina d'internet da la Chanzlia federala svizra].
+
+== Licenza
+
+Quests meds èn suttamess a la *licenza CC0 1.0 Universal*. Detagls chattais Vus en la datoteca `LICENSE`.
+
+== Contact
+
+mailto:opensource@bk.admin.ch[opensource@bk.admin.ch]
+endif::[]

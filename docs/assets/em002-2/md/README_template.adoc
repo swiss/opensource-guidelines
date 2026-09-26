@@ -1,0 +1,371 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= README Template
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= README-Vorlage
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Modèle de README
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Modello di README
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Model da README
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// The Confederation logo in colour. open-govpress falls back to `black` for any
+// value it does not recognise, `colour` being the one synonym it takes, so the
+// spelling here is the whole of the choice.
+:title-logo-base: color
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+== Project Title
+
+A brief description of what this project does and who it's for
+
+=== Features
+
+* Light/dark mode toggle
+* Live previews
+* Fullscreen mode
+* Cross platform
+
+=== Documentation
+
+https://linktodocumentation[Documentation]
+
+=== Installation
+
+Install my-project with npm
+
+[source,bash]
+----
+  npm install my-project
+  cd my-project
+----
+
+=== Usage/Examples
+
+[source,javascript]
+----
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+----
+
+=== Screenshots or Demo
+
+Insert gif or link to demo
+
+image::https://dummyimage.com/468x300?text=App+Screenshot+Here[App Screenshot]
+
+=== Support
+
+For support, email fake@fake.com or join our Slack channel.
+
+=== Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+=== License
+
+https://choosealicense.com/licenses/mit/[MIT]
+
+=== Roadmap
+
+* Additional browser support
+* Add more integrations
+endif::[]
+
+ifeval::["{lang}" == "de"]
+== Projekttitel
+
+Eine kurze Beschreibung, was dieses Projekt tut und für wen es gedacht ist
+
+=== Funktionen
+
+* Umschalten zwischen hellem und dunklem Modus
+* Live-Vorschauen
+* Vollbildmodus
+* Plattformübergreifend
+
+=== Dokumentation
+
+https://linktodocumentation[Dokumentation]
+
+=== Installation
+
+my-project mit npm installieren
+
+[source,bash]
+----
+  npm install my-project
+  cd my-project
+----
+
+=== Verwendung/Beispiele
+
+[source,javascript]
+----
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+----
+
+=== Screenshots oder Demo
+
+GIF einfügen oder Link zur Demo
+
+image::https://dummyimage.com/468x300?text=App+Screenshot+Here[App-Screenshot]
+
+=== Support
+
+Für Support schreiben Sie an fake@fake.com oder treten Sie unserem Slack-Kanal bei.
+
+=== Mitwirkung
+
+Beiträge sind jederzeit willkommen!
+
+Unter `contributing.md` finden Sie Hinweise für den Einstieg.
+
+Bitte halten Sie sich an den `code of conduct` dieses Projekts.
+
+=== Lizenz
+
+https://choosealicense.com/licenses/mit/[MIT]
+
+=== Roadmap
+
+* Unterstützung weiterer Browser
+* Weitere Integrationen ergänzen
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+== Titre du projet
+
+Une brève description de ce que fait ce projet et de son public cible
+
+=== Fonctionnalités
+
+* Bascule entre mode clair et mode sombre
+* Aperçus en direct
+* Mode plein écran
+* Multiplateforme
+
+=== Documentation
+
+https://linktodocumentation[Documentation]
+
+=== Installation
+
+Installer my-project avec npm
+
+[source,bash]
+----
+  npm install my-project
+  cd my-project
+----
+
+=== Utilisation / exemples
+
+[source,javascript]
+----
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+----
+
+=== Captures d'écran ou démo
+
+Insérer un gif ou un lien vers la démo
+
+image::https://dummyimage.com/468x300?text=App+Screenshot+Here[Capture d'écran de l'application]
+
+=== Support
+
+Pour obtenir de l'aide, écrivez à fake@fake.com ou rejoignez notre canal Slack.
+
+=== Contribuer
+
+Les contributions sont toujours les bienvenues !
+
+Voir `contributing.md` pour savoir comment commencer.
+
+Veuillez respecter le `code of conduct` de ce projet.
+
+=== Licence
+
+https://choosealicense.com/licenses/mit/[MIT]
+
+=== Feuille de route
+
+* Prise en charge de navigateurs supplémentaires
+* Ajouter d'autres intégrations
+endif::[]
+
+ifeval::["{lang}" == "it"]
+== Titolo del progetto
+
+Una breve descrizione di ciò che fa questo progetto e a chi è destinato
+
+=== Funzionalità
+
+* Commutazione tra modalità chiara e scura
+* Anteprime in tempo reale
+* Modalità a schermo intero
+* Multipiattaforma
+
+=== Documentazione
+
+https://linktodocumentation[Documentazione]
+
+=== Installazione
+
+Installare my-project con npm
+
+[source,bash]
+----
+  npm install my-project
+  cd my-project
+----
+
+=== Utilizzo / esempi
+
+[source,javascript]
+----
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+----
+
+=== Screenshot o demo
+
+Inserire una gif o un collegamento alla demo
+
+image::https://dummyimage.com/468x300?text=App+Screenshot+Here[Screenshot dell'applicazione]
+
+=== Supporto
+
+Per assistenza scrivete a fake@fake.com o entrate nel nostro canale Slack.
+
+=== Contribuire
+
+I contributi sono sempre benvenuti!
+
+Consultate `contributing.md` per sapere come iniziare.
+
+Vi preghiamo di attenervi al `code of conduct` di questo progetto.
+
+=== Licenza
+
+https://choosealicense.com/licenses/mit/[MIT]
+
+=== Roadmap
+
+* Supporto di ulteriori browser
+* Aggiungere altre integrazioni
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+== Titel dal project
+
+Ina curta descripziun da quai che quest project fa e per tgi ch'el è previs
+
+=== Funcziuns
+
+* Midar tranter il modus cler e stgir
+* Previstas live
+* Modus da maletg entir
+* Sur pliras plattafurmas
+
+=== Documentaziun
+
+https://linktodocumentation[Documentaziun]
+
+=== Installaziun
+
+Installar my-project cun npm
+
+[source,bash]
+----
+  npm install my-project
+  cd my-project
+----
+
+=== Utilisaziun/exempels
+
+[source,javascript]
+----
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+----
+
+=== Screenshots u demo
+
+Inserir ina gif u in link a la demo
+
+image::https://dummyimage.com/468x300?text=App+Screenshot+Here[Screenshot da l'applicaziun]
+
+=== Support
+
+Per support scrivai a fake@fake.com u vegni en noss chanal Slack.
+
+=== Cooperaziun
+
+Contribuziuns èn adina bainvegnidas!
+
+Sut `contributing.md` chattais Vus indicaziuns per cumenzar.
+
+Tegnai p.pl. il `code of conduct` da quest project.
+
+=== Licenza
+
+https://choosealicense.com/licenses/mit/[MIT]
+
+=== Roadmap
+
+* Sustegn d'ulteriurs browsers
+* Agiuntar ulteriuras integraziuns
+endif::[]

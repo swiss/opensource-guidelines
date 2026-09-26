@@ -1,0 +1,56 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+# Deliberately not the `pages` group that render-docs.yml uses: linting does not
+# touch the deployment, and sharing that group would queue every lint run behind
+# a publish.
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  git-hooks:
+    runs-on: ubuntu-latest
+    steps:
+      # The hooks read the index, not just the work tree -- check-asciidoc and
+      # site-index.sh both call `git ls-files` -- so this needs a real checkout.
+      # Full history is not needed: every hook looks at the tree as it stands.
+      - uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      # Pulls the prebuilt devenv closure instead of compiling it on the runner.
+      - name: Use the devenv binary cache
+        uses: cachix/cachix-action@v17
+        with:
+          name: devenv
+
+      - name: Install devenv
+        run: nix profile install nixpkgs#devenv
+
+      # `prek run --all-files` rather than `devenv test`: devenv reports only
+      # that the git-hooks task failed, without saying which hook or why, even
+      # with tasks."devenv:git-hooks:run".showOutput set. Running prek directly
+      # prints the per-hook result and the offending lines, which is the whole
+      # point of having this job.
+      #
+      # --show-diff-on-failure matters because several of these hooks fix the
+      # file rather than just complaining (end-of-file-fixer, dos2unix,
+      # trim-trailing-whitespace, nixfmt). Without the diff, CI would report
+      # "files were modified by this hook" and show nothing else.
+      #
+      # `--option env.cicd:bool true` drops the interactive-only packages, most
+      # of which is VS Code. Without it this job would download the whole
+      # editor closure on every push just to run the hooks.
+      - name: Run every git hook over every file
+        run: |
+          devenv --option env.cicd:bool true \
+            shell -- prek run --all-files --show-diff-on-failure

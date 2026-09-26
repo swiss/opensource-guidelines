@@ -1,0 +1,751 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Em002-4.1 OSS Community Checklist
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Em002-4.1 Checkliste OSS-Community
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Em002-4.1 Liste de contrôle Communauté OSS
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Em002-4.1 Lista di controllo Community OSS
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Em002-4.1 Glista da controlla Communitad OSS
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// The Confederation logo in colour. open-govpress falls back to `black` for any
+// value it does not recognise, `colour` being the one synonym it takes, so the
+// spelling here is the whole of the choice.
+:title-logo-base: color
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+This checklist goes together with _Em002-2 Instructions for Publishing Open Source Software_ and _Em002-4 OSS Community Guidelines_. +
+It must be filled in at the start of a project or at the start of the clarifications for release and subsequently completed. +
+For OSS support models, please refer to Section 8 of _Em002-1 Practical Guidelines for Open Source Software in the Federal Administration_.
+
+== Subject matter
+
+=== Name and brief description of the software
+
+Enter the name of the software.
+
+field::[rows=1]
+
+=== Contact person and authorisation
+
+Name the contact person of the specialist department and the persons responsible who have authorised publication of the software.
+
+field::[rows=3]
+
+== Checklist
+
+Type of community
+
+The community may already exist, which greatly simplifies the task.
+
+[%interactive]
+* [ ] Exists (third party may have the lead)
+* [ ] The Confederation has the lead
+* [ ] Equal partners (Confederation and partners/suppliers)
+* [ ] Other
+
+Library or entire software?
+
+There is usually no community concept for libraries. An add-on can only be used together with a commercial product.
+
+[%interactive]
+* [ ] Entire software
+* [ ] Library
+* [ ] Add-on
+* [ ] Other
+
+What type of community is planned?
+
+The choice of community type should be justified in two to three sentences.
+
+[%interactive]
+* [ ] None, only publication (as-is) (minimum release) +
+Note: email must be available, publicode.yaml must be filled in
+* [ ] Releases/issue tracker (minimum support, allow third-party support if necessary)
+* [ ] Community
+
+Are there potential or actual co-users of the software?
+
+Are there potential customers for the software? Possible and known users can be listed in the text box (see _Em002-2 Instructions for Publishing Open Source Software,_ Section 3.1.1).
+
+[%interactive]
+* [ ] None conceivable
+* [ ] Potential users (are conceivable)
+* [ ] Known users (have already contacted us)
+
+[%interactive]
+* [ ] Stakeholders (already defined/known members of the community)
+
+List of relevant jobs/companies. +
+This gives an idea of how relevant the software is for third parties.
+
+Who takes charge of product management?
+
+Product management is primarily responsible for further development of the product. Especially if this role is assumed by third parties, the companies/organisations should be named if possible.
+
+[%interactive]
+* [ ] Federal office
+* [ ] Service provider
+* [ ] Supplier(s) / third parties
+* [ ] Joint organisation
+* [ ] Open
+
+Integration of suppliers
+
+How are the suppliers involved?
+
+[%interactive]
+* [ ] Contractor
+* [ ] Partner
+* [ ] Responsible body
+* [ ] Other
+
+Type of organisation
+
+What organisational form does the community take? This should be explained in detail, especially if 'Other' is selected. On account of the effort this entails, a new association should only be set up if there is a very good reason for doing so.
+
+[%interactive]
+* [ ] Public sector only
+* [ ] Simple partnership
+* [ ] New or existing association
+* [ ] Other (e.g. a foundation, existing or not)
+
+Cost distribution
+
+This should be set out in the community concept. Section 5.5 of _Em002-4 OSS Community Guidelines_ provides information on this.
+
+What means and resources are required? The cost distribution considerations should be briefly stated.
+
+[%interactive]
+* [ ] The Confederation pays
+* [ ] Each party covers its own costs
+* [ ] Originator pays principle
+* [ ] The Confederation does not assume any costs from the community
+* [ ] Cost sharing (e.g. by way of an association)
+* [ ] Release, partially assumed by third parties (e.g. because software was created before 1 January 2024 and they absolutely want to use the software)
+
+[%interactive]
+* [ ] If additional services are offered in accordance with Art. 9 paras 5 and 6 EMOTA, is this set out in the community concept? +
+The community concept contains the relevant information.
+
+[%interactive]
+* [ ] Has the community concept been created?
+
+The community concept has been created or an existing one is being adopted? +
+(please insert link)
+
+[%interactive]
+* [ ] Are the necessary contracts in place?
+* [ ] Contributor Licence Agreement (CLA)footnote:[See also _Em002-3 OSS Licensing Guidelines_. Alternatively, Developer Certificates of Origin (DCO) can also be used.] created or adopted
+* [ ] Association founded, if necessary.
+
+== Concluding remarks
+
+Comments and references to other relevant documents
+
+field::[rows=4]
+
+*Filing of form*
+
+Please file this form with the project documentation and submit it to the appropriate office in your organisational unit.
+
+*Licence of the checklist template: CC0 1.0 Universal*
+
+This document is published under the CC0 licence. It may be freely used, modified and distributed, including for commercial purposes and in any format.
+endif::[]
+
+ifeval::["{lang}" == "de"]
+Diese Checkliste gehört zu _Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software_ und _Em002-4 Leitfaden OSS-Community_. +
+Sie ist zu Beginn eines Projekts oder zu Beginn der Abklärungen für die Freigabe auszufüllen und anschliessend zu vervollständigen. +
+Zu den OSS-Supportmodellen siehe Kapitel 8 von _Em002-1 Praxisleitfaden für Open-Source-Software in der Bundesverwaltung_.
+
+== Gegenstand
+
+=== Name und Kurzbeschreibung der Software
+
+Tragen Sie den Namen der Software ein.
+
+field::[rows=1]
+
+=== Ansprechperson und Bewilligung
+
+Nennen Sie die Ansprechperson der Fachabteilung sowie die verantwortlichen Personen, welche die Veröffentlichung der Software bewilligt haben.
+
+field::[rows=3]
+
+== Checkliste
+
+Art der Community
+
+Die Community kann bereits bestehen, was die Aufgabe stark vereinfacht.
+
+[%interactive]
+* [ ] Besteht (Dritte können die Führung haben)
+* [ ] Der Bund hat die Führung
+* [ ] Gleichberechtigte Partner (Bund und Partner/Lieferanten)
+* [ ] Andere
+
+Bibliothek oder gesamte Software?
+
+Für Bibliotheken besteht in der Regel kein Community-Konzept. Ein Add-on kann nur zusammen mit einem kommerziellen Produkt genutzt werden.
+
+[%interactive]
+* [ ] Gesamte Software
+* [ ] Bibliothek
+* [ ] Add-on
+* [ ] Andere
+
+Welche Art von Community ist geplant?
+
+Die Wahl der Community-Art sollte in zwei bis drei Sätzen begründet werden.
+
+[%interactive]
+* [ ] Keine, nur Veröffentlichung (as-is) (minimale Freigabe) +
+Hinweis: E-Mail muss verfügbar sein, publicode.yaml muss ausgefüllt sein
+* [ ] Releases/Issue-Tracker (minimaler Support, nötigenfalls Support durch Dritte zulassen)
+* [ ] Community
+
+Gibt es potenzielle oder tatsächliche Mitnutzende der Software?
+
+Gibt es potenzielle Abnehmer für die Software? Mögliche und bekannte Nutzende können im Textfeld aufgeführt werden (siehe _Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software,_ Kapitel 3.1.1).
+
+[%interactive]
+* [ ] Keine denkbar
+* [ ] Potenzielle Nutzende (sind denkbar)
+* [ ] Bekannte Nutzende (haben sich bereits gemeldet)
+
+[%interactive]
+* [ ] Anspruchsgruppen (bereits definierte/bekannte Mitglieder der Community)
+
+Liste der relevanten Stellen/Unternehmen. +
+Dies gibt einen Hinweis darauf, wie relevant die Software für Dritte ist.
+
+Wer übernimmt das Produktmanagement?
+
+Das Produktmanagement ist in erster Linie für die Weiterentwicklung des Produkts verantwortlich. Insbesondere wenn diese Rolle von Dritten übernommen wird, sollten die Unternehmen/Organisationen wenn möglich genannt werden.
+
+[%interactive]
+* [ ] Bundesamt
+* [ ] Leistungserbringer
+* [ ] Lieferant(en) / Dritte
+* [ ] Gemeinsame Organisation
+* [ ] Offen
+
+Einbindung der Lieferanten
+
+Wie sind die Lieferanten eingebunden?
+
+[%interactive]
+* [ ] Auftragnehmer
+* [ ] Partner
+* [ ] Trägerschaft
+* [ ] Andere
+
+Art der Organisation
+
+Welche Organisationsform hat die Community? Dies sollte insbesondere bei der Wahl von «Andere» ausführlich erläutert werden. Wegen des damit verbundenen Aufwands sollte ein neuer Verein nur bei sehr guter Begründung gegründet werden.
+
+[%interactive]
+* [ ] Nur öffentliche Hand
+* [ ] Einfache Gesellschaft
+* [ ] Neuer oder bestehender Verein
+* [ ] Andere (z. B. eine bestehende oder neue Stiftung)
+
+Kostenverteilung
+
+Diese sollte im Community-Konzept festgehalten werden. Kapitel 5.5 von _Em002-4 Leitfaden OSS-Community_ gibt darüber Auskunft.
+
+Welche Mittel und Ressourcen sind erforderlich? Die Überlegungen zur Kostenverteilung sollten kurz dargelegt werden.
+
+[%interactive]
+* [ ] Der Bund zahlt
+* [ ] Jede Partei trägt ihre eigenen Kosten
+* [ ] Verursacherprinzip
+* [ ] Der Bund übernimmt keine Kosten der Community
+* [ ] Kostenteilung (z. B. über einen Verein)
+* [ ] Freigabe, teilweise von Dritten übernommen (z. B. weil die Software vor dem 1. Januar 2024 entstanden ist und sie die Software unbedingt nutzen möchten)
+
+[%interactive]
+* [ ] Werden zusätzliche Leistungen nach Art. 9 Abs. 5 und 6 EMBAG angeboten, ist dies im Community-Konzept festgehalten? +
+Das Community-Konzept enthält die entsprechenden Angaben.
+
+[%interactive]
+* [ ] Wurde das Community-Konzept erstellt?
+
+Das Community-Konzept wurde erstellt oder ein bestehendes wird übernommen? +
+(bitte Link einfügen)
+
+[%interactive]
+* [ ] Liegen die erforderlichen Verträge vor?
+* [ ] Contributor Licence Agreement (CLA)footnote:[Siehe auch _Em002-3 Leitfaden OSS-Lizenzierung_. Alternativ können auch Developer Certificates of Origin (DCO) verwendet werden.] erstellt oder übernommen
+* [ ] Verein gegründet, sofern erforderlich.
+
+== Schlussbemerkungen
+
+Bemerkungen und Verweise auf weitere relevante Dokumente
+
+field::[rows=4]
+
+*Ablage des Formulars*
+
+Legen Sie dieses Formular bei der Projektdokumentation ab und reichen Sie es der zuständigen Stelle in Ihrer Organisationseinheit ein.
+
+*Lizenz der Checklisten-Vorlage: CC0 1.0 Universal*
+
+Dieses Dokument wird unter der CC0-Lizenz veröffentlicht. Es darf frei genutzt, verändert und verbreitet werden, auch zu kommerziellen Zwecken und in jedem Format.
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+Cette liste de contrôle accompagne les documents _Em002-2 Instructions pour la publication de logiciels open source_ et _Em002-4 Guide des communautés OSS_. +
+Elle doit être remplie au début d'un projet ou au début des clarifications en vue de la publication, puis complétée par la suite. +
+Concernant les modèles de support OSS, voir le chapitre 8 du _Em002-1 Guide pratique pour les logiciels open source dans l'administration fédérale_.
+
+== Objet
+
+=== Nom et brève description du logiciel
+
+Indiquez le nom du logiciel.
+
+field::[rows=1]
+
+=== Personne de contact et autorisation
+
+Indiquez la personne de contact du service spécialisé ainsi que les personnes responsables qui ont autorisé la publication du logiciel.
+
+field::[rows=3]
+
+== Liste de contrôle
+
+Type de communauté
+
+La communauté peut déjà exister, ce qui simplifie considérablement la tâche.
+
+[%interactive]
+* [ ] Existe (des tiers peuvent en assurer la direction)
+* [ ] La Confédération en assure la direction
+* [ ] Partenaires sur un pied d'égalité (Confédération et partenaires/fournisseurs)
+* [ ] Autre
+
+Bibliothèque ou logiciel complet ?
+
+Il n'existe en règle générale pas de concept de communauté pour les bibliothèques. Un add-on ne peut être utilisé qu'avec un produit commercial.
+
+[%interactive]
+* [ ] Logiciel complet
+* [ ] Bibliothèque
+* [ ] Add-on
+* [ ] Autre
+
+Quel type de communauté est prévu ?
+
+Le choix du type de communauté devrait être justifié en deux ou trois phrases.
+
+[%interactive]
+* [ ] Aucune, publication uniquement (as-is) (publication minimale) +
+Remarque : une adresse électronique doit être disponible, le fichier publicode.yaml doit être rempli
+* [ ] Releases / suivi des problèmes (support minimal, autoriser au besoin le support par des tiers)
+* [ ] Communauté
+
+Existe-t-il des coutilisateurs potentiels ou effectifs du logiciel ?
+
+Existe-t-il des clients potentiels pour le logiciel ? Les utilisateurs possibles et connus peuvent être indiqués dans le champ de texte (voir _Em002-2 Instructions pour la publication de logiciels open source,_ chapitre 3.1.1).
+
+[%interactive]
+* [ ] Aucun envisageable
+* [ ] Utilisateurs potentiels (sont envisageables)
+* [ ] Utilisateurs connus (se sont déjà manifestés)
+
+[%interactive]
+* [ ] Parties prenantes (membres de la communauté déjà définis ou connus)
+
+Liste des services / entreprises concernés. +
+Cela donne une indication de la pertinence du logiciel pour des tiers.
+
+Qui assume la gestion du produit ?
+
+La gestion du produit est en premier lieu responsable du développement ultérieur de celui-ci. En particulier lorsque ce rôle est assumé par des tiers, les entreprises ou organisations devraient si possible être nommées.
+
+[%interactive]
+* [ ] Office fédéral
+* [ ] Prestataire
+* [ ] Fournisseur(s) / tiers
+* [ ] Organisation commune
+* [ ] Ouvert
+
+Intégration des fournisseurs
+
+Comment les fournisseurs sont-ils intégrés ?
+
+[%interactive]
+* [ ] Mandataire
+* [ ] Partenaire
+* [ ] Organe responsable
+* [ ] Autre
+
+Type d'organisation
+
+Quelle forme d'organisation la communauté revêt-elle ? Cela devrait être expliqué en détail, en particulier si « Autre » est choisi. Compte tenu de la charge que cela représente, une nouvelle association ne devrait être créée que pour de très bonnes raisons.
+
+[%interactive]
+* [ ] Secteur public uniquement
+* [ ] Société simple
+* [ ] Association nouvelle ou existante
+* [ ] Autre (p. ex. une fondation, existante ou non)
+
+Répartition des coûts
+
+Elle devrait être fixée dans le concept de communauté. Le chapitre 5.5 du _Em002-4 Guide des communautés OSS_ fournit des informations à ce sujet.
+
+Quels moyens et quelles ressources sont nécessaires ? Les réflexions relatives à la répartition des coûts devraient être brièvement exposées.
+
+[%interactive]
+* [ ] La Confédération paie
+* [ ] Chaque partie supporte ses propres coûts
+* [ ] Principe de causalité
+* [ ] La Confédération ne prend en charge aucun coût de la communauté
+* [ ] Partage des coûts (p. ex. par le biais d'une association)
+* [ ] Publication, partiellement prise en charge par des tiers (p. ex. parce que le logiciel a été créé avant le 1er janvier 2024 et qu'ils souhaitent absolument l'utiliser)
+
+[%interactive]
+* [ ] Si des prestations supplémentaires sont proposées conformément à l'art. 9, al. 5 et 6, LMETA, cela est-il fixé dans le concept de communauté ? +
+Le concept de communauté contient les indications correspondantes.
+
+[%interactive]
+* [ ] Le concept de communauté a-t-il été établi ?
+
+Le concept de communauté a été établi ou un concept existant est repris ? +
+(veuillez insérer le lien)
+
+[%interactive]
+* [ ] Les contrats nécessaires sont-ils disponibles ?
+* [ ] Contributor Licence Agreement (CLA)footnote:[Voir également le _Em002-3 Guide de licences OSS_. À défaut, des Developer Certificates of Origin (DCO) peuvent aussi être utilisés.] établi ou repris
+* [ ] Association fondée, si nécessaire.
+
+== Remarques finales
+
+Remarques et renvois à d'autres documents pertinents
+
+field::[rows=4]
+
+*Classement du formulaire*
+
+Veuillez classer ce formulaire avec la documentation de projet et le remettre au service compétent de votre unité d'organisation.
+
+*Licence du modèle de liste de contrôle : CC0 1.0 Universal*
+
+Ce document est publié sous licence CC0. Il peut être librement utilisé, modifié et diffusé, y compris à des fins commerciales et dans tout format.
+endif::[]
+
+ifeval::["{lang}" == "it"]
+La presente lista di controllo accompagna i documenti _Em002-2 Istruzioni per la pubblicazione di software open source_ ed _Em002-4 Guida alle community OSS_. +
+Va compilata all'inizio di un progetto o all'inizio degli accertamenti in vista della pubblicazione e completata in seguito. +
+Per i modelli di supporto OSS si veda il capitolo 8 della _Em002-1 Guida pratica per il software open source nell'Amministrazione federale_.
+
+== Oggetto
+
+=== Nome e breve descrizione del software
+
+Indicate il nome del software.
+
+field::[rows=1]
+
+=== Persona di contatto e autorizzazione
+
+Indicate la persona di contatto del servizio specializzato nonché le persone responsabili che hanno autorizzato la pubblicazione del software.
+
+field::[rows=3]
+
+== Lista di controllo
+
+Tipo di community
+
+La community può già esistere, il che semplifica notevolmente il compito.
+
+[%interactive]
+* [ ] Esiste (terzi possono avere la direzione)
+* [ ] La Confederazione ha la direzione
+* [ ] Partner con pari diritti (Confederazione e partner/fornitori)
+* [ ] Altro
+
+Libreria o software completo?
+
+Per le librerie di regola non esiste un concetto di community. Un add-on può essere utilizzato soltanto insieme a un prodotto commerciale.
+
+[%interactive]
+* [ ] Software completo
+* [ ] Libreria
+* [ ] Add-on
+* [ ] Altro
+
+Quale tipo di community è previsto?
+
+La scelta del tipo di community andrebbe motivata in due o tre frasi.
+
+[%interactive]
+* [ ] Nessuna, solo pubblicazione (as-is) (pubblicazione minima) +
+Nota: deve essere disponibile un indirizzo e-mail, il file publicode.yaml deve essere compilato
+* [ ] Release / issue tracker (supporto minimo, se necessario ammettere il supporto da parte di terzi)
+* [ ] Community
+
+Vi sono coutenti potenziali o effettivi del software?
+
+Vi sono potenziali acquirenti del software? Gli utenti possibili e noti possono essere indicati nel campo di testo (cfr. _Em002-2 Istruzioni per la pubblicazione di software open source,_ capitolo 3.1.1).
+
+[%interactive]
+* [ ] Nessuno ipotizzabile
+* [ ] Utenti potenziali (sono ipotizzabili)
+* [ ] Utenti noti (si sono già annunciati)
+
+[%interactive]
+* [ ] Parti interessate (membri della community già definiti o noti)
+
+Elenco dei servizi / delle imprese rilevanti. +
+Ciò fornisce un'indicazione sulla rilevanza del software per i terzi.
+
+Chi assume la gestione del prodotto?
+
+La gestione del prodotto è responsabile in primo luogo dell'ulteriore sviluppo dello stesso. In particolare se tale ruolo è assunto da terzi, le imprese o organizzazioni andrebbero possibilmente indicate.
+
+[%interactive]
+* [ ] Ufficio federale
+* [ ] Fornitore di prestazioni
+* [ ] Fornitore/i / terzi
+* [ ] Organizzazione comune
+* [ ] Aperto
+
+Coinvolgimento dei fornitori
+
+In che modo i fornitori sono coinvolti?
+
+[%interactive]
+* [ ] Mandatario
+* [ ] Partner
+* [ ] Ente responsabile
+* [ ] Altro
+
+Tipo di organizzazione
+
+Quale forma organizzativa assume la community? Ciò andrebbe illustrato in dettaglio, in particolare se si sceglie «Altro». Dato l'onere che comporta, una nuova associazione dovrebbe essere costituita soltanto in presenza di ottime ragioni.
+
+[%interactive]
+* [ ] Solo ente pubblico
+* [ ] Società semplice
+* [ ] Associazione nuova o esistente
+* [ ] Altro (p. es. una fondazione, esistente o nuova)
+
+Ripartizione dei costi
+
+Andrebbe stabilita nel concetto di community. Il capitolo 5.5 della _Em002-4 Guida alle community OSS_ fornisce informazioni al riguardo.
+
+Quali mezzi e risorse sono necessari? Le considerazioni sulla ripartizione dei costi andrebbero esposte brevemente.
+
+[%interactive]
+* [ ] Paga la Confederazione
+* [ ] Ogni parte sostiene i propri costi
+* [ ] Principio di causalità
+* [ ] La Confederazione non assume alcun costo della community
+* [ ] Ripartizione dei costi (p. es. tramite un'associazione)
+* [ ] Pubblicazione, in parte assunta da terzi (p. es. perché il software è stato creato prima del 1° gennaio 2024 e intendono assolutamente utilizzarlo)
+
+[%interactive]
+* [ ] Se sono offerte prestazioni supplementari secondo l'art. 9 cpv. 5 e 6 LMeCA, ciò è stabilito nel concetto di community? +
+Il concetto di community contiene le indicazioni corrispondenti.
+
+[%interactive]
+* [ ] Il concetto di community è stato allestito?
+
+Il concetto di community è stato allestito oppure ne viene ripreso uno esistente? +
+(inserire il collegamento)
+
+[%interactive]
+* [ ] I contratti necessari sono disponibili?
+* [ ] Contributor Licence Agreement (CLA)footnote:[Cfr. anche la _Em002-3 Guida alle licenze OSS_. In alternativa possono essere utilizzati anche i Developer Certificates of Origin (DCO).] allestito o ripreso
+* [ ] Associazione costituita, se necessario.
+
+== Osservazioni conclusive
+
+Osservazioni e rinvii ad altri documenti rilevanti
+
+field::[rows=4]
+
+*Archiviazione del modulo*
+
+Archiviate questo modulo insieme alla documentazione di progetto e inoltratelo al servizio competente della vostra unità organizzativa.
+
+*Licenza del modello di lista di controllo: CC0 1.0 Universal*
+
+Il presente documento è pubblicato sotto licenza CC0. Può essere liberamente utilizzato, modificato e diffuso, anche a scopi commerciali e in qualsiasi formato.
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+Questa glista da controlla appartegna a _Em002-2 Instrucziuns per publitgar software open source_ ed a _Em002-4 Guida da communitads OSS_. +
+Ella sto vegnir emplenida al cumenzament d'in project u al cumenzament da las scleridas per la relaschada e vegnir cumplettada pli tard. +
+Concernent ils models da support OSS vesair il chapitel 8 da _Em002-1 Guida pratica per software open source en l'administraziun federala_.
+
+== Object
+
+=== Num e curta descripziun dal software
+
+Endatai il num dal software.
+
+field::[rows=1]
+
+=== Persuna da contact ed autorisaziun
+
+Numnai la persuna da contact da la partiziun spezialisada sco er las persunas responsablas che han autorisà la publicaziun dal software.
+
+field::[rows=3]
+
+== Glista da controlla
+
+Gener da la communitad
+
+La communitad po gia exister, quai che simplifitgescha fitg l'incumbensa.
+
+[%interactive]
+* [ ] Exista (terzas persunas pon avair la direcziun)
+* [ ] La Confederaziun ha la direcziun
+* [ ] Partenaris cun ils medems dretgs (Confederaziun e partenaris/furniturs)
+* [ ] Auter
+
+Biblioteca u software entir?
+
+Per bibliotecas n'exista da regla nagin concept da communitad. In add-on po vegnir utilisà mo ensemen cun in product commerzial.
+
+[%interactive]
+* [ ] Software entir
+* [ ] Biblioteca
+* [ ] Add-on
+* [ ] Auter
+
+Tge gener da communitad è planisà?
+
+La tscherna dal gener da communitad duess vegnir motivada en duas fin trais frasas.
+
+[%interactive]
+* [ ] Nagina, mo publicaziun (as-is) (relaschada minimala) +
+Indicaziun: l'e-mail sto esser disponibel, la publicode.yaml sto esser emplenida
+* [ ] Releases/issue-tracker (support minimal, permetter sche necessari il support tras terzas persunas)
+* [ ] Communitad
+
+Dattia co-utilisaders potenzials u effectivs dal software?
+
+Dattia potenzials cumpraders per il software? Utilisaders pussaivels ed enconuschents pon vegnir inditgads en il champ da text (vesair _Em002-2 Instrucziuns per publitgar software open source,_ chapitel 3.1.1).
+
+[%interactive]
+* [ ] Nagins imaginabels
+* [ ] Utilisaders potenzials (èn imaginabels)
+* [ ] Utilisaders enconuschents (s'han gia annunziads)
+
+[%interactive]
+* [ ] Gruppas d'interess (commembers da la communitad gia definids/enconuschents)
+
+Glista dals posts/da las interpresas relevantas. +
+Quai dat in indizi, quant relevant che il software è per terzas persunas.
+
+Tgi surpiglia il management dal product?
+
+Il management dal product è en emprima lingia responsabel per il svilup vinavant dal product. En spezial sche quest rol vegn surpiglià da terzas persunas, duessan las interpresas/organisaziuns vegnir numnadas sche pussaivel.
+
+[%interactive]
+* [ ] Uffizi federal
+* [ ] Purschider da prestaziuns
+* [ ] Furnitur(s) / terzas persunas
+* [ ] Organisaziun cuminaivla
+* [ ] Avert
+
+Integraziun dals furniturs
+
+Co èn ils furniturs integrads?
+
+[%interactive]
+* [ ] Incumbensà
+* [ ] Partenari
+* [ ] Purtader
+* [ ] Auter
+
+Gener da l'organisaziun
+
+Tge furma d'organisaziun ha la communitad? Quai duess vegnir explitgà detagliadamain, en spezial tar la tscherna da «Auter». Pervia da la lavur ch'igl è collià cun quai, duess ina nova associaziun vegnir fundada mo cun ina fitg buna motivaziun.
+
+[%interactive]
+* [ ] Mo il maun public
+* [ ] Societad simpla
+* [ ] Associaziun nova u existenta
+* [ ] Auter (p.ex. ina fundaziun, existenta u nova)
+
+Repartiziun dals custs
+
+Quella duess vegnir fixada en il concept da communitad. Il chapitel 5.5 da _Em002-4 Guida da communitads OSS_ dat infurmaziuns davart quai.
+
+Tge meds e resursas èn necessaris? Las reflexiuns davart la repartiziun dals custs duessan vegnir exponidas curtamain.
+
+[%interactive]
+* [ ] La Confederaziun paja
+* [ ] Mintga partida porta ses agens custs
+* [ ] Princip dal chaschunader
+* [ ] La Confederaziun na surpiglia nagins custs da la communitad
+* [ ] Partiziun dals custs (p.ex. via in'associaziun)
+* [ ] Relaschada, en part surpigliada da terzas persunas (p.ex. perquai che il software è vegnì creà avant ils 1. da schaner 2024 ed ellas vulan absolutamain utilisar il software)
+
+[%interactive]
+* [ ] Sche prestaziuns supplementaras tenor l'art. 9 al. 5 e 6 EMBAG vegnan purschidas, è quai fixà en il concept da communitad? +
+Il concept da communitad cuntegna las indicaziuns correspundentas.
+
+[%interactive]
+* [ ] È il concept da communitad vegnì elavurà?
+
+Il concept da communitad è vegnì elavurà u in existent vegn surpiglià? +
+(inserir p.pl. il link)
+
+[%interactive]
+* [ ] Èn ils contracts necessaris avant maun?
+* [ ] Contributor Licence Agreement (CLA)footnote:[Vesair era _Em002-3 Guida da licenzas OSS_. Alternativamain pon era vegnir utilisads Developer Certificates of Origin (DCO).] elavurà u surpiglià
+* [ ] Associaziun fundada, sche necessari.
+
+== Remartgas finalas
+
+Remartgas e renviaments ad ulteriurs documents relevants
+
+field::[rows=4]
+
+*Archivaziun dal formular*
+
+Archivai quest formular tar la documentaziun dal project ed inoltrai el al post cumpetent en Vossa unitad d'organisaziun.
+
+*Licenza dal model da la glista da controlla: CC0 1.0 Universal*
+
+Quest document vegn publitgà sut la licenza CC0. El dastga vegnir utilisà, midà e derasà liberamain, era per intents commerzials ed en mintga format.
+endif::[]

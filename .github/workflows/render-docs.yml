@@ -1,0 +1,183 @@
+name: Render docs
+
+on:
+  push:
+    branches: [main]
+    # Docs releases only. `open-govpress-v*` tags the renderer binary released
+    # from this repo (see GOVPRESS_URL below), and must not publish a docs
+    # archive of its own -- `v*` excludes it by construction.
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # Keep in sync with devenv.nix's govpressVersion/govpressUrl/govpressSha256.
+  # Fetched from a GitHub Release rather than committed to the repo: at
+  # ~112MiB it clears GitHub's 100MB hard limit on regular git objects, and
+  # this repo is a fork, which GitHub's LFS policy blocks from uploading
+  # *new* LFS objects at all -- release assets hit neither limit.
+  GOVPRESS_VERSION: "0.0.15"
+  GOVPRESS_URL: https://github.com/736-c41-2c1-e464fc974/opensource-guidelines/releases/download/open-govpress-v0.0.15/open-govpress-0.0.15-linux-x64.tar.gz
+  GOVPRESS_SHA256: e676d20f57c7376b24e448e01d9783bd31c9b45ee4126e0865b46890d4171ff5
+
+jobs:
+  # One job per language. Every document carries all five languages in one
+  # file, so the same sources are rendered five times, each pinned with
+  # `--lang`, into a directory of its own -- `-o <dir>` names outputs
+  # `<basename>.pdf` with no language in the filename, so the directory is
+  # what keeps them apart.
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      # One broken language should report itself rather than cancel the other
+      # four and hide whether they were fine.
+      fail-fast: false
+      matrix:
+        lang: [en, de, fr, it, rm]
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Cache open-govpress download
+        uses: actions/cache@v6
+        with:
+          path: /tmp/open-govpress.tar.gz
+          key: open-govpress-${{ env.GOVPRESS_SHA256 }}
+
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      - name: Download and extract open-govpress
+        run: |
+          if [ ! -f /tmp/open-govpress.tar.gz ]; then
+            curl -fL --retry 3 -o /tmp/open-govpress.tar.gz "$GOVPRESS_URL"
+          fi
+          echo "$GOVPRESS_SHA256  /tmp/open-govpress.tar.gz" | sha256sum -c -
+          mkdir -p /tmp/open-govpress
+          tar xzf /tmp/open-govpress.tar.gz -C /tmp/open-govpress
+          bin=$(find /tmp/open-govpress -maxdepth 2 -name open-govpress -type f)
+          echo "OGP_BIN=$bin" >> "$GITHUB_ENV"
+
+      - name: Render all documents in ${{ matrix.lang }}
+        env:
+          LANG_ID: ${{ matrix.lang }}
+        run: |
+          mkdir -p "out/$LANG_ID"
+
+          # A document may opt out of a language with `:l10n-languages:` in its
+          # header. Absent means all five. Skipping it here is what makes an
+          # untranslated document *absent* from that language rather than
+          # rendered as a blank PDF -- no ifeval:: branch matches, so the body
+          # would be empty.
+          #
+          # `docs/partials/` is excluded: it holds fragments that are
+          # `include::`d into the documents, and a fragment is not a document.
+          docs=()
+          while IFS= read -r doc; do
+            langs=$(sed -n 's/^:l10n-languages:[[:space:]]*//p' "$doc" | head -1)
+            if [ -z "$langs" ] || grep -qw "$LANG_ID" <<<"$langs"; then
+              docs+=("$doc")
+            else
+              echo "skipping $doc (no $LANG_ID translation)"
+            fi
+          done < <(git ls-files '*.adoc' ':!docs/partials/*')
+
+          xvfb-run -a "$OGP_BIN" render --no-sandbox \
+            --lang "$LANG_ID" -o "out/$LANG_ID" "${docs[@]}"
+
+      - name: Generate language index page
+        run: tools/site-index.sh "${{ matrix.lang }}" "out/${{ matrix.lang }}"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          # `path: out/` so the archive's root is `<lang>/`, which is what lets
+          # the collect job merge all five into one tree.
+          name: pdfs-${{ matrix.lang }}
+          path: out/
+
+  collect:
+    needs: render
+    runs-on: ubuntu-latest
+    permissions:
+      # `contents: write` is for pushing the accumulated site to the
+      # `site-history` branch. Job-level permissions replace the top-level block
+      # outright rather than adding to it, so the read scopes have to be
+      # restated here.
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Download every language
+        uses: actions/download-artifact@v8
+        with:
+          pattern: pdfs-*
+          # Without this each archive lands under its own `pdfs-<lang>/`
+          # directory instead of merging into `site/<lang>/`.
+          merge-multiple: true
+          path: site
+
+      - name: Generate language chooser
+        run: tools/site-root.sh site
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: site/
+
+      # A Pages deployment always replaces the whole site, so publishing an
+      # older build alongside the current one means uploading both -- which
+      # means remembering the older one somewhere between runs. That somewhere
+      # is the `site-history` branch.
+      - name: Overlay this build onto the published site
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KEEP_COMMITS: "10"
+        run: tools/site-publish.sh site .site-history
+
+      # upload-pages-artifact excludes `.git` from its tar since v4, but the
+      # site is re-published from a fresh clone each run and the object store
+      # has no business being in the artifact -- dropping it here keeps that
+      # guarantee ours rather than the action's.
+      - name: Strip the git metadata
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        run: rm -rf .site-history/.git
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .site-history/
+
+  deploy:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    needs: collect
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        env:
+          # actions/deploy-pages keys the deployment on GITHUB_SHA alone, and
+          # Pages treats a repeat of an already-published version as a no-op --
+          # reporting success while continuing to serve the earlier build. A
+          # release tag normally points at the commit main has just published,
+          # so the tag's archive would never reach the site. Qualifying the
+          # version with the ref name makes each ref its own deployment.
+          # Undocumented but stable: the runner layers step `env` over the
+          # default variables, and pages_build_version is a free-form string.
+          GITHUB_SHA: ${{ github.sha }}-${{ github.ref_name }}
+        uses: actions/deploy-pages@v5

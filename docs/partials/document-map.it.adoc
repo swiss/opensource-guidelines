@@ -1,0 +1,56 @@
+// Cfr. document-map.en.adoc per la motivazione di questa suddivisione.
+[mermaid,align="center",alt="Panoramica degli strumenti OSS in relazione all'art. 9 LMeCA"]
+....
+flowchart TD
+    subgraph FUND["Basi (settore TDT)"]
+        EM0025["Em002-5<br/>Promemoria<br/>LMeCA e OSS"]
+        EM002["Em002<br/>Linee guida<br/>strategiche"]
+        EM0026["Em002-6<br/>FAQ su OSS e<br/>art. 9 LMeCA"]
+    end
+
+    subgraph INTRO["Introduzione e guida (settore TDT)"]
+        EM0021["Em002-1<br/>Guida<br/>pratica"]
+        EM0023["Em002-3<br/>Guida alle<br/>licenze OSS"]
+        EM0027["Em002-7<br/>Aspetti strategici degli<br/>acquisti e dell'OSS"]
+    end
+
+    subgraph PUB["Strumenti di pubblicazione (settore TDT)"]
+        EM0022["Em002-2<br/>Istruzioni per la<br/>pubblicazione di OSS"]
+        EM0024["Em002-4<br/>Guida alle<br/>community OSS"]
+        CL21["Em002-2.1<br/>Lista di controllo<br/>Valutazione<br/>preliminare OSS"]
+        CL22["Em002-2.2<br/>Lista di controllo<br/>Analisi e<br/>preparazione OSS"]
+        CL23["Em002-2.3<br/>Lista di controllo<br/>Rilascio e<br/>pubblicazione OSS"]
+        CL41["Em002-4.1<br/>Lista di controllo<br/>Community OSS"]
+    end
+
+    subgraph PROC["Strumenti d'acquisto (UFCL)"]
+        KBB["Promemoria CCAP<br/>Acquisto di software<br/>e art. 9 LMeCA"]
+        ORI["Orientamento<br/>Open source e<br/>acquisti"]
+        CLEX["Lista di controllo<br/>Eccezione generale<br/>art. 9 LMeCA"]
+    end
+
+    HERMES["www.HERMES.admin.ch"]
+    FCHOSS["Internet:<br/>strumenti OSS<br/>Cancelleria federale"]
+
+    EM002 --> EM0021
+    EM0021 --> EM0023
+    EM0021 --> EM0022
+    EM0022 --> EM0024
+    EM0022 --> CL21
+    CL21 --> CL22
+    CL22 --> CL23
+    EM0024 --> CL41
+    ORI --> CLEX
+    HERMES -->|"riferimento"| FCHOSS
+
+    classDef fund fill:#f0f0f0,stroke:#000000,color:#000000
+    classDef intro fill:#dae8fc,stroke:#000000,color:#000000
+    classDef pub fill:#e1d5e7,stroke:#000000,color:#000000
+    classDef check fill:#d5e8d4,stroke:#000000,color:#000000
+    classDef proc fill:#f8cecc,stroke:#000000,color:#000000
+    class EM002,EM0025,EM0026 fund
+    class EM0021,EM0023 intro
+    class EM0022,EM0024 pub
+    class CL21,CL22,CL23,CL41 check
+    class EM0027,KBB,ORI,CLEX proc
+....

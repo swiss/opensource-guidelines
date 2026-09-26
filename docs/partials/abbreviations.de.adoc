@@ -1,0 +1,65 @@
+// Siehe abbreviations.en.adoc für die Begründung dieser Aufteilung.
+// tag::abbr-em002[]
+AGB::
+Allgemeine Geschäftsbedingungen
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+AO::
+Application Owner
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+BBL::
+Bundesamt für Bauten und Logistik
+BGÖ::
+Öffentlichkeitsgesetz
+CLA::
+Contributor Licence Agreement
+DCO::
+Developer Certificate of Origin
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+DVS::
+Digitale Verwaltung Schweiz (www.digital-public-services-switzerland.ch/strategy)
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+DÖDS::
+Digitale Öffentliche Dienste Schweiz (www.digital-public-services-switzerland.ch/strategy)
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+EMBAG::
+Bundesgesetz über den Einsatz elektronischer Mittel zur Erfüllung von Behördenaufgaben
+FSF::
+Free Software Foundation
+HERMES::
+_Handbuch der Elektronischen Rechenzentren des Bundes_, eine Methode zur Systementwicklung (www.hermes.admin.ch)
+ISB::
+Informatiksteuerungsorgan des Bundes (bis 2021)
+KBB::
+Kompetenzzentrum Beschaffungswesen Bund
+KI::
+Künstliche Intelligenz
+LB::
+Leistungsbezüger
+LE::
+Leistungserbringer
+OE::
+Organisationseinheit (in der Regel ein Bundesamt)
+OSI::
+Open Source Initiative
+OSPO::
+Open Source Programme Office
+OSS::
+Open-Source-Software
+OSSD::
+Open-Source-Softwareentwicklung
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+AV::
+Applikationsverantwortliche bzw. Applikationsverantwortlicher
+// end::abbr-em002[]

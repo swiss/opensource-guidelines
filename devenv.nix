@@ -6,10 +6,10 @@
 }:
 
 let
-  # open-govpress (https://gitlab.com/swiss-armed-forces/cyber-command/cea/open-govpress)
-  # is the CLI used to render these .adoc documents to PDF. It ships as a
-  # generic dynamically-linked Linux binary (electron-builder's tar.gz
-  # target), which cannot execute directly on NixOS -- there is no
+  # open-govpress (https://github.com/swiss/open-govpress) is the CLI used to
+  # render these .adoc documents to PDF. It ships as a generic
+  # dynamically-linked Linux binary (electron-builder's tar.gz target), which
+  # cannot execute directly on NixOS -- there is no
   # /lib64/ld-linux-x86-64.so.2 and no FHS layout for it to find its shared
   # libraries in. Wrapping it in an FHS environment (the same trick nixpkgs
   # itself uses for Chrome/Electron/AppImage binaries) lets the unmodified

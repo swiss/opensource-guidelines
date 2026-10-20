@@ -19,9 +19,9 @@ let
   # repo: at ~112MiB it clears GitHub's 100MB hard limit on regular git
   # objects, and this repo is a fork, which GitHub's LFS policy blocks from
   # uploading *new* LFS objects at all -- release assets hit neither limit.
-  govpressVersion = "0.0.15";
+  govpressVersion = "0.0.19";
   govpressUrl = "https://github.com/736-c41-2c1-e464fc974/opensource-guidelines/releases/download/open-govpress-v${govpressVersion}/open-govpress-${govpressVersion}-linux-x64.tar.gz";
-  govpressSha256 = "e676d20f57c7376b24e448e01d9783bd31c9b45ee4126e0865b46890d4171ff5";
+  govpressSha256 = "946c7f187ec1eb109681e89cbd9aebcba869e560df8f7493ddbecd3540a9b679";
 
   govpressFHS = pkgs.buildFHSEnv {
     name = "open-govpress-fhs";

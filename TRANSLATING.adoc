@@ -78,7 +78,7 @@ ifeval::["{lang}" == "en"]                 <4>
 
 Language codes are the bare subtags `en de fr it rm` -- never `de-CH`. Nothing anywhere reduces a region subtag to its base: `open-govpress render --lang de-CH` exits with `unknown --lang "de-CH"`, and a document whose own `:lang:` is `de-CH` fails on its caption include, which is resolved by exact filename. No `ifeval::` would match it either.
 
-Two further attributes are shared and must survive translation unchanged: `:revnumber:` and `:revdate:`, which date the document, and `:url-repo:`, the repository URL written once in the header and referenced as `+{url-repo}+` in the body of eight documents. Translate neither the attribute name nor the reference -- `+{url-repo}+` is an attribute reference, not text, and expanding it by hand puts the URL back in 64 places.
+Further attributes are shared and must survive translation unchanged: `:revnumber:` and `:revdate:`, which date the document; `:url-repo:`, the repository URL written once in the header and referenced as `+{url-repo}+` in the body of eight documents; and `:url-site:`, where CI publishes the rendered PDFs, referenced the same way in each of the README's five blocks. Translate neither an attribute name nor a reference -- `+{url-repo}+` is an attribute reference, not text, and expanding it by hand puts the URL back in 64 places.
 
 === The Kennzeichnung
 

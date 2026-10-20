@@ -38,6 +38,11 @@ endif::[]
 // reads nothing here; this is its own documented idiom for an author-defined
 // attribute that saves repetition (see the `showcase.adoc` it ships).
 :url-repo: https://github.com/swiss/opensource-guidelines
+// Where CI publishes the rendered PDFs, written as `{url-site}` in all five
+// body blocks. Shared like `{url-repo}` rather than per-language: the site
+// carries every language behind one chooser, so there is nothing to localise
+// in the address itself.
+:url-site: https://swiss.github.io/opensource-guidelines
 // Contents and numbering for the *web* view of this source. open-govpress sets
 // all four itself for `:govpress-style: report` (styles/common.adoc and
 // styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
@@ -54,6 +59,8 @@ This repository contains *evolving drafts* of guidelines and tools to support th
 Every document in this repository carries all five languages -- English, German, French, Italian and Romansh -- in a single AsciiDoc file. The German, French, Italian and Romansh texts are *unreviewed translations*; see link:TRANSLATING.adoc[TRANSLATING.adoc] before editing them.
 
 For a complete list of documents, see: link:docs/index.adoc[Tools for Publishing Open Source Software]
+
+The drafts are also rendered to PDF and published in all five languages at {url-site}[swiss.github.io/opensource-guidelines].
 
 == Legal obligations and responsibility
 
@@ -97,6 +104,8 @@ Jedes Dokument in diesem Repository enthält alle fünf Sprachen -- Englisch, De
 
 Eine vollständige Liste der Dokumente finden Sie unter: link:docs/index.adoc[Hilfsmittel zur Veröffentlichung von Open-Source-Software]
 
+Die Entwürfe werden zudem als PDF gerendert und in allen fünf Sprachen unter {url-site}[swiss.github.io/opensource-guidelines] veröffentlicht.
+
 == Gesetzliche Pflichten und Verantwortung
 
 Gemäss https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[Artikel 9 EMBAG] ist die Bundesverwaltung *grundsätzlich verpflichtet, ihre Software als Open Source zu veröffentlichen.* Jede Bundesbehörde trägt eigenständig die Verantwortung für die Einhaltung dieser Pflicht, einschliesslich der öffentlichen Bereitstellung des Quellcodes.
@@ -138,6 +147,8 @@ Ce dépôt contient des *projets en cours d'élaboration* d'outils destinés à 
 Chaque document de ce dépôt contient les cinq langues -- anglais, allemand, français, italien et romanche -- dans un seul fichier AsciiDoc. Les textes allemand, français, italien et romanche sont des *traductions non vérifiées* ; veuillez lire link:TRANSLATING.adoc[TRANSLATING.adoc] avant de les modifier.
 
 Pour la liste complète des documents, voir : link:docs/index.adoc[Outils pour la publication de logiciels open source]
+
+Les projets sont également rendus en PDF et publiés dans les cinq langues sur {url-site}[swiss.github.io/opensource-guidelines].
 
 == Obligations légales et responsabilité
 
@@ -181,6 +192,8 @@ Ogni documento di questo repository contiene tutte e cinque le lingue -- inglese
 
 Per l'elenco completo dei documenti si veda: link:docs/index.adoc[Strumenti per la pubblicazione di software open source]
 
+Le bozze sono inoltre rese in PDF e pubblicate in tutte e cinque le lingue su {url-site}[swiss.github.io/opensource-guidelines].
+
 == Obblighi legali e responsabilità
 
 Conformemente all'https://www.fedlex.admin.ch/eli/cc/2023/682/de#art_9[articolo 9 LMeCA], l'Amministrazione federale è *tenuta in linea di principio a pubblicare il proprio software come open source.* Ogni autorità federale è responsabile in modo autonomo del rispetto di tale obbligo, compresa la messa a disposizione pubblica del codice sorgente.
@@ -222,6 +235,8 @@ Quest repositori cuntegna *sbozzas ch'èn vegnidas sviluppadas vinavant* da meds
 Mintga document da quest repositori cuntegna tuttas tschintg linguas -- englais, tudestg, franzos, talian e rumantsch -- en ina suletta datoteca AsciiDoc. Ils texts tudestg, franzos, talian e rumantsch èn *translaziuns betg verifitgadas*; legiai link:TRANSLATING.adoc[TRANSLATING.adoc] avant che elavurar els.
 
 Ina glista cumpletta dals documents chattais Vus sut: link:docs/index.adoc[Meds per publitgar software open source]
+
+Las sbozzas vegnan ultra da quai renderisadas sco PDF e publitgadas en tuttas tschintg linguas sut {url-site}[swiss.github.io/opensource-guidelines].
 
 == Obligaziuns legalas e responsabladad
 

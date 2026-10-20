@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outils pour la publication de logiciels open source</title>
+<style>
+  :root { color-scheme: light dark;
+    --link: #0b57d0; --rule: rgba(128,128,128,.3); --wash: rgba(11,87,208,.08); }
+  @media (prefers-color-scheme: dark) {
+    :root { --link: #8ab4f8; --wash: rgba(138,180,248,.12); }
+  }
+  body { margin: 0 auto; padding: 2rem 1rem 4rem; max-width: 46rem;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 .5rem; }
+  p.lead { margin: 0 0 2rem; opacity: .7; font-size: .9rem; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { border-top: 1px solid var(--rule); }
+  li:last-child { border-bottom: 1px solid var(--rule); }
+  li a { display: flex; align-items: center; gap: .75rem;
+    padding: .8rem .5rem .8rem .25rem; text-decoration: none; color: inherit; }
+  li a .doc { flex: 1; }
+  li a .title { display: block; color: var(--link); text-decoration: underline;
+    text-underline-offset: .18em; }
+  li a .name { display: block; font-size: .75rem; opacity: .6; margin-top: .15rem; }
+  /* A badge rather than a chevron: these rows hand over a file, they do not
+    navigate, and the reader deserves to know which before clicking. */
+  li a .kind { flex: none; font-size: .7rem; font-weight: 600; letter-spacing: .06em;
+    color: var(--link); border: 1px solid currentColor; border-radius: .25rem;
+    padding: .05rem .35rem; opacity: .8; }
+  li a:hover, li a:focus-visible { background: var(--wash); }
+  li a:hover .title { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+  nav { margin-top: 2.5rem; font-size: .85rem; }
+  nav a { color: var(--link); }
+</style>
+<h1>Outils pour la publication de logiciels open source</h1>
+<p class="lead">Généré automatiquement à partir des sources AsciiDoc de ce dépôt.</p>
+<ul>
+  <li><a href="index.pdf"><span class="doc"><span class="title">Outils pour la publication de logiciels open source</span><span class="name">index.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="README.pdf"><span class="doc"><span class="title">Outils relatifs aux logiciels open source (selon l'article 9 LMETA)</span><span class="name">README.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="README_template.pdf"><span class="doc"><span class="title">Modèle de README</span><span class="name">README_template.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002.pdf"><span class="doc"><span class="title">Em002 Lignes directrices stratégiques pour les logiciels open source dans l'administration fédérale</span><span class="name">em002.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-1.pdf"><span class="doc"><span class="title">Em002-1 Guide pratique pour les logiciels open source dans l'administration fédérale</span><span class="name">em002-1.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-2.pdf"><span class="doc"><span class="title">Em002-2 Instructions pour la publication d'OSS</span><span class="name">em002-2.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-2-1-checklist-oss-preliminary-assessment.pdf"><span class="doc"><span class="title">Em002-2.1 Liste de contrôle Évaluation préalable OSS</span><span class="name">em002-2-1-checklist-oss-preliminary-assessment.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-2-2-checklist-oss-analysis-and-preparation.pdf"><span class="doc"><span class="title">Em002-2.2 Liste de contrôle Analyse et préparation OSS</span><span class="name">em002-2-2-checklist-oss-analysis-and-preparation.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-2-3-checklist-oss-release-and-publication.pdf"><span class="doc"><span class="title">Em002-2.3 Liste de contrôle Validation et publication OSS</span><span class="name">em002-2-3-checklist-oss-release-and-publication.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-3.pdf"><span class="doc"><span class="title">Em002-3 Guide de licences OSS</span><span class="name">em002-3.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-4.pdf"><span class="doc"><span class="title">Em002-4 Guide des communautés OSS</span><span class="name">em002-4.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-4-1-checklist-oss-community.pdf"><span class="doc"><span class="title">Em002-4.1 Liste de contrôle Communauté OSS</span><span class="name">em002-4-1-checklist-oss-community.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-5.pdf"><span class="doc"><span class="title">Em002-5 Aide-mémoire LMETA et OSS</span><span class="name">em002-5.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-6.pdf"><span class="doc"><span class="title">Em002-6 FAQ sur les OSS et l'art. 9 LMETA</span><span class="name">em002-6.pdf</span></span><span class="kind">PDF</span></a></li>
+  <li><a href="em002-7.pdf"><span class="doc"><span class="title">Em002-7 Guide OSS : application de l'article 9 LMETA</span><span class="name">em002-7.pdf</span></span><span class="kind">PDF</span></a></li>
+</ul>
+<nav><a href="../">&#8592; Toutes les langues</a></nav>
+</html>

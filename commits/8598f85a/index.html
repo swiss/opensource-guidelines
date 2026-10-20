@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Source Guidelines</title>
+<style>
+  :root { color-scheme: light dark;
+    --link: #0b57d0; --rule: rgba(128,128,128,.3); --wash: rgba(11,87,208,.08); }
+  @media (prefers-color-scheme: dark) {
+    :root { --link: #8ab4f8; --wash: rgba(138,180,248,.12); }
+  }
+  body { margin: 0 auto; padding: 3rem 1rem 4rem; max-width: 34rem;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.5rem; margin: 0 0 .5rem; }
+  p.lead { margin: 0 0 2.5rem; opacity: .7; font-size: .9rem; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { border-top: 1px solid var(--rule); }
+  li:last-child { border-bottom: 1px solid var(--rule); }
+  li a { display: flex; align-items: baseline; gap: .75rem;
+    padding: .9rem .5rem .9rem .25rem; text-decoration: none; color: inherit; }
+  li a .name { flex: 1; color: var(--link); text-decoration: underline;
+    text-underline-offset: .18em; }
+  li a .code { opacity: .55; font-size: .8rem; text-transform: uppercase;
+    letter-spacing: .04em; }
+  /* The chevron says "this row goes somewhere" even before the pointer
+    arrives, which the hover tint alone could not. */
+  li a::after { content: "\203A"; color: var(--link); font-size: 1.25em;
+    line-height: 1; opacity: .8; }
+  li a:hover, li a:focus-visible { background: var(--wash); }
+  li a:hover .name { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+  footer { margin-top: 2.5rem; font-size: .8rem; }
+  footer p { margin: 0 0 .6rem; }
+  footer p.note { opacity: .65; }
+  footer a { color: var(--link); }
+</style>
+<h1>Open Source Guidelines</h1>
+<p class="lead">Tools for publishing open source software in the Swiss Federal
+Administration. Choose a language.</p>
+<ul>
+  <li><a href="en/"><span class="name">English</span><span class="code">en</span></a></li>
+  <li><a href="de/"><span class="name">Deutsch (Schweiz)</span><span class="code">de</span></a></li>
+  <li><a href="fr/"><span class="name">Français (Suisse)</span><span class="code">fr</span></a></li>
+  <li><a href="it/"><span class="name">Italiano (Svizzera)</span><span class="code">it</span></a></li>
+  <li><a href="rm/"><span class="name">Rumantsch (Svizra)</span><span class="code">rm</span></a></li>
+</ul>
+<footer>
+<p class="note">The German, French, Italian and Romansh versions are unreviewed
+translations. The binding versions are published in the official languages by
+the Federal Chancellery.</p>
+</footer>
+</html>

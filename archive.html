@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archived builds &#8212; Open Source Guidelines</title>
+<style>
+  :root { color-scheme: light dark;
+    --link: #0b57d0; --rule: rgba(128,128,128,.3); --wash: rgba(11,87,208,.08); }
+  @media (prefers-color-scheme: dark) {
+    :root { --link: #8ab4f8; --wash: rgba(138,180,248,.12); }
+  }
+  body { margin: 0 auto; padding: 3rem 1rem 4rem; max-width: 40rem;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.5rem; margin: 0 0 .5rem; }
+  h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em;
+    opacity: .55; margin: 2.5rem 0 .25rem; font-weight: 600; }
+  p.lead { margin: 0 0 1rem; opacity: .7; font-size: .9rem; }
+  p.empty { margin: .5rem 0 0; opacity: .5; font-size: .85rem; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { border-top: 1px solid var(--rule); }
+  li:last-child { border-bottom: 1px solid var(--rule); }
+  li a { display: flex; align-items: center; gap: .75rem;
+    padding: .8rem .5rem .8rem .25rem; text-decoration: none; color: inherit;
+    font-variant-numeric: tabular-nums; }
+  li a .build { flex: 1; }
+  li a .ref { display: block; color: var(--link); text-decoration: underline;
+    text-underline-offset: .18em; }
+  li a .when { opacity: .55; font-size: .8rem; }
+  li a .subject { display: block; font-size: .75rem; opacity: .6; margin-top: .15rem; }
+  li a::after { content: "\203A"; color: var(--link); font-size: 1.25em;
+    line-height: 1; opacity: .8; }
+  li a:hover, li a:focus-visible { background: var(--wash); }
+  li a:hover .ref { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+  nav { margin-top: 2.5rem; font-size: .85rem; }
+  nav a { color: var(--link); }
+</style>
+<h1>Archived builds</h1>
+<p class="lead">Each entry is the complete set of documents, in all languages, as
+they stood at that point. Released versions are kept permanently; builds of the
+develop branch are kept for the most recent commits only.</p>
+<h2>Releases</h2>
+<p class="empty">No release has been tagged yet.</p>
+<h2>Recent builds of develop</h2>
+<ul>
+  <li><a href="commits/fa56f477/"><span class="build"><span class="ref">fa56f477</span><span class="subject">Point the README at the site the documents are published to</span></span><span class="when">2026-10-20</span></a></li>
+  <li><a href="commits/8598f85a/"><span class="build"><span class="ref">8598f85a</span><span class="subject">Point the README at the site the documents are published to</span></span><span class="when">2026-10-20</span></a></li>
+  <li><a href="commits/276c695a/"><span class="build"><span class="ref">276c695a</span><span class="subject">Convert docs to AsciiDoc, localise into all five languages, add open-govpress rendering and publishing pipeline (#21)</span></span><span class="when">2026-10-20</span></a></li>
+</ul>
+<nav><a href="./">&#8592; All languages</a></nav>
+</html>

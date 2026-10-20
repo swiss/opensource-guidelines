@@ -1,0 +1,8 @@
+ref	develop
+type	branch
+sha	fa56f47733e00a0ffd479a7cce26cce9a8b8bdf4
+short	fa56f477
+date	2026-10-20T23:49:54+02:00
+epoch	1792532994
+subject	Point the README at the site the documents are published to
+run	39503531739

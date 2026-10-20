@@ -1,0 +1,8 @@
+ref	develop
+type	branch
+sha	276c695a03197e7684ce4b0e2565f67efacc6d7b
+short	276c695a
+date	2026-10-20T23:38:45+02:00
+epoch	1792532325
+subject	Convert docs to AsciiDoc, localise into all five languages, add open-govpress rendering and publishing pipeline (#21)
+run	39502047452

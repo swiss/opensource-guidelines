@@ -1,0 +1,87 @@
+// Voir abbreviations.en.adoc pour la justification de ce découpage.
+// tag::abbr-em002[]
+ANS::
+Administration numérique suisse (www.digital-public-services-switzerland.ch/strategy)
+BP::
+Bénéficiaire de prestations
+CG::
+Conditions générales
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+AO::
+Application owner
+CCMP::
+Centre de compétence des marchés publics de la Confédération
+ChF::
+Chancellerie fédérale
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+CLA::
+Contributor Licence Agreement
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+CCMP::
+Centre de compétence des marchés publics de la Confédération
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+DCO::
+Developer Certificate of Origin
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+ANS::
+Administration numérique suisse (www.digital-public-services-switzerland.ch/strategy)
+BP::
+Bénéficiaire de prestations
+FP::
+Fournisseur de prestations
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+FP::
+Fournisseur de prestations
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+FSF::
+Free Software Foundation
+HERMES::
+_Handbuch der Elektronischen Rechenzentren des Bundes_, une méthode de développement de systèmes (www.hermes.admin.ch)
+IA::
+Intelligence artificielle
+LMETA::
+Loi fédérale sur l'utilisation des moyens électroniques pour l'exécution des tâches des autorités
+LTrans::
+Loi sur la transparence
+OFCL::
+Office fédéral des constructions et de la logistique
+OSI::
+Open Source Initiative
+OSPO::
+Open Source Programme Office
+OSS::
+Logiciel open source
+OSSD::
+Développement de logiciels open source
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+RA::
+Responsable de l'application
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+UO::
+Unité d'organisation (en règle générale un office fédéral)
+USIC::
+Unité de pilotage informatique de la Confédération (jusqu'en 2021)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002-6[]

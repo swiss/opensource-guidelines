@@ -1,0 +1,200 @@
+// Vesair references.en.adoc per la motivaziun da questa repartiziun.
+// tag::ref-em002-tools[]
+[Em002]::
+Em002 Directivas strategicas per software open source en l'administraziun federala, versiun 2.0, 2025
+
+[Em002-1]::
+Em002-1 Guida pratica per software open source en l'administraziun federala, versiun 2.0, 2025
+
+[Em002-2]::
+Em002-2 Instrucziuns per publitgar software open source, versiun 2.0, 2025
+
+[Em002-2.1]::
+Em002-2.1 Glista da controlla Evaluaziun preliminara OSS, versiun 2.0, 2025
+
+[Em002-2.2]::
+Em002-2.2 Glista da controlla Analisa e preparaziun OSS, versiun 2.0, 2025
+
+[Em002-2.3]::
+Em002-2.3 Glista da controlla Relaschada e publicaziun OSS, versiun 2, 2025
+
+[Em002-3]::
+Em002-3 Guida da licenzas OSS, versiun 2.0, 2025
+
+[Em002-4]::
+Em002-4 Guida da communitads OSS, versiun 2.0, 2025
+
+[Em002-4.1]::
+Em002-4.1 Glista da controlla Communitad OSS, versiun 2.0, 2025
+
+[Em002-5]::
+Em002-5 Fegl d'infurmaziun Meds OSS, versiun 2.0, 2025
+
+[Em002-6]::
+Em002-6 Dumondas frequentas davart la publicaziun da l'OSS (FAQ-OSS), versiun 2.0, 2025
+
+[Em002-7]::
+Em002-7 Aspects strategics da l'acquist e dal software open source, versiun 2.0, 2025
+
+[BBL-WZK]::
+Fegls d'infurmaziun per ils posts da basegn da l'UFCL sa chattan en la chascha d'utensilis correspundenta (per tudestg): link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html]
+
+[BBL-AGB]::
+CGC da la Confederaziun. link:https://www.bkb.admin.ch/bkb/de/home/themen/agb.html[https://www.bkb.admin.ch/bkb/de/home/themen/agb.html]
+
+// end::ref-em002-tools[]
+// tag::ref-em002-general[]
+// tag::ref-em002-7[]
+[A029]::
+Standard da product per software da client d'automatisaziun da biro
+Intranet: link:https://intranet.dti.bk.admin.ch/isb_kp/de/home/ikt-vorgaben/standards/a029-bab_client_software.html[https://intranet.dti.bk.admin.ch/isb_kp/de/home/ikt-vorgaben/standards/a029-bab_client_software.html]
+
+// end::ref-em002-7[]
+// end::ref-em002-general[]
+// tag::ref-em002-general[]
+[BITKOM2023]::
+Leitfaden Open-Source-Software 2.0. Berlin: Bitkom e. V. Bundesverband Informationswirtschaft, Telekommunikation und neue Medien e. V. BIT-KOM. 2023. link:https://www.bitkom.org/Bitkom/Publikationen/Bitkom-Leitfaden-zu-Open-Source-Software-20.html[https://www.bitkom.org/Bitkom/Publikationen/Bitkom-Leitfaden-zu-Open-Source-Software-20.html]
+
+// end::ref-em002-general[]
+// tag::ref-em002-7[]
+[BBL2015]::
+Fegl d'infurmaziun: Concurs da software: garantir ina vasta concurrenza; 2015; betg pli en vigur
+
+[BITKOM2024]::
+Leitfaden Open-Source-Software 2.0. Berlin: Bitkom e. V. Bundes-verband Informationswirtschaft, Telekommunikation und neue Medien e. V. BIT-KOM. 2024. https://www.bitkom.org/Bitkom/Publikationen/Bitkom-Leitfaden-zu-Open-Source-Software-20.html
+
+// end::ref-em002-7[]
+// tag::ref-em002-general[]
+// tag::ref-em002-7[]
+[BöB]::
+Lescha federala davart l'acquist public (LAPub) link:https://www.fedlex.admin.ch/eli/oc/2020/126/de[https://www.fedlex.admin.ch/eli/oc/2020/126/de]
+
+[DigiV]::
+Ordinaziun davart las prestaziuns digitalas e la transformaziun digitala en l'administraziun federala (DigiV) link:https://www.fedlex.admin.ch/eli/cc/2025/235/de[CS 172.019.1 – Ordinaziun dals 2 d'avrigl 2025 | Fedlex]
+
+// end::ref-em002-7[]
+// end::ref-em002-general[]
+// tag::ref-em002-tools[]
+// tag::ref-em002-7[]
+[BBL-WL]::
+link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Wegleitung%20Open%20Source%20in%20der%20Beschaffung.pdf.download.pdf/Wegleitung%20Open%20Source%20in%20der%20Beschaffung.pdf[Directiva Open Source en l'acquist], UFCL; 2025 +
+Agid da decisiun per cumpraders en projects cun ina pussaivla relevanza OSS. Cuntegna infurmaziuns davart la realisaziun correcta en concurs ed en contracts. (PDF) +
+Accessibel mo per posts federals en l'intranet da la Confederaziun
+
+[BBL-CL]::
+link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[Glista da controlla excepziun integrala art. 9 EMBAG], UFCL, 2025, +
+Gida tar l'examinaziun e la documentaziun, sch'i po vegnir renunzià en il cas singul a la publicaziun dal software sviluppà. (DOCX) +
+Accessibel mo per posts federals en l'intranet da la Confederaziun
+
+// end::ref-em002-7[]
+// end::ref-em002-tools[]
+// tag::ref-em002-tools[]
+// tag::ref-em002-7[]
+[KBB-MB]::
+Fegl d'infurmaziun: acquist da software ed art. 9 EMBAG, Center da cumpetenza per l'acquist public da la Confederaziun: +
+link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html]
+
+// end::ref-em002-7[]
+// end::ref-em002-tools[]
+// tag::ref-em002-general[]
+[EY2011]::
+Open Source Software im geschäftskritischen Einsatz. Ernst & Young. 2011. link:https://www.yumpu.com/de/document/read/23276493/open-source-software-ernst-young[https://www.yumpu.com/de/document/read/23276493/open-source-software-ernst-young].
+
+[EMBAG2023]::
+172.019 Lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads (EMBAG) link:https://www.fedlex.admin.ch/eli/cc/2023/682/rm[https://www.fedlex.admin.ch/eli/cc/2023/682/rm]
+
+[Fr2012]::
+Fröhlich-Bleuler, Gianni. Open Source Compliance. Jusletter ils 12 da november 2012.
+
+[Ga2021]::
+Gartner for Application and Software Engineering Leaders Tool: Open Source Software Governance Policy Template. Gartner, mars 2021
+
+[GoAy2022]::
+Goldstein, Ayala. Top 10 Open Source Licenses in 2022: Trends and Predictions. 2022. link:https://resources.whitesourcesoftware.com/blog-whitesource/top-open-source-licenses-trends-and-predictions[https://resources.whitesourcesoftware.com/blog-whitesource/top-open-source-licenses-trends-and-predictions]
+
+[Gu2024]::
+Günter, Matthias. Selection criteria for enterprise-ready Open Source software. 2024. link:https://gnostx.com/wp_gnostx/blog/2024/05/31/selection-criteria-for-enterprise-ready-open-source-software/[https://gnostx.com/wp_gnostx/blog/2024/05/31/selection-criteria-for-enterprise-ready-open-source-software/]
+
+[IZqCab2023]::
+Izquierdo, Javier Luis, Canovas and Cabot, Jordi; For a more transparent governance of open source; Communications of the ACM; August 2023
+
+[JaAx2016]::
+Jaeger, Till, e Metzger, Alex. Open Source Software: Rechtliche Rahmenbedingungen der Freien Software. 4. ed. Minca: C.H.Beck. 2016
+
+[KuWiSa2008]::
+Kuhn, Bradley M., Williamson, Aaron; e Sandler, Karen M. A Practical Guide to GPL Compliance. Software Freedom Law Center. 2008. link:https://softwarefreedom.org/resources/2008/compliance-guide.html[https://softwarefreedom.org/resources/2008/compliance-guide.html]
+
+[LaOp2023]::
+Lambach, D. ed Oppermann, K.. Narratives of digital sovereignty in German political discourse', Governance, 36(3), p. 693–709. 2023. Disponibel sut: link:https://doi.org/10.1111/gove.12690[https://doi.org/10.1111/gove.12690]
+
+[LaWu2022]::
+Laux, Christian e Wüst, Anja. Datensouveränität – Was es zur Begriffsklärung braucht. Swiss Data Alliance. Versiun 1.0. Fanadur 2022
+
+[Le2023]::
+Lehmann, David. Erfahrungen mit Open Source Freigabe beim BIT. Preschentaziun dals 18 da settember 2023
+
+[OSI2024]::
+Open Source Initiative. Open Source Licenses by Name. 2024. link:https://opensource.org/licenses/alphabetical[https://opensource.org/licenses/alphabetical]
+
+[OSS2024]::
+Open Source Studie 2024; link:https://www.oss-studie.ch/[https://www.oss-studie.ch/]
+
+[Pe1999]::
+Perens, Bruce. The Open Source Definition. In Open Sources: Voices from the Open Source Revolution. 1999. link:https://www.oreilly.com/openbook/opensources/book/perens.html[https://www.oreilly.com/openbook/opensources/book/perens.html].
+
+[SB001]::
+link:https://intranet.dti.bk.admin.ch/isb_kp/de/home/ikt-vorgaben/strategien-teilstrategien/strategie-digitale-bundesverwaltung.html[Strategia Administraziun federala digitala] e plan da transformaziun.
+
+[Sc2024]::
+Schlauri, Simon. Charakteristika gängiger Open-Source-Lizenzen. 2024
+
+[ScScPo2017]::
+Schlauri, Simon, Schweizer, Samuel, e Poledna, Thomas. 2017. Rechtliche Voraussetzungen Der Nutzung von Open-Source-Software in Der Öffentlichen Verwaltung, Insbesondere des Kantons Bern. Carl Grossmann Verlag. link:http://www.oapen.org/search?identifier=632680[http://www.oapen.org/search?identifier=632680] (26 d'avust 2019).
+
+[St2011]::
+Straub, Wolfgang. Softwareschutz: Urheberrecht, Patentrecht, Open Source. Turitg: 2011. Dike. link:https://www.it-recht.ch/wp-content/uploads/2014/11/Straub-Softwareschutz-Open-Source-Software-Zurich-2011.pdf[https://www.it-recht.ch/wp-content/uploads/2014/11/Straub-Softwareschutz-Open-Source-Software-Zurich-2011.pdf].
+
+[St2024]::
+Stürmer, Matthias. Technological Perspective on Digital Sovereignty, rapport per il DFAE. 2024 link:https://arxiv.org/abs/2406.03266[[2406.03266\] Technological Perspective on Digital Sovereignty (arxiv.org)]
+
+[StGa2018]::
+Stürmer, Matthias, e Gauch, Carole. Open Source Studie Schweiz 2018. Forschungsstelle Digitale Nachhaltigkeit der Universität Bern. 2018. link:https://www.oss-studie.ch/open-source-studie-2018.pdf[https://www.oss-studie.ch/open-source-studie-2018.pdf].
+
+[StNu2021]::
+Stürmer, Matthias e Nussbaumer, Jasmin. Open Source Studie Schweiz 2021. Forschungsstelle Digitale Nachhaltigkeit der Universität Bern. 2021. link:https://www.ch-open.ch/open-source-studie-schweiz-2021/[https://www.ch-open.ch/open-source-studie-schweiz-2021/]
+
+[Whe2007]::
+Wheeler, David A. The Free-Libre / Open Source Software (FLOSS) License Slide. 2007. link:https://dwheeler.com/essays/floss-license-slide.pdf[https://dwheeler.com/essays/floss-license-slide.pdf]
+
+// end::ref-em002-general[]
+// tag::ref-em002-tools[]
+// tag::ref-em002-7[]
+[KBB-KV]::
+Criteris models – Acquist ed EMBAG. +https://perimap.admin.ch/goto_perimap_file_47064_download.html+ +
+Texts da contract models – Svilup da software +https://perimap.admin.ch/goto_perimap_file_47059_download.html+
+
+[KBB-Perimap]::
+link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[Plattafurma d'emprender e da models dal CCA] (ina registraziun è necessaria)
+
+// end::ref-em002-7[]
+// end::ref-em002-tools[]
+// tag::ref-em002-7[]
+[OSBA-VK]::
+Criteris d'attribuziun per l'acquist persistent da software open source | OSBA – Open Source Business Alliance
+
+[Sto2024]::
+Attestat da cumpetenza 3 davart criteris relevants per l'acquist en connex cun la nova _lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads (EMBAG), sa basond sin l'art. 9 (software open source)_ da Reto Stoll, 2024
+
+[Stü2015]::
+Model da fatschenta open source: plivalur da la purschida d'abunament, Matthias Stürmer, 2015
+
+[Stü2024]::
+Technological Perspective on Digital Sovereignty, Matthias Stürmer, 2024, https://arbor.bfh.ch/entities/publication/b77d2f8b-4148-4325-82cd-405fa077a28a
+
+[SIK]::
+SIK per l'acquist da software open source: +https://www.parldigi.ch/de/sik-e-fuer-beschaffung-von-open-source-software/+, 2015
+
+[W012]::
+W012 – Directivas per la suveranitad digitala en l'administraziun federala, V1.0 2025
+
+// end::ref-em002-7[]

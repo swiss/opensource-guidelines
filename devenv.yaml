@@ -1,0 +1,14 @@
+inputs:
+  # Required by the git-hooks.hooks block in devenv.nix. devenv does not pull
+  # this in on its own -- without the input, evaluating the module fails with
+  # "To use 'git-hooks', run: devenv inputs add git-hooks ...".
+  git-hooks:
+    url: github:cachix/git-hooks.nix
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+  pre-commit-hooks:
+    follows: git-hooks
+allowUnfree: true

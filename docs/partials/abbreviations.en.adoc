@@ -1,0 +1,63 @@
+// The abbreviation list shared by Em002 and Em002-6. It was two hand-kept
+// copies that had drifted: HERMES was italicised in one and upright in the
+// other, OSSD was capitalised in one and not the other, and an organisational
+// unit was "usually an office" in one and "usually a federal office" in the
+// other.
+//
+// The English lists are identical, but the translations are not -- the two
+// documents cite different things, and a translator picked a different
+// abbreviation for the same concept (German AV vs AO, DVS vs DOEDS). So the
+// entries are tagged per consuming document rather than included wholesale.
+// The per-language entry counts differ on purpose; see TRANSLATING.adoc.
+//
+// `[horizontal]` stays in the including document, immediately before the
+// include -- the block attribute carries across the include and across the
+// leading tag comment, and leaving it here would double it up.
+//
+// A few entries are emitted twice, once per tag: the two documents sort them
+// differently and no single order satisfies both. They collapse as soon as the
+// source lists are alphabetised.
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+AI::
+Artificial intelligence
+AO::
+Application owner
+CCPP::
+Competence Centre for Federal Public Procurement
+CLA::
+Contributor Licence Agreement
+DCO::
+Developer Certificate of Origin
+DPSS::
+Digital Public Services Switzerland (www.digital-public-services-switzerland.ch/strategy)
+EMOTA::
+Federal Act on the Use of Electronic Means to Carry Out Official Tasks
+FITSU::
+Federal IT Steering Unit (until 2021)
+FOBL::
+Federal Office for Buildings and Logistics
+FoIA::
+Freedom of Information Act
+FSF::
+Free Software Foundation
+HERMES::
+_Handbuch der Elektronischen Rechenzentren des Bundes_, a method for system development (www.hermes.admin.ch)
+OSI::
+Open Source Initiative
+OSPO::
+Open Source Programme Office
+OSS::
+Open source software
+OSSD::
+Open source software development
+OU::
+Organisational unit (usually a federal office)
+SPc::
+Service procurer
+SPDX::
+Software Package Data Exchange
+SPv::
+Service provider
+// end::abbr-em002-6[]
+// end::abbr-em002[]

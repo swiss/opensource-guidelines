@@ -1,0 +1,576 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Em002-2.3 OSS Release and Publication Checklist
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Em002-2.3 Checkliste OSS-Freigabe und -Veröffentlichung
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Em002-2.3 Liste de contrôle Validation et publication OSS
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Em002-2.3 Lista di controllo Rilascio e pubblicazione OSS
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Em002-2.3 Glista da controlla Relaschada e publicaziun OSS
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// The Confederation logo in colour. open-govpress falls back to `black` for any
+// value it does not recognise, `colour` being the one synonym it takes, so the
+// spelling here is the whole of the choice.
+:title-logo-base: color
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+This checklist is part of the document 'Em002-2 Instructions for Publishing Open Source Software'.
+
+It concludes the instructions and results in release of the software under an open source licence. The description of the checklist can be found in [Em002-2] Annex D.
+
+== Subject matter
+
+=== Name and brief description of the software
+
+Enter the name of the software.
+
+field::[rows=1]
+
+=== Contact person and review
+
+Name the organisation, contact person from the specialist office and the persons responsible (e.g. ISBO/DSBO) who have verified compliance with the publication requirements.
+
+field::[rows=3]
+
+=== Repository names and developer permissions
+
+State the planned repository names of the software to be published and the chosen publication platform.footnote:[A repository under the GitHub organisation of the Federal Chancellery (http://github.com/swiss) can be requested from opensource@bk.admin.ch.]
+
+field::[rows=3]
+
+Specify who (GitHub username, name, position, function) is working on the repository. If this is in a repository of an office, it must be stated who authorised the person. That person is then also responsible for the solution if the first person leaves the organisation or changes their position. It should also be specified whether individuals are acting as private persons or as part of the office. Name the GitHub user account that should be assigned the role of Repository Administrator. There can be several administrators.
+
+field::[rows=4]
+
+== Checklist
+
+The checklist is to be completed before actual publication.
+
+[%interactive]
+* [ ] 'Em002-2.1 OSS Preliminary Assessment Checklist' has been completed and no problematic points were identified.
+
+[%interactive]
+* [ ] 'Em002-2.2 OSS Analysis and Preparation Checklist' has been completed and no problematic points were identified.
+
+[%interactive]
+* [ ] Licence has been selected.
+
+Selected licence and justification
+
+field::[rows=2]
+
+[%interactive]
+* [ ] ISDS concept has been created.
+
+The relevant reviews have been carried out. Refer to documents/reviews. It is defined how security-relevant reports by third parties will be handled. +
+If applicable, the software will be subject to a bug bounty programme. +
+There may also be OSS checks in the repositories. +
+The relevant configuration is described and the person responsible is named.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Community and support is regulated (via 'Em002-4.1 OSS Community Checklist')
+
+The checklist is attached. The key points are included here.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Level and method of support have been clarified.
+
+Indication of how this has been regulated.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] A *publiccode.yml* was created for the publication.
+
+The metadata standard https://yml.publiccode.tools/ describes the software. The defined format makes the publication easier to find and reuse. +
+This must be saved in the main directory of the repository. +
+If a new repository or organisation is created, this can be reported via opensource@bk.admin.ch for inclusion in the OSS Catalogue.
+
+[%interactive]
+* [ ] Transferred responsibilities
+
+Indication of whether responsibility for release was transferred to a third party (supplier, support, association) during procurement or subsequently.
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Green light for open sourcing from the application and budget managers
+
+Names and date
+
+field::[rows=2]
+
+== Concluding remarks
+
+Comments and references to other relevant documents
+
+field::[rows=4]
+
+*Filing of form*
+
+Please file this form with the project documentation and/or in accordance with the specifications of your authority (organisational unit).
+
+*Licence of the checklist template: CC0 1.0 Universal*
+
+This document is published under the https://creativecommons.org/publicdomain/zero/1.0/[_CC0 licence_]. It may be freely used, modified and distributed, including for commercial purposes and in any format.
+endif::[]
+
+ifeval::["{lang}" == "de"]
+Diese Checkliste ist Teil des Dokuments «Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software».
+
+Sie schliesst die Anleitung ab und führt zur Freigabe der Software unter einer Open-Source-Lizenz. Die Beschreibung der Checkliste findet sich in [Em002-2] Anhang D.
+
+== Gegenstand
+
+=== Name und Kurzbeschreibung der Software
+
+Tragen Sie den Namen der Software ein.
+
+field::[rows=1]
+
+=== Ansprechperson und Prüfung
+
+Nennen Sie die Organisation, die Ansprechperson der Fachstelle sowie die verantwortlichen Personen (z. B. ISBO/DSBO), welche die Einhaltung der Veröffentlichungsvorgaben geprüft haben.
+
+field::[rows=3]
+
+=== Repository-Namen und Entwicklerberechtigungen
+
+Geben Sie die geplanten Repository-Namen der zu veröffentlichenden Software sowie die gewählte Veröffentlichungsplattform an.footnote:[Ein Repository unter der GitHub-Organisation der Bundeskanzlei (http://github.com/swiss) kann bei opensource@bk.admin.ch beantragt werden.]
+
+field::[rows=3]
+
+Geben Sie an, wer (GitHub-Benutzername, Name, Stelle, Funktion) am Repository arbeitet. Befindet sich dieses in einem Repository eines Amtes, so ist anzugeben, wer die Person autorisiert hat. Diese Person ist anschliessend auch für die Lösung verantwortlich, falls die erste Person die Organisation verlässt oder ihre Stelle wechselt. Zudem sollte angegeben werden, ob Personen als Privatpersonen oder als Teil des Amtes handeln. Nennen Sie das GitHub-Benutzerkonto, dem die Rolle Repository-Administrator zugewiesen werden soll. Es kann mehrere Administratorinnen und Administratoren geben.
+
+field::[rows=4]
+
+== Checkliste
+
+Die Checkliste ist vor der eigentlichen Veröffentlichung auszufüllen.
+
+[%interactive]
+* [ ] Die «Em002-2.1 Checkliste OSS-Vorabklärung» wurde ausgefüllt und es wurden keine problematischen Punkte festgestellt.
+
+[%interactive]
+* [ ] Die «Em002-2.2 Checkliste OSS-Analyse und -Vorbereitung» wurde ausgefüllt und es wurden keine problematischen Punkte festgestellt.
+
+[%interactive]
+* [ ] Die Lizenz wurde ausgewählt.
+
+Gewählte Lizenz und Begründung
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Das ISDS-Konzept wurde erstellt.
+
+Die einschlägigen Prüfungen wurden durchgeführt. Verweisen Sie auf Dokumente/Prüfungen. Es ist festgelegt, wie mit sicherheitsrelevanten Meldungen Dritter umgegangen wird. +
+Gegebenenfalls untersteht die Software einem Bug-Bounty-Programm. +
+Es kann zudem OSS-Prüfungen in den Repositories geben. +
+Die entsprechende Konfiguration ist beschrieben und die verantwortliche Person ist benannt.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Community und Support sind geregelt (über «Em002-4.1 Checkliste OSS-Community»)
+
+Die Checkliste liegt bei. Die wichtigsten Punkte sind hier aufgeführt.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Umfang und Art des Supports wurden geklärt.
+
+Angabe, wie dies geregelt wurde.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Für die Veröffentlichung wurde eine *publiccode.yml* erstellt.
+
+Der Metadatenstandard https://yml.publiccode.tools/ beschreibt die Software. Das festgelegte Format macht die Veröffentlichung besser auffindbar und wiederverwendbar. +
+Diese ist im Hauptverzeichnis des Repositorys abzulegen. +
+Wird ein neues Repository oder eine neue Organisation erstellt, so kann dies über opensource@bk.admin.ch zur Aufnahme in den OSS-Katalog gemeldet werden.
+
+[%interactive]
+* [ ] Übertragene Verantwortlichkeiten
+
+Angabe, ob die Verantwortung für die Freigabe bei der Beschaffung oder nachträglich an Dritte (Lieferant, Support, Verein) übertragen wurde.
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Grünes Licht für das Open Sourcing durch die Applikations- und Budgetverantwortlichen
+
+Namen und Datum
+
+field::[rows=2]
+
+== Schlussbemerkungen
+
+Bemerkungen und Verweise auf weitere relevante Dokumente
+
+field::[rows=4]
+
+*Ablage des Formulars*
+
+Legen Sie dieses Formular bei der Projektdokumentation und/oder gemäss den Vorgaben Ihrer Behörde (Organisationseinheit) ab.
+
+*Lizenz der Checklisten-Vorlage: CC0 1.0 Universal*
+
+Dieses Dokument wird unter der https://creativecommons.org/publicdomain/zero/1.0/[_CC0-Lizenz_] veröffentlicht. Es darf frei genutzt, verändert und verbreitet werden, auch zu kommerziellen Zwecken und in jedem Format.
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+Cette liste de contrôle fait partie du document « Em002-2 Instructions pour la publication de logiciels open source ».
+
+Elle conclut les instructions et aboutit à la publication du logiciel sous une licence open source. La description de la liste de contrôle figure dans [Em002-2] annexe D.
+
+== Objet
+
+=== Nom et brève description du logiciel
+
+Indiquez le nom du logiciel.
+
+field::[rows=1]
+
+=== Personne de contact et examen
+
+Indiquez l'organisation, la personne de contact du service spécialisé ainsi que les personnes responsables (p. ex. ISBO/DSBO) qui ont vérifié le respect des exigences de publication.
+
+field::[rows=3]
+
+=== Noms des dépôts et autorisations des développeurs
+
+Indiquez les noms de dépôt prévus pour le logiciel à publier ainsi que la plateforme de publication choisie.footnote:[Un dépôt au sein de l'organisation GitHub de la Chancellerie fédérale (http://github.com/swiss) peut être demandé à opensource@bk.admin.ch.]
+
+field::[rows=3]
+
+Indiquez qui (nom d'utilisateur GitHub, nom, poste, fonction) travaille sur le dépôt. Si celui-ci se trouve dans un dépôt d'un office, il faut préciser qui a autorisé la personne. Cette personne est alors également responsable de la solution si la première quitte l'organisation ou change de poste. Il convient également de préciser si les personnes agissent à titre privé ou en tant que membres de l'office. Indiquez le compte utilisateur GitHub auquel doit être attribué le rôle d'administrateur du dépôt. Il peut y avoir plusieurs administrateurs.
+
+field::[rows=4]
+
+== Liste de contrôle
+
+La liste de contrôle doit être remplie avant la publication proprement dite.
+
+[%interactive]
+* [ ] La « liste de contrôle Em002-2.1 Évaluation préalable OSS » a été remplie et aucun point problématique n'a été constaté.
+
+[%interactive]
+* [ ] La « liste de contrôle Em002-2.2 Analyse et préparation OSS » a été remplie et aucun point problématique n'a été constaté.
+
+[%interactive]
+* [ ] La licence a été choisie.
+
+Licence choisie et justification
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Le concept SIPD a été établi.
+
+Les examens pertinents ont été effectués. Renvoyez aux documents et aux examens. Il est défini comment les signalements de tiers relevant de la sécurité seront traités. +
+Le cas échéant, le logiciel est soumis à un programme de bug bounty. +
+Des contrôles OSS peuvent en outre exister dans les dépôts. +
+La configuration correspondante est décrite et la personne responsable est désignée.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La communauté et le support sont réglés (via la « liste de contrôle Em002-4.1 Communauté OSS »)
+
+La liste de contrôle est jointe. Les points essentiels figurent ici.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] L'étendue et la forme du support ont été clarifiées.
+
+Indication de la manière dont cela a été réglé.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Un fichier *publiccode.yml* a été créé pour la publication.
+
+Le standard de métadonnées https://yml.publiccode.tools/ décrit le logiciel. Le format défini rend la publication plus facile à trouver et à réutiliser. +
+Ce fichier doit être enregistré dans le répertoire principal du dépôt. +
+Si un nouveau dépôt ou une nouvelle organisation est créé, cela peut être annoncé à opensource@bk.admin.ch en vue de l'inscription au catalogue OSS.
+
+[%interactive]
+* [ ] Responsabilités transférées
+
+Indication précisant si la responsabilité de la publication a été transférée à des tiers (fournisseur, support, association) lors de l'acquisition ou ultérieurement.
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Feu vert pour l'open sourcing de la part des responsables de l'application et du budget
+
+Noms et date
+
+field::[rows=2]
+
+== Remarques finales
+
+Remarques et renvois à d'autres documents pertinents
+
+field::[rows=4]
+
+*Classement du formulaire*
+
+Veuillez classer ce formulaire avec la documentation de projet et/ou conformément aux prescriptions de votre autorité (unité d'organisation).
+
+*Licence du modèle de liste de contrôle : CC0 1.0 Universal*
+
+Ce document est publié sous la https://creativecommons.org/publicdomain/zero/1.0/[_licence CC0_]. Il peut être librement utilisé, modifié et diffusé, y compris à des fins commerciales et dans tout format.
+endif::[]
+
+ifeval::["{lang}" == "it"]
+La presente lista di controllo fa parte del documento «Em002-2 Istruzioni per la pubblicazione di software open source».
+
+Essa conclude le istruzioni e porta al rilascio del software sotto una licenza open source. La descrizione della lista di controllo figura in [Em002-2] allegato D.
+
+== Oggetto
+
+=== Nome e breve descrizione del software
+
+Indicate il nome del software.
+
+field::[rows=1]
+
+=== Persona di contatto ed esame
+
+Indicate l'organizzazione, la persona di contatto del servizio specializzato nonché le persone responsabili (p. es. ISBO/DSBO) che hanno verificato il rispetto delle prescrizioni di pubblicazione.
+
+field::[rows=3]
+
+=== Nomi dei repository e autorizzazioni degli sviluppatori
+
+Indicate i nomi di repository previsti per il software da pubblicare nonché la piattaforma di pubblicazione scelta.footnote:[Un repository nell'organizzazione GitHub della Cancelleria federale (http://github.com/swiss) può essere richiesto a opensource@bk.admin.ch.]
+
+field::[rows=3]
+
+Indicate chi (nome utente GitHub, nome, posizione, funzione) lavora al repository. Se questo si trova in un repository di un ufficio, occorre indicare chi ha autorizzato la persona. Tale persona è poi responsabile anche della soluzione qualora la prima lasci l'organizzazione o cambi posizione. Andrebbe inoltre precisato se le persone agiscono a titolo privato o in quanto parte dell'ufficio. Indicate l'account utente GitHub al quale deve essere attribuito il ruolo di amministratore del repository. Vi possono essere più amministratori.
+
+field::[rows=4]
+
+== Lista di controllo
+
+La lista di controllo va compilata prima della pubblicazione vera e propria.
+
+[%interactive]
+* [ ] La «lista di controllo Em002-2.1 Valutazione preliminare OSS» è stata compilata e non sono stati rilevati punti problematici.
+
+[%interactive]
+* [ ] La «lista di controllo Em002-2.2 Analisi e preparazione OSS» è stata compilata e non sono stati rilevati punti problematici.
+
+[%interactive]
+* [ ] La licenza è stata scelta.
+
+Licenza scelta e motivazione
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Il concetto SIPD è stato allestito.
+
+Gli esami pertinenti sono stati svolti. Rinviate ai documenti e agli esami. È stabilito come vengono trattate le segnalazioni di terzi rilevanti per la sicurezza. +
+Se del caso, il software è sottoposto a un programma di bug bounty. +
+Nei repository possono inoltre essere previsti controlli OSS. +
+La relativa configurazione è descritta e la persona responsabile è designata.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Community e supporto sono disciplinati (mediante la «lista di controllo Em002-4.1 Community OSS»)
+
+La lista di controllo è allegata. I punti essenziali figurano qui.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] L'entità e la modalità del supporto sono state chiarite.
+
+Indicazione di come ciò è stato disciplinato.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Per la pubblicazione è stato creato un file *publiccode.yml*.
+
+Lo standard di metadati https://yml.publiccode.tools/ descrive il software. Il formato definito rende la pubblicazione più facilmente reperibile e riutilizzabile. +
+Il file va salvato nella directory principale del repository. +
+Se viene creato un nuovo repository o una nuova organizzazione, ciò può essere segnalato a opensource@bk.admin.ch per l'inserimento nel catalogo OSS.
+
+[%interactive]
+* [ ] Responsabilità trasferite
+
+Indicazione se la responsabilità della pubblicazione è stata trasferita a terzi (fornitore, supporto, associazione) al momento dell'acquisto o successivamente.
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Via libera all'open sourcing da parte dei responsabili dell'applicazione e del budget
+
+Nomi e data
+
+field::[rows=2]
+
+== Osservazioni conclusive
+
+Osservazioni e rinvii ad altri documenti rilevanti
+
+field::[rows=4]
+
+*Archiviazione del modulo*
+
+Archiviate questo modulo insieme alla documentazione di progetto e/o conformemente alle prescrizioni della vostra autorità (unità organizzativa).
+
+*Licenza del modello di lista di controllo: CC0 1.0 Universal*
+
+Il presente documento è pubblicato sotto la https://creativecommons.org/publicdomain/zero/1.0/[_licenza CC0_]. Può essere liberamente utilizzato, modificato e diffuso, anche a scopi commerciali e in qualsiasi formato.
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+Questa glista da controlla fa part dal document «Em002-2 Instrucziuns per publitgar software open source».
+
+Ella conclura las instrucziuns e maina a la relaschada dal software sut ina licenza open source. La descripziun da la glista da controlla sa chatta en [Em002-2] agiunta D.
+
+== Object
+
+=== Num e curta descripziun dal software
+
+Endatai il num dal software.
+
+field::[rows=1]
+
+=== Persuna da contact e controlla
+
+Numnai l'organisaziun, la persuna da contact dal post spezialisà sco er las persunas responsablas (p.ex. ISBO/DSBO) che han verifitgà l'observaziun da las prescripziuns da publicaziun.
+
+field::[rows=3]
+
+=== Nums dals repositoris ed autorisaziuns dals sviluppaders
+
+Inditgai ils nums da repositori planisads dal software da publitgar sco er la plattafurma da publicaziun tschernida.footnote:[In repositori sut l'organisaziun GitHub da la Chanzlia federala (http://github.com/swiss) po vegnir dumandà tar opensource@bk.admin.ch.]
+
+field::[rows=3]
+
+Inditgai, tgi (num d'utilisader GitHub, num, post, funcziun) che lavura al repositori. Sche quel sa chatta en in repositori d'in uffizi, sto vegnir inditgà, tgi che ha autorisà la persuna. Questa persuna è lura era responsabla per la soluziun, sche l'emprima persuna banduna l'organisaziun u mida ses post. I duess ultra da quai vegnir inditgà, sche las persunas agischeschan sco persunas privatas u sco part da l'uffizi. Numnai il conto d'utilisader GitHub al qual duai vegnir attribuì il rol d'administratur dal repositori. I pon dar plirs administraturs.
+
+field::[rows=4]
+
+== Glista da controlla
+
+La glista da controlla sto vegnir emplenida avant la publicaziun propria.
+
+[%interactive]
+* [ ] La «glista da controlla Em002-2.1 Evaluaziun preliminara OSS» è vegnida emplenida e i n'èn vegnids constatads nagins puncts problematics.
+
+[%interactive]
+* [ ] La «glista da controlla Em002-2.2 Analisa e preparaziun OSS» è vegnida emplenida e i n'èn vegnids constatads nagins puncts problematics.
+
+[%interactive]
+* [ ] La licenza è vegnida tschernida.
+
+Licenza tschernida e motivaziun
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Il concept ISDS è vegnì elavurà.
+
+Las controllas relevantas èn vegnidas fatgas. Renviai als documents ed a las controllas. I è fixà, co ch'i vegn tractà cun annunzias da terzas persunas relevantas per la segirezza. +
+Eventualmain è il software suttamess ad in program da bug bounty. +
+I pon ultra da quai dar controllas OSS en ils repositoris. +
+La configuraziun correspundenta è descritta e la persuna responsabla è numnada.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Communitad e support èn reglads (via la «glista da controlla Em002-4.1 Communitad OSS»)
+
+La glista da controlla è agiuntada. Ils puncts ils pli impurtants èn inditgads qua.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] L'extensiun e la moda dal support èn vegnidas scleridas.
+
+Indicaziun, co che quai è vegnì reglà.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Per la publicaziun è vegnida creada ina *publiccode.yml*.
+
+Il standard da metadatas https://yml.publiccode.tools/ descriva il software. Il format fixà renda la publicaziun pli facil da chattar e da reutilisar. +
+Quella sto vegnir archivada en l'ordinatur principal dal repositori. +
+Sch'in nov repositori u ina nova organisaziun vegn creà, po quai vegnir annunzià via opensource@bk.admin.ch per l'admissiun en il catalog OSS.
+
+[%interactive]
+* [ ] Responsabladads transferidas
+
+Indicaziun, sche la responsabladad per la relaschada è vegnida transferida a terzas persunas (furnitur, support, associaziun) tar l'acquist u pli tard.
+
+field::[rows=2]
+
+[%interactive]
+* [ ] Glisch verda per l'open sourcing da vart dals responsabels da l'applicaziun e dal budget
+
+Nums e data
+
+field::[rows=2]
+
+== Remartgas finalas
+
+Remartgas e renviaments ad ulteriurs documents relevants
+
+field::[rows=4]
+
+*Archivaziun dal formular*
+
+Archivai quest formular tar la documentaziun dal project e/u tenor las prescripziuns da Vossa autoritad (unitad d'organisaziun).
+
+*Licenza dal model da la glista da controlla: CC0 1.0 Universal*
+
+Quest document vegn publitgà sut la https://creativecommons.org/publicdomain/zero/1.0/[_licenza CC0_]. El dastga vegnir utilisà, midà e derasà liberamain, era per intents commerzials ed en mintga format.
+endif::[]

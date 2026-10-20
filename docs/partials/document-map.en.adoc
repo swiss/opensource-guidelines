@@ -1,0 +1,82 @@
+// The map of Art. 9 EMOTA documents, shared by Em002, Em002-1, Em002-5 and
+// Em002-7. It lived as a PNG in three copies that had already drifted apart --
+// they disagreed about the checklist file format and about the whole right-hand
+// column -- which is why it is one file per language now. The caption and its
+// figure number stay in the including document, because the number differs per
+// document and Em002 includes the map twice.
+//
+// Categories are carried by the subgraph names as well as the fills, so the
+// diagram needs no colour key: a reader who cannot tell the fills apart still
+// knows which group each document is in.
+//
+// The original's second key was shape, not colour: square corners meant the DTI
+// sector was responsible, rounded corners the FOBL. That is what the "(DTI
+// sector)" and "(FOBL)" halves of the group names carry.
+//
+// Em002-7 is therefore grouped with the guidance documents, which is the band
+// the original draws it in, and keeps the red procurement fill the original
+// gives it. Colour is its subject, the group is who answers for it; putting it
+// in the FOBL group said both at once, and got the second one wrong.
+//
+// Titles are the short form on purpose. The full ones are in the prose around
+// every inclusion, and a four-line node label makes the graph wider than the A4
+// content box.
+//
+// Do not add a `theme`, `themeVariables` or an `%%{init}%%` directive -- the
+// palette comes from the document's own tokens. `classDef` is not a theme
+// override and is fine.
+[mermaid,align="center",alt="Overview of the OSS tools in connection with Art. 9 EMOTA"]
+....
+flowchart TD
+    subgraph FUND["Fundamentals (DTI sector)"]
+        EM0025["Em002-5<br/>EMOTA and OSS<br/>Factsheet"]
+        EM002["Em002<br/>Strategic<br/>Guidelines"]
+        EM0026["Em002-6<br/>FAQ on OSS and<br/>Art. 9 EMOTA"]
+    end
+
+    subgraph INTRO["Introduction and guidance (DTI sector)"]
+        EM0021["Em002-1<br/>Practical<br/>Guidelines"]
+        EM0023["Em002-3<br/>OSS Licensing<br/>Guidelines"]
+        EM0027["Em002-7<br/>Strategic Aspects of<br/>Procurement and OSS"]
+    end
+
+    subgraph PUB["Publication tools (DTI sector)"]
+        EM0022["Em002-2<br/>Instructions for<br/>Publishing OSS"]
+        EM0024["Em002-4<br/>OSS Community<br/>Guidelines"]
+        CL21["Em002-2.1<br/>Preliminary<br/>Assessment<br/>Checklist"]
+        CL22["Em002-2.2<br/>Analysis and<br/>Preparation<br/>Checklist"]
+        CL23["Em002-2.3<br/>Release and<br/>Publication<br/>Checklist"]
+        CL41["Em002-4.1<br/>OSS Community<br/>Checklist"]
+    end
+
+    subgraph PROC["Procurement tools (FOBL)"]
+        KBB["Factsheet CCPP<br/>Procurement of Software<br/>and Art. 9 EMOTA"]
+        ORI["Orientation<br/>Open Source and<br/>Procurement"]
+        CLEX["Checklist<br/>General Exception<br/>Art. 9 EMOTA"]
+    end
+
+    HERMES["www.HERMES.admin.ch"]
+    FCHOSS["Internet:<br/>OSS tools<br/>Federal Chancellery"]
+
+    EM002 --> EM0021
+    EM0021 --> EM0023
+    EM0021 --> EM0022
+    EM0022 --> EM0024
+    EM0022 --> CL21
+    CL21 --> CL22
+    CL22 --> CL23
+    EM0024 --> CL41
+    ORI --> CLEX
+    HERMES -->|"reference"| FCHOSS
+
+    classDef fund fill:#f0f0f0,stroke:#000000,color:#000000
+    classDef intro fill:#dae8fc,stroke:#000000,color:#000000
+    classDef pub fill:#e1d5e7,stroke:#000000,color:#000000
+    classDef check fill:#d5e8d4,stroke:#000000,color:#000000
+    classDef proc fill:#f8cecc,stroke:#000000,color:#000000
+    class EM002,EM0025,EM0026 fund
+    class EM0021,EM0023 intro
+    class EM0022,EM0024 pub
+    class CL21,CL22,CL23,CL41 check
+    class EM0027,KBB,ORI,CLEX proc
+....

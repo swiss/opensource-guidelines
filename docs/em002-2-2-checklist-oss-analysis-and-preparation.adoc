@@ -1,0 +1,656 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Em002-2.2 OSS Analysis and Preparation Checklist
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Em002-2.2 Checkliste OSS-Analyse und -Vorbereitung
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Em002-2.2 Liste de contrôle Analyse et préparation OSS
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Em002-2.2 Lista di controllo Analisi e preparazione OSS
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Em002-2.2 Glista da controlla Analisa e preparaziun OSS
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// The Confederation logo in colour. open-govpress falls back to `black` for any
+// value it does not recognise, `colour` being the one synonym it takes, so the
+// spelling here is the whole of the choice.
+:title-logo-base: color
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+This checklist is part of _Em002-2 Instructions for Publishing Open Source Software_ and is intended for ICT professionals. +
+It serves to review the documentation and source code of a project. In doing so, it helps ensure that the quality level of the documentation is sufficient to publish an application as open source. It can also be used to verify that the source code and all third-party components used by the project do not pose any legal risks. These measures minimise security risks. +
+Information about this checklist can be found in _[Em002-2]_ in Section 4.
+
+Furthermore, this checklist ensures that the project documentation addresses both end users and technical professionals equally.
+
+== Subject matter
+
+=== Name and brief description of the software
+
+Enter the name of the software.
+
+field::[rows=1]
+
+=== Contact person and review
+
+Name the organisation, contact person from the specialist office and the persons responsible (e.g. ISBO/DSBO) who have verified compliance with the publication requirements.
+
+field::[rows=3]
+
+== Checklist
+
+[%interactive]
+* [ ] _Em002-2.1 OSS Preliminary Assessment Checklist_ has been completed and no problematic points were identified.
+
+[%interactive]
+* [ ] The source code to be published has been analysed.
+** Review how the existing code quality and guidelines have been implemented.
+** Ensure no sensitive (test) data is included, e.g. data based on real people or cases.
+** Current documentation (see [Em002-2] Annexes D.1. and D.2.)
+** Delete unnecessary files or outdated documents.
+** Check code for secrets/credentials.footnote:[https://www.ncsc.admin.ch/ncsc/en/home/aktuell/im-fokus/2022/git.html]
+** Conduct targeted security tests and subsequently establish a (public) bug bounty programme.footnote:[https://www.ncsc.admin.ch/ncsc/en/home/infos-fuer/infos-it-spezialisten/themen/bug-bounty-programme.html]
+** Review all libraries used to ensure licences are present and corresponding lists (attributions) have been created.
+** Description of the deployment (CI/CD pipelinefootnote:[https://en.wikipedia.org/wiki/CI/CD]) and possibly setup of a demo instance.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Licence selection
+** Check for any dependencies on existing licences.
+** For third-party code, check terms of use for compatibility with intended licence and replace code if necessary.
+** Select the appropriate licence using the guide 'Em002-3 OSS Licensing Guidelines' (primary recommendations are AGPL for copyleft and MIT for permissive).
+
+Selected licence and justification
+
+field::[rows=1]
+
+[%interactive]
+* [ ] The documentation is stored with the source code (see [Em002-2] Annex D.1.)
+
+Justification/storage location
+
+field::[rows=1]
+
+[%interactive]
+* [ ] The documentation addresses both end users and technical professionals.
+
+List of the central documentation
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Detailed documentation of the source code (OSS specific)
+
+Important standard documentation (README, LICENSE, CONTRIBUTING, etc.) is available.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] The source code, including history, contains no sensitive, protected or confidential personal data. Or the history has been completely deleted. (see [Em002-2] Annex E.2.)
+
+Explanation of review (if not filed as separate document)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] It has been clarified with the supplier and all involved developers within the Federal Administration whether author information (names, email addresses) may be published. +
+Alternatively, the source code including history has been cleaned/anonymised.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] The libraries used by the project are compatible with the project's licence.
+
+Explanation of review (if not filed as separate document)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] The project uses a package manager to manage its dependencies.
+
+[%interactive]
+* [ ] The project declares its licence in the corresponding descriptor of the package manager. Creation of a Software Bill of Materials (SBOM), which lists all open source components used.
+
+[%interactive]
+* [ ] The source code contains a _THIRD-PARTY-LICENSES.md_ file listing for each library used: the project name of the library, the homepage of the library, the SPDX identifier of the library's licence, and a link to the library's licence.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] For applications, an 'About' dialogue is available that references the _THIRD-PARTY-LICENSES.md_ file.
+
+[%interactive]
+* [ ] As part of the code review process, it is ensured that the _THIRD-PARTY-LICENSES.md_ file is updated with every change to the libraries.
+
+== Concluding remarks
+
+Comments and references to other relevant documents
+
+field::[rows=4]
+
+*Filing of form*
+
+Please file this form with the project documentation and/or in accordance with the specifications of your authority (organisational unit).
+
+*Licence of the checklist template: CC0 1.0 Universal*
+
+This document is published under the https://creativecommons.org/publicdomain/zero/1.0/[_CC0 licence_]. It may be freely used, modified and distributed, including for commercial purposes and in any format.
+endif::[]
+
+ifeval::["{lang}" == "de"]
+Diese Checkliste ist Teil von _Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software_ und richtet sich an IKT-Fachpersonen. +
+Sie dient der Überprüfung der Dokumentation und des Quellcodes eines Projekts. Damit hilft sie sicherzustellen, dass die Qualität der Dokumentation ausreicht, um eine Anwendung als Open Source zu veröffentlichen. Zudem lässt sich damit prüfen, ob der Quellcode und alle vom Projekt verwendeten Drittkomponenten keine rechtlichen Risiken bergen. Diese Massnahmen minimieren Sicherheitsrisiken. +
+Informationen zu dieser Checkliste finden sich in _[Em002-2]_ in Kapitel 4.
+
+Darüber hinaus stellt diese Checkliste sicher, dass die Projektdokumentation Endnutzende und technische Fachpersonen gleichermassen anspricht.
+
+== Gegenstand
+
+=== Name und Kurzbeschreibung der Software
+
+Tragen Sie den Namen der Software ein.
+
+field::[rows=1]
+
+=== Ansprechperson und Prüfung
+
+Nennen Sie die Organisation, die Ansprechperson der Fachstelle sowie die verantwortlichen Personen (z. B. ISBO/DSBO), welche die Einhaltung der Veröffentlichungsvorgaben geprüft haben.
+
+field::[rows=3]
+
+== Checkliste
+
+[%interactive]
+* [ ] Die _Em002-2.1 Checkliste OSS-Vorabklärung_ wurde ausgefüllt und es wurden keine problematischen Punkte festgestellt.
+
+[%interactive]
+* [ ] Der zu veröffentlichende Quellcode wurde analysiert.
+** Prüfen, wie die bestehende Codequalität und die Richtlinien umgesetzt wurden.
+** Sicherstellen, dass keine sensiblen (Test-)Daten enthalten sind, z. B. Daten, die auf realen Personen oder Fällen beruhen.
+** Aktuelle Dokumentation (siehe [Em002-2] Anhänge D.1. und D.2.)
+** Unnötige Dateien oder veraltete Dokumente löschen.
+** Code auf Secrets/Zugangsdaten prüfen.footnote:[https://www.ncsc.admin.ch/ncsc/de/home/aktuell/im-fokus/2022/git.html]
+** Gezielte Sicherheitstests durchführen und anschliessend ein (öffentliches) Bug-Bounty-Programm einrichten.footnote:[https://www.ncsc.admin.ch/ncsc/de/home/infos-fuer/infos-it-spezialisten/themen/bug-bounty-programme.html]
+** Alle verwendeten Bibliotheken prüfen, ob die Lizenzen vorliegen und entsprechende Listen (Attributionen) erstellt wurden.
+** Beschreibung des Deployments (CI/CD-Pipelinefootnote:[https://de.wikipedia.org/wiki/CI/CD]) und gegebenenfalls Aufbau einer Demo-Instanz.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Lizenzwahl
+** Allfällige Abhängigkeiten von bestehenden Lizenzen prüfen.
+** Bei Drittcode die Nutzungsbedingungen auf Kompatibilität mit der vorgesehenen Lizenz prüfen und den Code nötigenfalls ersetzen.
+** Die passende Lizenz anhand des Leitfadens «Em002-3 Leitfaden OSS-Lizenzierung» auswählen (primäre Empfehlungen sind AGPL für Copyleft und MIT für permissiv).
+
+Gewählte Lizenz und Begründung
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Die Dokumentation wird zusammen mit dem Quellcode abgelegt (siehe [Em002-2] Anhang D.1.)
+
+Begründung/Ablageort
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Die Dokumentation spricht sowohl Endnutzende als auch technische Fachpersonen an.
+
+Liste der zentralen Dokumentation
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Ausführliche Dokumentation des Quellcodes (OSS-spezifisch)
+
+Wichtige Standarddokumentation (README, LICENSE, CONTRIBUTING usw.) ist vorhanden.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Der Quellcode enthält einschliesslich Historie keine sensiblen, geschützten oder vertraulichen Personendaten. Oder die Historie wurde vollständig gelöscht. (siehe [Em002-2] Anhang E.2.)
+
+Erläuterung der Prüfung (falls nicht als separates Dokument abgelegt)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Mit dem Lieferanten und allen beteiligten Entwicklerinnen und Entwicklern innerhalb der Bundesverwaltung wurde geklärt, ob Autorenangaben (Namen, E-Mail-Adressen) veröffentlicht werden dürfen. +
+Alternativ wurde der Quellcode einschliesslich Historie bereinigt/anonymisiert.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Die vom Projekt verwendeten Bibliotheken sind mit der Lizenz des Projekts kompatibel.
+
+Erläuterung der Prüfung (falls nicht als separates Dokument abgelegt)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Das Projekt verwendet einen Paketmanager zur Verwaltung seiner Abhängigkeiten.
+
+[%interactive]
+* [ ] Das Projekt deklariert seine Lizenz im entsprechenden Deskriptor des Paketmanagers. Erstellung einer Software Bill of Materials (SBOM), die alle verwendeten Open-Source-Komponenten auflistet.
+
+[%interactive]
+* [ ] Der Quellcode enthält eine Datei _THIRD-PARTY-LICENSES.md_, die für jede verwendete Bibliothek aufführt: den Projektnamen der Bibliothek, die Homepage der Bibliothek, den SPDX-Identifikator der Lizenz der Bibliothek sowie einen Link auf die Lizenz der Bibliothek.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Bei Anwendungen steht ein «Über»-Dialog zur Verfügung, der auf die Datei _THIRD-PARTY-LICENSES.md_ verweist.
+
+[%interactive]
+* [ ] Im Rahmen des Code-Review-Prozesses wird sichergestellt, dass die Datei _THIRD-PARTY-LICENSES.md_ bei jeder Änderung an den Bibliotheken nachgeführt wird.
+
+== Schlussbemerkungen
+
+Bemerkungen und Verweise auf weitere relevante Dokumente
+
+field::[rows=4]
+
+*Ablage des Formulars*
+
+Legen Sie dieses Formular bei der Projektdokumentation und/oder gemäss den Vorgaben Ihrer Behörde (Organisationseinheit) ab.
+
+*Lizenz der Checklisten-Vorlage: CC0 1.0 Universal*
+
+Dieses Dokument wird unter der https://creativecommons.org/publicdomain/zero/1.0/[_CC0-Lizenz_] veröffentlicht. Es darf frei genutzt, verändert und verbreitet werden, auch zu kommerziellen Zwecken und in jedem Format.
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+Cette liste de contrôle fait partie du document _Em002-2 Instructions pour la publication de logiciels open source_ et s'adresse aux spécialistes TIC. +
+Elle sert à examiner la documentation et le code source d'un projet. Elle contribue ainsi à garantir que le niveau de qualité de la documentation est suffisant pour publier une application en open source. Elle permet également de vérifier que le code source et tous les composants tiers utilisés par le projet ne présentent aucun risque juridique. Ces mesures réduisent les risques de sécurité. +
+Les informations relatives à cette liste de contrôle figurent dans _[Em002-2]_, chapitre 4.
+
+Cette liste de contrôle garantit en outre que la documentation du projet s'adresse aussi bien aux utilisateurs finaux qu'aux spécialistes techniques.
+
+== Objet
+
+=== Nom et brève description du logiciel
+
+Indiquez le nom du logiciel.
+
+field::[rows=1]
+
+=== Personne de contact et examen
+
+Indiquez l'organisation, la personne de contact du service spécialisé ainsi que les personnes responsables (p. ex. ISBO/DSBO) qui ont vérifié le respect des exigences de publication.
+
+field::[rows=3]
+
+== Liste de contrôle
+
+[%interactive]
+* [ ] La _liste de contrôle Em002-2.1 Évaluation préalable OSS_ a été remplie et aucun point problématique n'a été constaté.
+
+[%interactive]
+* [ ] Le code source à publier a été analysé.
+** Vérifier comment la qualité du code existante et les directives ont été mises en œuvre.
+** S'assurer qu'aucune donnée (de test) sensible n'est incluse, p. ex. des données fondées sur des personnes ou des cas réels.
+** Documentation à jour (voir [Em002-2] annexes D.1. et D.2.)
+** Supprimer les fichiers inutiles ou les documents obsolètes.
+** Vérifier le code à la recherche de secrets ou d'identifiants.footnote:[https://www.ncsc.admin.ch/ncsc/fr/home/aktuell/im-fokus/2022/git.html]
+** Effectuer des tests de sécurité ciblés et mettre ensuite en place un programme de bug bounty (public).footnote:[https://www.ncsc.admin.ch/ncsc/fr/home/infos-fuer/infos-it-spezialisten/themen/bug-bounty-programme.html]
+** Examiner toutes les bibliothèques utilisées afin de s'assurer que les licences sont disponibles et que les listes correspondantes (attributions) ont été établies.
+** Description du déploiement (pipeline CI/CDfootnote:[https://fr.wikipedia.org/wiki/CI/CD]) et, le cas échéant, mise en place d'une instance de démonstration.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Choix de la licence
+** Vérifier les éventuelles dépendances à des licences existantes.
+** Pour le code de tiers, vérifier la compatibilité des conditions d'utilisation avec la licence prévue et remplacer le code si nécessaire.
+** Choisir la licence appropriée à l'aide du guide « Em002-3 Guide de licences OSS » (les recommandations principales sont l'AGPL pour le copyleft et la MIT pour les licences permissives).
+
+Licence choisie et justification
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentation est conservée avec le code source (voir [Em002-2] annexe D.1.)
+
+Justification / lieu de conservation
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentation s'adresse aussi bien aux utilisateurs finaux qu'aux spécialistes techniques.
+
+Liste de la documentation centrale
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Documentation détaillée du code source (spécifique à l'OSS)
+
+La documentation standard importante (README, LICENSE, CONTRIBUTING, etc.) est disponible.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Le code source, historique compris, ne contient aucune donnée personnelle sensible, protégée ou confidentielle. Ou l'historique a été entièrement supprimé. (voir [Em002-2] annexe E.2.)
+
+Explication de l'examen (s'il n'est pas classé comme document distinct)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Il a été clarifié avec le fournisseur et tous les développeurs concernés au sein de l'administration fédérale si les informations sur les auteurs (noms, adresses électroniques) peuvent être publiées. +
+À défaut, le code source, historique compris, a été nettoyé ou anonymisé.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Les bibliothèques utilisées par le projet sont compatibles avec la licence du projet.
+
+Explication de l'examen (s'il n'est pas classé comme document distinct)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Le projet utilise un gestionnaire de paquets pour gérer ses dépendances.
+
+[%interactive]
+* [ ] Le projet déclare sa licence dans le descripteur correspondant du gestionnaire de paquets. Établissement d'une Software Bill of Materials (SBOM) recensant tous les composants open source utilisés.
+
+[%interactive]
+* [ ] Le code source contient un fichier _THIRD-PARTY-LICENSES.md_ indiquant pour chaque bibliothèque utilisée : le nom du projet de la bibliothèque, sa page d'accueil, l'identifiant SPDX de sa licence et un lien vers celle-ci.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Pour les applications, une boîte de dialogue « À propos » renvoyant au fichier _THIRD-PARTY-LICENSES.md_ est disponible.
+
+[%interactive]
+* [ ] Dans le cadre du processus de revue de code, il est garanti que le fichier _THIRD-PARTY-LICENSES.md_ est mis à jour à chaque modification des bibliothèques.
+
+== Remarques finales
+
+Remarques et renvois à d'autres documents pertinents
+
+field::[rows=4]
+
+*Classement du formulaire*
+
+Veuillez classer ce formulaire avec la documentation de projet et/ou conformément aux prescriptions de votre autorité (unité d'organisation).
+
+*Licence du modèle de liste de contrôle : CC0 1.0 Universal*
+
+Ce document est publié sous la https://creativecommons.org/publicdomain/zero/1.0/[_licence CC0_]. Il peut être librement utilisé, modifié et diffusé, y compris à des fins commerciales et dans tout format.
+endif::[]
+
+ifeval::["{lang}" == "it"]
+La presente lista di controllo fa parte del documento _Em002-2 Istruzioni per la pubblicazione di software open source_ ed è destinata agli specialisti TIC. +
+Serve a esaminare la documentazione e il codice sorgente di un progetto. Contribuisce così a garantire che il livello qualitativo della documentazione sia sufficiente per pubblicare un'applicazione come open source. Consente inoltre di verificare che il codice sorgente e tutti i componenti di terzi utilizzati dal progetto non comportino rischi giuridici. Queste misure riducono al minimo i rischi per la sicurezza. +
+Le informazioni su questa lista di controllo figurano in _[Em002-2]_, capitolo 4.
+
+Questa lista di controllo garantisce inoltre che la documentazione di progetto si rivolga in egual misura agli utenti finali e agli specialisti tecnici.
+
+== Oggetto
+
+=== Nome e breve descrizione del software
+
+Indicate il nome del software.
+
+field::[rows=1]
+
+=== Persona di contatto ed esame
+
+Indicate l'organizzazione, la persona di contatto del servizio specializzato nonché le persone responsabili (p. es. ISBO/DSBO) che hanno verificato il rispetto delle prescrizioni di pubblicazione.
+
+field::[rows=3]
+
+== Lista di controllo
+
+[%interactive]
+* [ ] La _lista di controllo Em002-2.1 Valutazione preliminare OSS_ è stata compilata e non sono stati rilevati punti problematici.
+
+[%interactive]
+* [ ] Il codice sorgente da pubblicare è stato analizzato.
+** Verificare come sono state attuate la qualità del codice esistente e le direttive.
+** Assicurarsi che non siano contenuti dati (di test) sensibili, p. es. dati basati su persone o casi reali.
+** Documentazione aggiornata (cfr. [Em002-2] allegati D.1. e D.2.)
+** Cancellare i file superflui o i documenti obsoleti.
+** Verificare il codice alla ricerca di segreti o credenziali.footnote:[https://www.ncsc.admin.ch/ncsc/it/home/aktuell/im-fokus/2022/git.html]
+** Svolgere test di sicurezza mirati e istituire in seguito un programma di bug bounty (pubblico).footnote:[https://www.ncsc.admin.ch/ncsc/it/home/infos-fuer/infos-it-spezialisten/themen/bug-bounty-programme.html]
+** Esaminare tutte le librerie utilizzate per accertare che le licenze siano disponibili e che siano stati redatti i relativi elenchi (attribuzioni).
+** Descrizione del deployment (pipeline CI/CDfootnote:[https://it.wikipedia.org/wiki/CI/CD]) ed eventualmente allestimento di un'istanza dimostrativa.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Scelta della licenza
+** Verificare eventuali dipendenze da licenze esistenti.
+** Per il codice di terzi, verificare la compatibilità delle condizioni d'uso con la licenza prevista e, se necessario, sostituire il codice.
+** Scegliere la licenza adeguata sulla base della guida «Em002-3 Guida alle licenze OSS» (le raccomandazioni principali sono l'AGPL per il copyleft e la MIT per le licenze permissive).
+
+Licenza scelta e motivazione
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentazione è archiviata insieme al codice sorgente (cfr. [Em002-2] allegato D.1.)
+
+Motivazione / luogo di archiviazione
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentazione si rivolge sia agli utenti finali sia agli specialisti tecnici.
+
+Elenco della documentazione centrale
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Documentazione dettagliata del codice sorgente (specifica per l'OSS)
+
+La documentazione standard importante (README, LICENSE, CONTRIBUTING ecc.) è disponibile.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Il codice sorgente, cronologia compresa, non contiene dati personali sensibili, protetti o confidenziali. Oppure la cronologia è stata cancellata completamente. (cfr. [Em002-2] allegato E.2.)
+
+Spiegazione dell'esame (se non archiviata come documento separato)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Con il fornitore e con tutti gli sviluppatori coinvolti in seno all'Amministrazione federale è stato chiarito se le indicazioni sugli autori (nomi, indirizzi e-mail) possono essere pubblicate. +
+In alternativa il codice sorgente, cronologia compresa, è stato ripulito o anonimizzato.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Le librerie utilizzate dal progetto sono compatibili con la licenza del progetto.
+
+Spiegazione dell'esame (se non archiviata come documento separato)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Il progetto utilizza un gestore di pacchetti per gestire le proprie dipendenze.
+
+[%interactive]
+* [ ] Il progetto dichiara la propria licenza nel corrispondente descrittore del gestore di pacchetti. Allestimento di una Software Bill of Materials (SBOM) che elenca tutti i componenti open source utilizzati.
+
+[%interactive]
+* [ ] Il codice sorgente contiene un file _THIRD-PARTY-LICENSES.md_ che indica per ogni libreria utilizzata: il nome del progetto della libreria, la sua homepage, l'identificatore SPDX della sua licenza e un collegamento alla stessa.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Per le applicazioni è disponibile una finestra di dialogo «Informazioni su» che rinvia al file _THIRD-PARTY-LICENSES.md_.
+
+[%interactive]
+* [ ] Nell'ambito del processo di code review si garantisce che il file _THIRD-PARTY-LICENSES.md_ venga aggiornato a ogni modifica delle librerie.
+
+== Osservazioni conclusive
+
+Osservazioni e rinvii ad altri documenti rilevanti
+
+field::[rows=4]
+
+*Archiviazione del modulo*
+
+Archiviate questo modulo insieme alla documentazione di progetto e/o conformemente alle prescrizioni della vostra autorità (unità organizzativa).
+
+*Licenza del modello di lista di controllo: CC0 1.0 Universal*
+
+Il presente documento è pubblicato sotto la https://creativecommons.org/publicdomain/zero/1.0/[_licenza CC0_]. Può essere liberamente utilizzato, modificato e diffuso, anche a scopi commerciali e in qualsiasi formato.
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+Questa glista da controlla fa part da _Em002-2 Instrucziuns per publitgar software open source_ e s'adressa a persunas spezialisadas en TIC. +
+Ella serva a controllar la documentaziun ed il code da funtauna d'in project. Uschia gida ella a garantir che la qualitad da la documentaziun tanschia per publitgar in'applicaziun sco open source. Ultra da quai po vegnir controllà, sche il code da funtauna e tut las cumponentas da terzas persunas utilisadas dal project na cumportan nagins ristgs giuridics. Questas mesiras reduceschan ils ristgs da segirezza. +
+Infurmaziuns davart questa glista da controlla sa chattan en _[Em002-2]_ en il chapitel 4.
+
+Ultra da quai garantescha questa glista da controlla che la documentaziun dal project s'adressia tant als utilisaders finals sco er a las persunas spezialisadas tecnicas.
+
+== Object
+
+=== Num e curta descripziun dal software
+
+Endatai il num dal software.
+
+field::[rows=1]
+
+=== Persuna da contact e controlla
+
+Numnai l'organisaziun, la persuna da contact dal post spezialisà sco er las persunas responsablas (p.ex. ISBO/DSBO) che han verifitgà l'observaziun da las prescripziuns da publicaziun.
+
+field::[rows=3]
+
+== Glista da controlla
+
+[%interactive]
+* [ ] La _glista da controlla Em002-2.1 Evaluaziun preliminara OSS_ è vegnida emplenida e i n'èn vegnids constatads nagins puncts problematics.
+
+[%interactive]
+* [ ] Il code da funtauna da publitgar è vegnì analisà.
+** Controllar, co che la qualitad dal code existenta e las directivas èn vegnidas realisadas.
+** Garantir che naginas datas (da test) sensiblas na sajan cuntegnidas, p.ex. datas che sa basan sin persunas u cas reals.
+** Documentaziun actuala (vesair [Em002-2] agiuntas D.1. e D.2.)
+** Stizzar datotecas nunnecessarias u documents antiquads.
+** Controllar il code concernent secrets/datas d'access.footnote:[https://www.ncsc.admin.ch/ncsc/de/home/aktuell/im-fokus/2022/git.html]
+** Exequir tests da segirezza mirads ed installar suenter in program da bug bounty (public).footnote:[https://www.ncsc.admin.ch/ncsc/de/home/infos-fuer/infos-it-spezialisten/themen/bug-bounty-programme.html]
+** Controllar tuttas bibliotecas utilisadas, sche las licenzas èn avant maun e sche las glistas correspundentas (attribuziuns) èn vegnidas fatgas.
+** Descripziun dal deployment (pipeline CI/CDfootnote:[https://de.wikipedia.org/wiki/CI/CD]) ed eventualmain construcziun d'ina instanza da demonstraziun.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Tscherna da la licenza
+** Controllar eventualas dependenzas da licenzas existentas.
+** Per code da terzas persunas controllar las cundiziuns d'utilisaziun concernent la cumpatibilitad cun la licenza previsa e remplazzar il code sche necessari.
+** Tscherner la licenza adattada cun agid da la guida «Em002-3 Guida da licenzas OSS» (las recumandaziuns principalas èn l'AGPL per copyleft e la MIT per permissiv).
+
+Licenza tschernida e motivaziun
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentaziun vegn archivada ensemen cun il code da funtauna (vesair [Em002-2] agiunta D.1.)
+
+Motivaziun/lieu d'archivaziun
+
+field::[rows=1]
+
+[%interactive]
+* [ ] La documentaziun s'adressa tant als utilisaders finals sco er a las persunas spezialisadas tecnicas.
+
+Glista da la documentaziun centrala
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Documentaziun detagliada dal code da funtauna (specifica per OSS)
+
+La documentaziun standard impurtanta (README, LICENSE, CONTRIBUTING etc.) è avant maun.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Il code da funtauna na cuntegna, inclusiv la cronologia, naginas datas persunalas sensiblas, protegidas u confidenzialas. U la cronologia è vegnida stizzada cumplettamain. (vesair [Em002-2] agiunta E.2.)
+
+Explicaziun da la controlla (sche betg archivada sco document separà)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Cun il furnitur e cun tut ils sviluppaders participads entaifer l'administraziun federala è vegnì scleri, sche las indicaziuns davart ils auturs (nums, adressas d'e-mail) dastgan vegnir publitgadas. +
+Alternativamain è il code da funtauna, inclusiv la cronologia, vegnì rundà/anonimisà.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Las bibliotecas utilisadas dal project èn cumpatiblas cun la licenza dal project.
+
+Explicaziun da la controlla (sche betg archivada sco document separà)
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Il project utilisescha in manager da pachets per administrar sias dependenzas.
+
+[%interactive]
+* [ ] Il project declerescha sia licenza en il descriptur correspundent dal manager da pachets. Elavuraziun d'ina Software Bill of Materials (SBOM) che renumbra tuttas cumponentas open source utilisadas.
+
+[%interactive]
+* [ ] Il code da funtauna cuntegna ina datoteca _THIRD-PARTY-LICENSES.md_ che inditgescha per mintga biblioteca utilisada: il num dal project da la biblioteca, sia pagina d'internet, l'identificatur SPDX da sia licenza ed in link sin quella.
+
+field::[rows=1]
+
+[%interactive]
+* [ ] Tar applicaziuns stat a disposiziun in dialog «Davart» che renviescha a la datoteca _THIRD-PARTY-LICENSES.md_.
+
+[%interactive]
+* [ ] En il rom dal process da code review vegn garantì che la datoteca _THIRD-PARTY-LICENSES.md_ vegnia actualisada tar mintga midada da las bibliotecas.
+
+== Remartgas finalas
+
+Remartgas e renviaments ad ulteriurs documents relevants
+
+field::[rows=4]
+
+*Archivaziun dal formular*
+
+Archivai quest formular tar la documentaziun dal project e/u tenor las prescripziuns da Vossa autoritad (unitad d'organisaziun).
+
+*Licenza dal model da la glista da controlla: CC0 1.0 Universal*
+
+Quest document vegn publitgà sut la https://creativecommons.org/publicdomain/zero/1.0/[_licenza CC0_]. El dastga vegnir utilisà, midà e derasà liberamain, era per intents commerzials ed en mintga format.
+endif::[]

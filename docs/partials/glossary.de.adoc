@@ -1,0 +1,123 @@
+// Siehe glossary.en.adoc für die Begründung dieser Aufteilung.
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Anwendungsbereich::
+Gemeint sind die Kategorien der Büroautomationssoftware (BA) nach [A029] und weitere Klassifizierungen.
+
+Branch::
+Ein Entwicklungszweig einer OSS.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Kollaboration::
+Der Begriff «Kollaboration» leitet sich vom lateinischen Wort «collaborare» ab, das «zusammenarbeiten» bedeutet. +
+Er beschreibt eine Arbeitsweise, bei der mehrere Personen oder Teams gemeinsam auf ein Ziel hinarbeiten und dabei ihre Fähigkeiten und Ressourcen einbringen. Im Zentrum stehen gegenseitiger Austausch, Transparenz und das Teilen von Wissen. +
+Nach dem Gabler Wirtschaftslexikon bezeichnet Kollaboration auch die «Zusammenarbeit eines Unternehmens mit seinen Kunden und Lieferanten unter Nutzung moderner Informationstechnologien zur Integration inner- und überbetrieblicher Geschäftsprozesse».
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+KBB::
+Kompetenzzentrum Beschaffungswesen Bund
+
+Collaboration::
+Der Begriff Collaboration stammt vom lateinischen Wort «collaborare» und bedeutet «zusammenarbeiten».
+Er beschreibt eine Arbeitsweise, bei der mehrere Personen oder Teams gemeinsam auf ein Ziel hinarbeiten und ihre Fähigkeiten und Ressourcen einbringen. Im Zentrum stehen gegenseitiger Austausch, Transparenz und das Teilen von Wissen. +
+Gemäss dem Gabler Wirtschaftslexikon bezeichnet Collaboration auch die «Zusammenarbeit zwischen einem Unternehmen und seinen Kunden und Lieferanten unter Einsatz moderner Informationstechnologien zur Integration inner- und überbetrieblicher Geschäftsprozesse».
+
+Committer::
+Ein Committer ist eine Person, die eine Änderung an Daten in einem Versionsverwaltungssystem einträgt.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Contribution::
+Eine OSS-Contribution ist ein Beitrag zur Entwicklung und Verbesserung von Open-Source-Software (OSS). Dies kann in Form von Code, Dokumentation, Tests, Rückmeldungen oder anderen Beitragsarten geschehen. (Google AI)
+
+Contributor Licence Agreement (CLA)::
+Ein Contributor Licence Agreement (CLA), auch Contributor Agreement genannt, ist ein Dokument, das die Bedingungen festlegt, unter denen geistiges Eigentum zu einem Projekt oder einer Initiative beigetragen werden darf. Damit ist in der Regel ein Softwareprojekt unter einer Open-Source-Lizenz gemeint (Wikipedia).
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Core Developer::
+Entwicklerin oder Entwickler eines OSS-Projekts mit Committer-Zugriffsrechten auf das Repositorium.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+DTI::
+Sektor Digitale Transformation und IKT-Lenkung. Teil der Bundeskanzlei BK
+
+eOperations::
+eOperations Schweiz ermöglicht gemeinsame digitale öffentliche Dienstleistungen für Bund, Kantone und Gemeinden. https://www.eoperations.ch[www.eoperations.ch]
+
+ISB::
+Informatiksteuerungsorgan des Bundes. Vorgänger von BK-DTI
+
+BBL::
+Bundesamt für Bauten und Logistik
+
+Lebenszyklus::
+Ein Softwarelebenszyklus beschreibt den Prozess der Softwareentwicklung mit dem Ziel, dem Kunden Software bereitzustellen. In der Regel beginnt der Zyklus mit einem vom Kunden erkannten Problem und dessen Analyse und endet auf Kundenseite mit der Ablösung der Software durch eine Nachfolgelösung.
+
+Lock-in::
+Der Lock-in-Effekt bezeichnet eine enge Kundenbindung an Produkte/Dienstleistungen oder an einen Anbieter, die einen Produkt- oder Anbieterwechsel für die Kundschaft aufgrund der damit verbundenen Kosten und weiterer Hürden erschwert.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Marktanalyse::
+Eine spezifische Marktanalyse dient dazu, Informationen zum aktuellen und potenziellen Beschaffungsmarkt zu ermitteln und aufzubereiten. Zweck der Marktanalyse ist es, Marktstrukturen und insbesondere die Anbieterstruktur hinsichtlich aller massgebenden Merkmale zu ermitteln und zu verstehen: Preissituation (hoch, tief, Schwankungen); Marktgrösse; geografische Verteilung potenzieller Anbieter und Hauptakteure usw. (siehe https://perimap.admin.ch/goto_perimap_file_38221_download.html). +
+Mögliche Quellen für OSS-Software finden sich in link:em002-1.pdf[Em002-1 Praxisleitfaden OSS] in Kapitel 7.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+OSS::
+Open-Source-Software
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Produkt::
+Hier als Synonym für «Anwendung» verwendet.
++
+Der Begriff stammt aus ITIL. In ITIL (Information Technology Infrastructure Library) ist ein Produkt eine Konfiguration von Ressourcen, die darauf ausgelegt ist, einer Kundin oder einer Organisation Nutzen zu stiften. Anders als ein Service, der typischerweise ein laufender, interaktiver Prozess ist, ist ein Produkt eine statische Einheit.
++
+Produkte können Software, Hardware, Daten oder andere von der Organisation bereitgestellte Ressourcen sein. (Google AI)
+
+Produktstandardisierung::
+In diesem Dokument bezieht sich die Standardisierung in erster Linie auf SD120, den IKT-Standarddienst für die Büroautomation, sowie auf weitere Standardisierungen durch DTI.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Subscription::
+Beim Bezug von Software im Abonnement wird eine Subscription abgeschlossen. Das bedeutet, dass die Software nicht gekauft wird. +
+In den meisten Fällen umfasst dies nicht nur die Erlaubnis zur Nutzung der Software, sondern auch alle relevanten Dienstleistungen und den Support.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+SBOM::
+Eine Software Bill of Materials (SBOM) ist eine Inventarliste aller Komponenten und Softwareabhängigkeiten, die Teil der Entwicklung und Bereitstellung einer Software sind.
+
+Subskription::
+Beim Abonnieren von Software wird eine Subskription abgeschlossen. Das bedeutet, dass die Software nicht gekauft wird. +
+In den meisten Fällen umfasst dies nicht nur die Erlaubnis zur Nutzung der Software, sondern auch alle massgebenden Leistungen und den Support.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Upstream-Projekt::
+Upstream ist ein Begriff aus der verteilten Softwareentwicklung (oft Open Source) und bezeichnet die Richtung eines Patches zu seinem Ursprung (upstream), also zu den ursprünglichen Entwicklerinnen und Entwicklern bzw. Maintainern der Software oder zum ursprünglichen Projekt. Dabei kann es sich auch um Softwarebibliotheken handeln.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+ZenDiS::
+ZenDiS ist eine Gesellschaft mit beschränkter Haftung (GmbH) in öffentlicher Hand in Deutschland. Sie unterstützt Bund, Länder und Kommunen bei der Umsetzung der digitalen Souveränität. Mit opencode.de und container.gov.de bietet sie eine Plattform für sichere Open-Source-Entwicklung. (https://www.zendis.de[www.zendis.de])
+
+Zero-Day-Exploit::
+Ein Zero-Day-Exploit bezeichnet die Ausnutzung einer Sicherheitslücke, für die noch kein Patch des Komponentenherstellers verfügbar ist.
+
+// end::gloss-em002-7[]

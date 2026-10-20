@@ -46,7 +46,12 @@ description:
       - Documentation
       - Open Source Knowledge
     screenshots:
-      - https://github.com/swiss/opensource-guidelines/blob/e173972f2119e46d38e017064544d179e69805eb/docs/en/assets/em002-1/media/image1.png
+      # A page of the rendered Em002, not a source asset: it shows what this
+      # repository actually produces. The previous entry pointed at a diagram
+      # PNG through a `/blob/` URL, which serves an HTML page rather than an
+      # image, and at a bitmap that no longer exists now that the diagrams are
+      # generated from the AsciiDoc sources.
+      - https://raw.githubusercontent.com/swiss/opensource-guidelines/main/docs/assets/screenshots/document-map.png
 legal:
   license: CC0-1.0
 maintenance:
@@ -60,4 +65,5 @@ localisation:
     - de-CH
     - fr-CH
     - it-CH
+    - rm-CH
     - en

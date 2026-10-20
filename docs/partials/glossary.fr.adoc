@@ -1,0 +1,127 @@
+// Voir glossary.en.adoc pour la justification de ce découpage.
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Domaine d'application::
+Il s'agit des catégories de logiciels de bureautique (BA) telles que définies dans [A029] et d'autres classifications.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Branche::
+Une branche de développement d'un logiciel open source.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Branch::
+Une branche de développement d'un OSS.
+
+CCMP::
+Centre de compétence des marchés publics de la Confédération
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Collaboration::
+Le terme «collaboration» dérive du mot latin «collaborare», qui signifie «travailler ensemble». +
+Il décrit un mode de travail dans lequel plusieurs personnes ou équipes œuvrent ensemble à un objectif commun en y apportant leurs compétences et leurs ressources. L'échange mutuel, la transparence et le partage des connaissances sont au centre. +
+Selon le Gabler Wirtschaftslexikon, la collaboration désigne aussi la «coopération d'une entreprise avec ses clients et ses fournisseurs, en recourant aux technologies modernes de l'information pour intégrer les processus d'affaires internes et interentreprises».
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Committer::
+Un committer est une personne qui inscrit une modification de données dans un système de gestion de versions.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Contribution::
+Une contribution OSS est un apport au développement et à l'amélioration d'un logiciel open source (OSS). Cela peut prendre la forme de code, de documentation, de tests, de retours ou d'autres types de contributions. (Google AI)
+
+Contributor Licence Agreement (CLA)::
+Un Contributor Licence Agreement (CLA), également appelé Contributor Agreement, est un document qui fixe les conditions auxquelles de la propriété intellectuelle peut être apportée à un projet ou à une initiative. Il s'agit généralement d'un projet logiciel sous licence open source (Wikipédia).
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Core developer::
+Développeur d'un projet open source disposant de droits d'accès de committer au dépôt.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+TNI::
+Secteur Transformation numérique et gouvernance de l'informatique. Fait partie de la Chancellerie fédérale ChF
+
+eOperations::
+eOperations Suisse permet des prestations publiques numériques communes pour la Confédération, les cantons et les communes. https://www.eoperations.ch[www.eoperations.ch]
+
+USIC::
+Unité de pilotage informatique de la Confédération. Prédécesseur de ChF-TNI
+
+OFCL::
+Office fédéral des constructions et de la logistique
+
+Cycle de vie::
+Un cycle de vie logiciel décrit le processus de développement logiciel visant à mettre un logiciel à disposition du client. En règle générale, le cycle commence par un problème identifié par le client et son analyse, et se termine du côté du client par le remplacement du logiciel par un successeur.
+
+Lock-in::
+L'effet de lock-in désigne une fidélisation étroite de la clientèle à des produits/services ou à un fournisseur, qui rend difficile pour le client un changement de produit ou de fournisseur en raison des coûts et des autres obstacles liés au changement.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Analyse de marché::
+Une analyse de marché spécifique sert à identifier et à traiter les informations relatives au marché d'acquisition actuel et potentiel. L'analyse de marché a pour but d'identifier et de comprendre les structures du marché et, en particulier, la structure des fournisseurs au regard de toutes les caractéristiques déterminantes : situation des prix (élevés, bas, fluctuations) ; taille du marché ; répartition géographique des fournisseurs potentiels et des acteurs principaux, etc. (voir https://perimap.admin.ch/goto_perimap_file_38221_download.html). +
+Les sources possibles de logiciels OSS figurent dans link:em002-1.pdf[Em002-1 Guide pratique OSS], chapitre 7.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+OSS::
+Logiciel open source
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Produit::
+Utilisé ici comme synonyme d'«application».
++
+Le terme provient d'ITIL. Dans ITIL (Information Technology Infrastructure Library), un produit est une configuration de ressources conçue pour apporter de la valeur à un client ou à une organisation. Contrairement à un service, qui est typiquement un processus interactif et continu, un produit est une entité statique.
++
+Les produits peuvent être des logiciels, du matériel, des données ou d'autres ressources fournies par l'organisation. (Google AI)
+
+Standardisation des produits::
+Dans le présent document, la standardisation se réfère principalement à SD120, le service standard TIC pour la bureautique, ainsi qu'à d'autres standardisations du secteur TNI.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Subscription::
+Lors de l'acquisition d'un logiciel par abonnement, une subscription est conclue. Cela signifie que le logiciel n'est pas acheté. +
+Dans la plupart des cas, cela comprend non seulement l'autorisation d'utiliser le logiciel, mais aussi l'ensemble des prestations et du support pertinents.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+SBOM::
+Une Software Bill of Materials (SBOM) est une liste d'inventaire de tous les composants et dépendances logicielles qui font partie du développement et du déploiement d'un logiciel.
+
+Abonnement::
+Lors de l'abonnement à un logiciel, une souscription est conclue. Cela signifie que le logiciel n'est pas acheté. +
+Dans la plupart des cas, cela comprend non seulement l'autorisation d'utiliser le logiciel, mais aussi toutes les prestations déterminantes et le support.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Projet upstream::
+Upstream est un terme issu du développement logiciel distribué (souvent open source) et désigne la direction d'un correctif vers son origine (upstream), c'est-à-dire vers les développeurs ou mainteneurs d'origine du logiciel, ou vers le projet d'origine. Il peut aussi s'agir de bibliothèques logicielles.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+ZenDiS::
+ZenDiS est une société à responsabilité limitée (GmbH) en mains publiques en Allemagne. Elle soutient la Fédération, les Länder et les communes dans la mise en œuvre de la souveraineté numérique. Avec opencode.de et container.gov.de, elle offre une plateforme pour un développement open source sécurisé. (https://www.zendis.de[www.zendis.de])
+
+Exploit zero-day::
+Un exploit zero-day désigne l'exploitation d'une faille de sécurité pour laquelle aucun correctif n'est encore disponible auprès du fabricant du composant.
+
+// end::gloss-em002-7[]

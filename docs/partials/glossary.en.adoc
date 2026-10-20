@@ -1,0 +1,131 @@
+// The glossary shared by Em002-6 and Em002-7. Em002-6 owns the general
+// glossary -- Em002-7 says so in its own Annex B preamble -- and Em002-7 adds
+// the procurement-specific terms on top, so the union is tagged per consuming
+// document and Em002-6's wording wins wherever the two had drifted.
+//
+// Drift found: "Application area", "Branch", "Collaboration", "Market
+// analysis" and "Product" disagreed in English, and rather more in the
+// translations, mostly over hard breaks and list continuations.
+//
+// Where the two documents use different headwords for the same concept
+// (German Kollaboration vs Collaboration, Subscription vs Subskription, and
+// their French, Italian and Romansh equivalents), both entries survive, one
+// per tag. Unifying them is a translation decision, not a formatting one.
+//
+// The preamble paragraphs -- the TERMDAT pointer and Em002-7's "see Em002-6"
+// note -- stay in the including documents; they differ per document.
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Application area::
+This refers to the categories of office automation (OA) software as defined in [A029] and other classifications.
+
+Branch::
+A development branch of an OSS.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+CCPP::
+Competence Centre for Federal Public Procurement
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Collaboration::
+The term 'collaboration' derives from the Latin word 'collaborare', which means 'to work together'. +
+It describes a way of working in which several people or teams work together towards a common goal, contributing their skills and resources. The focus is on mutual exchange, transparency and the sharing of knowledge. +
+According to the Gabler Business Dictionary, collaboration also refers to 'cooperation between a company and its customers and suppliers, using modern information technologies to integrate internal and cross-company business processes.'
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Committer::
+A committer is a person who enters a change to data in a version control system.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Contribution::
+OSS contribution refers to the contribution to the development and improvement of open source software (OSS). This can take the form of providing code, documentation, tests, feedback or other types of contributions. (Google AI)
+
+Contributor Licence Agreement (CLA)::
+A Contributor Licence Agreement (CLA), also known as a Contributor Agreement, is a document that sets out the terms under which intellectual property may be contributed to a project or initiative. This usually refers to a software project under an open-source licence (Wikipedia).
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Core developer::
+Developer of an OSS project who has committer access rights to the repository.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+DTI::
+Digital Transformation and ICT Steering Sector. Part of the Federal Chancellery FCh
+
+eOperations::
+eOperations Switzerland enables joint digital public services for the federal government, cantons and communes. https://www.eoperations.ch[www.eoperations.ch]
+
+FITSU::
+Federal IT Steering Unit. Predecessor of FCh-DTI
+
+FOBL::
+Federal Office for Buildings and Logistics
+
+Life cycle::
+A software life cycle describes the process of software development with the aim of providing software to the customer. As a rule, the cycle begins with a problem identified by the customer and its analysis, and ends on the customer side with the replacement of the software by a successor.
+
+Lock-in::
+The lock-in effect refers to close customer loyalty to products/services or a provider or vendor, which makes it difficult for the customer to switch products or providers due to the costs and other barriers involved in switching.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Market analysis::
+A specific market analysis is used to identify and process information on the current and potential procurement market. The purpose of the market analysis is to identify and understand market structures and, in particular, the supplier structure with regard to all relevant characteristics: price situation (high, low, fluctuations); market size; geographical distribution of potential suppliers and key players, etc. (see https://perimap.admin.ch/goto_perimap_file_38221_download.html). +
+Possible sources of OSS software can be found in link:em002-1.pdf[Em002-1 Practical Guidelines for OSS] in Section 7.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+OSS::
+Open source software
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Product::
+Used here as a synonym for 'application'.
++
+The term originates from ITIL. In ITIL (Information Technology Infrastructure Library), a product is a configuration of resources designed to deliver value to a customer or organisation. Unlike a service, which is typically an ongoing, interactive process, a product is a static entity.
++
+Products can be software, hardware, data or other resources provided by the organisation. (Google AI)
+
+Product standardisation::
+In this document, standardisation primarily refers to SD120, the ICT standard service for office automation, and other standardisations by DTI.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+SBOM::
+A Software Bill of Materials (SBOM) is an inventory list of all components and software dependencies that are part of the development and deployment of a piece of software.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Subscription::
+When subscribing to software, a subscription is taken out. This means that the software is not purchased. +
+In most cases, this involves not only permission to use the software, but also includes all relevant services and support.
+
+Upstream project::
+Upstream is a term used in distributed software development (often open source) and refers to the direction of a patch to its origin (upstream), i.e. to the original developers or maintainers of the software, or to the original project. These can also be software libraries.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+ZenDiS::
+ZenDiS is a publicly owned limited liability company (GmbH) in Germany. It supports the federal government, states, and municipalities in implementing digital sovereignty. With opencode.de and container.gov.de, it offers a platform for secure open-source development. (https://www.zendis.de[www.zendis.de])
+
+Zero-day exploit::
+A zero-day exploit refers to the exploitation of a security vulnerability for which no patch is yet available from the component manufacturer.
+
+// end::gloss-em002-7[]

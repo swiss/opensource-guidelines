@@ -1,0 +1,99 @@
+// Vesair abbreviations.en.adoc per la motivaziun da questa repartiziun.
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+ADS::
+Administraziun digitala Svizra (www.digital-public-services-switzerland.ch/strategy)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+AO::
+Application owner
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+CCA::
+Center da cumpetenza per l'acquist public da la Confederaziun
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+CGC::
+Cundiziuns generalas da contract
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+ChF::
+Chanzlia federala
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+CLA::
+Contributor Licence Agreement
+DCO::
+Developer Certificate of Origin
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+EMBAG::
+Lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+FSF::
+Free Software Foundation
+HERMES::
+_Handbuch der Elektronischen Rechenzentren des Bundes_, ina metoda per il svilup da sistems (www.hermes.admin.ch)
+IA::
+Intelligenza artifiziala
+ISB::
+Organ da direcziun d'informatica da la Confederaziun (fin il 2021)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+LTr::
+Lescha davart la transparenza
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+EMBAG::
+Lescha federala davart ils meds electronics per ademplir incumbensas d'autoritads
+LTrans::
+Lescha davart la transparenza
+PP::
+Purschider da prestaziuns
+RP::
+Retratg da prestaziuns
+// end::abbr-em002-6[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+OSI::
+Open Source Initiative
+OSPO::
+Open Source Programme Office
+OSS::
+Software open source
+OSSD::
+Svilup da software open source
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002[]
+PP::
+Purschider da prestaziuns
+// end::abbr-em002[]
+// tag::abbr-em002[]
+RA::
+Responsabel da l'applicaziun
+RP::
+Retratg da prestaziuns
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002[]
+// tag::abbr-em002[]
+// tag::abbr-em002-6[]
+UFCL::
+Uffizi federal per edifizis e logistica
+UO::
+Unitad d'organisaziun (per ordinari in uffizi federal)
+// end::abbr-em002-6[]
+// end::abbr-em002[]
+// tag::abbr-em002-6[]
+SPDX::
+Software Package Data Exchange
+// end::abbr-em002-6[]

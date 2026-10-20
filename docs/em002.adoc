@@ -1,0 +1,1335 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Em002 Strategic Guidelines for Open Source Software in the Federal Administration
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Em002 Strategische Leitlinien für Open-Source-Software in der Bundesverwaltung
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Em002 Lignes directrices stratégiques pour les logiciels open source dans l'administration fédérale
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Em002 Linee guida strategiche per il software open source nell'Amministrazione federale
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Em002 Directivas strategicas per software open source en l'administraziun federala
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// The Confederation logo in colour. open-govpress falls back to `black` for any
+// value it does not recognise, `colour` being the one synonym it takes, so the
+// spelling here is the whole of the choice.
+:title-logo-base: color
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// The repository, written as `{url-repo}` throughout the body. open-govpress
+// reads nothing here; this is its own documented idiom for an author-defined
+// attribute that saves repetition (see the `showcase.adoc` it ships).
+:url-repo: https://github.com/swiss/opensource-guidelines
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+NOTE: This document is an evolving draft and part of the guidelines and tools designed to support the Federal Administration in publishing open source code. For more information, see the main link:{url-repo}/tree/main[README].
+
+'''
+
+== Introduction
+
+=== Objective and purpose
+
+Under Article 9 paragraph 1 of the Federal Act of 17 March 2023footnote:[SR 172.019] on the Use of Electronic Means to Carry Out Official Tasks (EMOTA), public authorities must disclose the source code of software they develop or commission to perform their duties, unless third-party rights or security-relevant reasons preclude or restrict this. This eliminates legal uncertainty regarding the publication of software by federal authorities.
+
+In recent years, it has become clear that the importance of open source software (OSS) in the Federal Administration has generally continued to increase.
+
+These strategic guidelines describe the fundamentals of open source software and how this is handled in the Federal Administration. The document sets out six objectives and proposes nine measures to fulfil these.
+
+It also gives references to other relevant public sector strategies regarding open source.
+
+=== Background
+
+In 2005, the Federal IT Strategy Unit (FITSU) published the first version of an OSS strategy for the Federal Administration. At that time, the most important principle was defined as the equal treatment of OSS with closed source software in procurement.
+
+Since publication in 2005, the prevalence of open source software has steadily increased. Today, according to the Open Source Study Switzerland 2024 report, a clear majority of companies and authorities use open source software in many different areas. In the software industry, very few companies do not work with open source tools and components.
+
+On 1 February 2019, these Strategic Guidelines for Open Source Software in the Federal Administration and the practical guidelines came into force as Version 1.0. With the enactment of EMOTA and the new obligations under Article 9, it became necessary to align both sets of guidelines with the new status and create additional tools for the federal authorities.
+
+=== Procedure
+
+The federal offices are responsible for implementing EMOTA themselves. However, given the growing importance of open source, it was decided to revise the practical guidelines _link:em002-1.pdf[Em002-1]_ together with all stakeholders. Furthermore, additional tools for implementing EMOTA were added.
+
+The practical guidelines define the necessary concepts, set out the constellations for using open source software, where and how alternatives to existing commercial software can be found, how open source should be procured, what business models exist for open source and what support models are possible when using open source. The other tools provide answers to frequently asked questions and guidance on releasing open source software in accordance with EMOTA. They explore all issues surrounding OSS licences and show how a community can be built around software. Several checklists for guidance and documentation are also made available to federal authorities.
+
+Documents relating to procurement were also amended, and an additional information sheet [KBB-MB], set of guidelines [BBL-WL] and a checklist [BBL-CL] were drawn up.
+
+Existing uncertainties are resolved as far as possible with these strategic guidelines, the accompanying practical guidelines and recommendations for action, as well as the additional tools.
+
+== Reference to other strategies
+
+These Strategic Guidelines for Open Source Software in the Federal Administration are aligned with four current public sector strategies and EMOTA.footnote:[SR 172.019: https://www.fedlex.admin.ch/eli/cc/2023/682/de] These contain a direct or indirect reference to the topic of open source software and IT collaboration among public institutions:
+
+The *Digital Federal Administration Strategy* [SB001] sets out eight principles and four priorities. By using open source software, the Federal Administration contributes to priority 4, 'Strengthening digital sovereignty'. An open source solution can be reused any number of times and adapted to the individual needs of the Federal Administration due to its open source code.
+
+The concept of digital sustainability and digital sovereignty also comes up in the **Digital Public Services Switzerland Strategy 2024–2027**footnote:[Digital Public Services Switzerland Strategy 2024–2027: https://www.digital-public-services-switzerland.ch/strategy]. The Confederation and cantons will create appropriate conditions for this multiple use. Basic modules for expanding eGovernment will be 'implemented once and used jointly'. Opting for open source software makes it easier to reuse IT solutions.
+
+According to the **Digital Switzerland Strategy**footnote:[https://digital.swiss/en/] it is crucial for Switzerland's success in the digital space to strengthen the networking of federal levels. Particular attention should therefore be paid to coordination between the Confederation, cantons and communes as well as cooperation between organisations active in the field of digitalisation throughout Switzerland. The Federal Council also attached particular importance to Switzerland's digital sovereignty as a focus topic for 2023.footnote:[https://digital.swiss/en/strategy/focus-topics/digital-sovereignty]
+
+In the **Open Government Data Strategy Switzerland (2019–2023)**footnote:[Open Government Data Strategy 2019 – 2023] the Federal Council states that data from the Federal Administration that is not personal and not security-critical should be published according to the Open by Default principle. The Federal Administration has launched the opendata.swiss portal for this purpose.footnote:[https://opendata.swiss/en] Federal offices, cantons, cities and other public organisations have currently published over 11,700 datasets there.
+
+The Open Government Data Master Plan 2024–2027footnote:[https://www.bfs.admin.ch/asset/en/28425806] implements the Open by Default principle.
+
+== Governance and tools
+
+When talking about open source software, a distinction has to be made between *consuming* (using), *contributing* (adding to existing code) and *creating* (i.e. new projects).
+
+image::./assets/four-cs/four-cs.en.svg[The 4 Cs in the context of OSS]
+
+Figure 1: The 4 Cs in the context of OSS
+
+*Collaboration* is also always conceivable in the background. In the case of creation, it must be initiated by the Federal Administration; in the case of contribution, it already exists; and it can also be helpful in the case of consumption (e.g. user group).
+
+When *consuming* open source software, it should be treated and evaluated as equivalent to proprietary software.
+
+When *developing* software, open source release is generally mandatory, subject to the exceptions set out in Art. 9 EMOTA (third-party rights and security-relevant reasons).
+
+These exceptions are addressed in link:em002-2.pdf[Em002-2 Instructions for Publishing OSS].
+
+The federal authorities, i.e. the administrative units of the Federal Administration, are themselves responsible for correct compliance; there is no centralised responsibility.
+
+*Publication* brings added value especially when a *community* of interested parties emerges and works together on the software. If the community collaborates on a project and the Federal Administration allows these contributions, economic benefits and synergy effects are created.footnote:[https://test.bitkom.org/sites/main/files/2023-03/BitkomLeitfadenOpenSourceSoftware31.pdf, Section 4 (in German)]
+
+In practice, release often consists of not only the source code, but also all other aspects (documentation, governance, build instructions, etc.).
+
+In principle, the Federal Administration has no obligation to build communities; the legal mandate only requires it to publish the source code. The Federal Administration should prioritise investing in communities where the benefit for the Confederation and third parties is great and the effort is as low as possible.
+
+Currently, there is no common federal platform for *developing and publishing source code*. Each public authority must therefore select a platform (repository) for publication itself. The practical guidelines in link:em002-2.pdf[Em002-2 Instructions for Publishing Open Source Software] and the associated checklists define how to work with a platform and which properties it must fulfil.
+
+The *choice of licence* is dealt with in the OSS Licensing Guidelines link:em002-3.pdf[Em002-3]), which presents a selection of standard licences and explains their uses. The Federal Administration should only use its own licence texts in justified cases according to Art. 9 para. 4 EMOTA.
+
+When using and developing OSS, **support**footnote:[At least during the lifecycle by way of contracts or a community.] must always be regulated (even if it is waived). The responsible administrative unit regulates this during the release process or when defining the community. EMOTA does not make any provisions here, and no additional financing or personnel will be made available for support. It may make sense to include support and joint further development where the benefit for Swiss authorities or the Swiss economy is considered sufficiently large (ecosystem costs) and/or cost-sharing or cooperation is sought. If the supplier takes this on, its support costs can be covered by the users.
+
+The *procurement of OSS* is done via the Federal Administration's regular procurement process. The FOBL provides the relevant documents and tools.
+
+In addition, a _Software procurement and Art. 9 EMOTA information sheet_ is availablefootnote:[Available here (in German): https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html and https://perimap.admin.ch/goto_perimap_file_46835_download.html] _[KBB-MB]_ (see Figure 2).
+
+Legal and practical considerations mean that under certain circumstances the obligation to release OSS may be transferred to a supplier (during the tender or in operation). The procurement tools and the release process determine how this is to be approached with the supplier. Most of this is achieved by supplementing existing processes, contract drafts and tools.
+
+The organisational procedure is regulated in link:em002-2.pdf[Em002-2 Instructions for Publishing Open Source Software] and the associated tools.
+
+*OSS is treated equally to proprietary software under procurement law.* Since no licence fees are incurred for OSS according to the definition of the Open Source Initiative (OSI), software can be downloaded and used in principle without a tender. Only the services to be provided by companies (e.g. support, engineering) are then subject to procurement law and must be put out to tender.
+
+Where necessary, the relevant aspects from the tools are integrated into the Confederation's project management processes (i.e. HERMES).
+
+Open development (direct open development on an openly accessible repository) and participation in existing projects (contribution) are also covered in the explanations in link:em002-4.pdf[Em002-4 OSS Community Guidelines].
+
+=== Overview of OSS documents
+
+The following diagram gives an overview of the documents relevant to OSS in the Federal Administration.
+
+include::partials/document-map.en.adoc[]
+
+Figure 2: Documents related to Art. 9 EMOTA
+
+== Objectives
+
+The following overarching, long-term objectives show how the Federal Administration taps into the potential of open source software and addresses the risks and challenges:
+
+A) Compliance with legal requirements (i.e. EMOTA):: The release of open source software is governed by Article 9 EMOTA. Compliance with this legal requirement is a key aspect of these guidelines and the associated documents. Federal authorities should comply with this article and maximise the benefits for the Federal Administration and Switzerland. The organisational units themselves are responsible for implementation.
+
+B) Increase innovation and efficiency:: Open source software serves as the basis of modern IT today. Building on the millions of freely available components and solutions, independent applications can be rapidly developed and operated. The associated time and resource savings and the architectural principles associated with open source software, such as interoperability, agility and microservices, increase the capacity for innovation and efficiency of software development. This in turn accelerates the digitalisation of the Federal Administration. By releasing open source software, the adoption of digital solutions can be accelerated in the federal environment and synergy effects can be utilised.
+
+C) Promote a culture of collaboration:: Open source software promotes a culture of collaboration in IT through the sharing of source code, open communication and practices for joint further development. These principles can be applied to increase collaboration in IT within the Federal Administration, with the cantons and with other public institutions. This strengthens digital sovereignty and reduces dependencies on software vendors.
+
+D) Create clarity and minimise risks:: Information on frequently used open source licences should enable the Federal Administration to select the right licences. This minimises legal risks. Technical and legal recommendations enable the Federal Administration to use and release open source software.
+
+E) Create an overview to utilise synergies:: Open source software is currently used in numerous places within the Federal Administration in different ways. A lot of knowledge and experience is available, but the synergies cannot yet be utilised as there is no overview of the open source solutions in use. Such an overview and the joint procurement of services will make it possible to better exploit the potential of open source software, which saves resources and creates synergies.
+
+F) Increase attractiveness as an IT employer:: Open source software is popular with many highly qualified IT professionals. The use of modern open source technologies and the application of open source development methods motivate many employees and increase the attractiveness of the Federal Administration as an employer. To use open source software, the Confederation needs specialists with knowledge and experience of open source software, so efforts should be made when recruiting specialists to expand internal open source know-how.
+
+== Measures
+
+The following measures are intended to help achieve the objectives outlined above. The measures will be supplemented or replaced in due course and adapted to changed circumstances.
+
+The following overview illustrates how the objectives are linked to the corresponding measures. These support implementation of the respective objectives but they may also have an impact on other objectives.
+
+A) Compliance with legal requirements (EMOTA)::
+1) Implement the _Practical Guidelines for Open Source Software in the Federal Administration link:em002-1.pdf[Em002-1]_ +
+2) Implement the _Instructions for Publishing Open Source Software link:em002-2.pdf[Em002-2]_ and the tools derived from that. +
+3) Procurement authorities build up open source know-how and thus support the Federal Administration.
+
+B) Increase innovation and efficiency::
+1) Implement the _Practical Guidelines for Open Source Software in the Federal Administration link:em002-1.pdf[Em002-1]_ +
+3) The procurement authorities can deal with open source and optimally support Art. 9 EMOTA. +
+8) Promote community building
+
+C) Promote a culture of collaboration::
+1) Implement the _Practical Guidelines for Open Source Software in the Federal Administration link:em002-1.pdf[Em002-1]_ +
+4) Promote knowledge and experience exchange +
+8) Promote community building +
+9) Examine the possibility of establishing own publication platform; promote Open Development
+
+D) Create clarity and minimise risks::
+1) Implement the _Practical Guidelines for Open Source Software in the Federal Administration link:em002-1.pdf[Em002-1]_ +
+2) Implement the _Instructions for Publishing Open Source Software link:em002-2.pdf[Em002-2]_ and the tools derived from that.
+
+E) Create an overview to utilise synergies::
+6) Implement joint procurement of services +
+7) Create an overview of open source software used, released and co-developed +
+8) Promote community building
+
+F) Increase attractiveness as an IT employer::
+5) Promote and communicate an open source culture +
+8) Promote community building
+
+=== Description of the measures
+
+Measure 1: Implement the _Practical Guidelines for Open Source Software in the Federal Administration link:em002-1.pdf[Em002-1]_.::
+Although the term open source software is already over 20 years old, the steady spread of open source software and the continuous development of application scenarios constantly lead to new practices and questions. New and further developments of open source solutions are also increasingly forming full-fledged alternatives to proprietary software. With EMOTA, the obligation to publish in-house developments is added.
++
+The _Practical Guidelines for Open Source Software in the Federal Administration_ give an overview and introduction to the topic, outlines the advantages and disadvantages of open source software and explains all other tools. It also contains best practices, proven alternatives and practical recommendations on how the Federal Administration should handle open source software.
++
+These practical guidelines and the other tools should be used and implemented by the federal authorities when dealing with open source software and releases.
++
+As a brief introduction to the topic, an _information sheet on the application of Art. 9 EMOTA_ and link:em002-6.pdf[EM002-6 FAQ about Publishing OSS (OSS-FAQ)] are available.
+
+Measure 2: Implement the Instructions for Publishing Open Source Software link:em002-2.pdf[Em002-2] and the tools derived from that.::
+The efficient use of OSS in software development often requires contributions in the form of bug fixes and functional enhancements. With EMOTA, there is also an obligation to release self-created software. The necessary guidance is available with various tools.
++
+The checklists are part of the instructions for publishing OSS. They should be used as a supplement to the corresponding guidelines of the administrative units before and during development.
++
+The handling of legacy code under Art. 9 EMOTA is also discussed. The aim is to find and implement pragmatic solutions.
++
+Licences are particularly important in the OSS environment. When releasing, procuring and using software, licences must be aligned with what is legally feasible and the desired effect. The necessary knowledge and corresponding decisions should be documented. In this context, the necessary additional documents such as the Contributor Licence Agreement (CLA) are also provided.
++
+To facilitate the application of Art. 9 EMOTA, additions will be made to the Confederation's project management method (HERMES). Administrative units should find the necessary tools in the regular process.
+
+Measure 3: Procurement authorities build up open source know-how and thus support the Federal Administration.::
+The new link:em002-7.pdf[Em002-7 Strategic Aspects of Procurement and OSS] was created to address procurement aspects.
++
+To ensure broad competition, procurement requires that open and closed source software be treated equally. The increased requirements in connection with Art. 9 EMOTA regarding the resources to be procured for software publication must be taken into account.
++
+The Competence Centre for Federal Public Procurement (CCPP) has published an information sheet on software procurement and Art. 9 EMOTA [KBB-MB] at the following link link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html].
++
+Further assistance is available on the FOBL intranet (accessible only from the federal network) with the link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[Open Source in Procurement Guidelines] [BBL-WL] and the link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[Checklist for Art. 9 EMOTA Blanket Exception] [BBL-CL].
+
+Measure 4: Promote knowledge and experience exchange::
+Creating and using open source software requires in-depth, specialised know-how. At the same time, open source solutions are constantly evolving and new open source projects are being launched. It is therefore a challenge to maintain a comprehensive overview of current trends and technologies.
++
+To promote the professional use of open source and facilitate the exchange of knowledge and experience, information should be shared within an extended community of interest, and employees within the Federal Administration should be competently supported.
+
+Measure 5: Promote and communicate an open source culture::
+Advancing digitalisation has further exacerbated the shortage of skilled workers in IT. This also makes it difficult for the Federal Administration's service providers to recruit qualified IT staff. The use of open source software and the associated developer culture is known to be an argument for professionals to apply for such positions.
++
+In order to be perceived by the public as an 'open source-friendly' employer, the various measures and the open source solutions used should be actively communicated in the form of a technology radar.footnote:[Technology radars should be used as widely as possible. This means, if possible, at the level of the federal authorities or even the Federal Administration.] For employer attractiveness, it is also important to allow federal employees to contribute to existing open source software.
+
+Measure 6: Implement joint procurement of services::
+Maintenance and support of open source software is currently provided by internal employees of the Federal Administration, while external suppliers offer services for certain open source solutions. These services are often procured independently by the respective offices, which can lead to duplication and the associated financial losses.
++
+The joint procurement of services for open source software should increase the reliability of maintenance and support in operation and simplify the use of open source solutions. Based on the technology radar (see Measure 5), services for the most widespread open source systems and technologies should be centrally procured. These services can then be obtained by all offices as needed.footnote:[This concerns support for the software in use. Third party support for software released under EMOTA is possible and may be charged for. This is covered in link:em002-4.pdf[Em002-4 OSS Community Guidelines.]]
+
+Measure 7: Create an overview of open source software used, released and co-developed.::
+Since no licences need to be purchased when using open source software, the time-consuming procurement process is often eliminated.
++
+This makes it difficult to track where the Federal Administration uses which open source software. As a result, the potential of open source software – such as the use of synergies, the formation of communities for the experience exchange, etc. – cannot be fully utilised.
++
+A technology radar within the Federal Administration should provide an overview of where which open source software is being used and who has what know-how.
+
+Measure 8: Promote community building::
+Building and participating in communities for project development is very important for OSS. A significant number of synergies result from this. It may be that the project already exists and the Confederation only participates, or the Confederation may lead the project, or indeed it may be a collaboration. Omitting a community is also an important decision. Direct development on an open repository (without subsequent release) can bring further efficiency gains and promote joint development. Em002-4 provides guidance and motivation for community building by the federal authorities.
+
+Measure 9: Examine the possibility of establishing own publication platform; promote Open Development::
+The establishment and operation of an internal or Swiss publication platform will be examined and implemented after such a decision has been taken.
++
+The aim of an independent platform for the Federal Administration is to preserve digital sovereignty and independence. Collaboration is simplified and at the same time it creates an overview of activities.
++
+Federal cooperation across all authorities in Switzerland (similar to opencode.de) is being examined (e.g. DPSS or eOperations Switzerland).
+
+== Annexes
+
+=== Changes from previous version
+
+* Minor editorial changes and improvements.
+* Factsheet Em002-5 has been replaced by the OSS tools information sheet'.
+* A new addition is the document '`link:em002-7.pdf[Em002-7 Procurement and OSS]`'.
+* New diagram depicting the 4 Cs in the context of OSS (addition of 'collaboration').
+* New FOBL and CCPP references.
+
+=== References for OSS tools
+
+The following references list the documents relating to the document set for link:em002.pdf[Em002 Tools for Open Source Software] in the Federal Administration.
+
+NOTE: The tools and especially the checklists are partly based on the *OSS documents of the Canton of Bern*, which are released under a BSD3 licence (link:https://github.com/kanton-bern/oss[https://github.com/kanton-bern/oss]).
+
+The current Em002 documents are published on the OSS resources page of the Federal Chancellery. https://www.bk.admin.ch/bk/en/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software.html.
+
+The English version is also published as markdown on GitHub. Feedback can also be given there. {url-repo}
+
+include::partials/references.en.adoc[tags=ref-em002-tools]
+
+Visual overview of OSS tools:
+
+include::partials/document-map.en.adoc[]
+
+Figure 3: Documents in connection with Art. 9 EMOTA
+
+=== General references
+
+All references to the Em002 document set can be found here *in Em002 Strategic Guidelines [Em002*].
+
+include::partials/references.en.adoc[tags=ref-em002-general]
+
+=== Abbreviations
+
+This list of abbreviations contains all the abbreviations used in the OSS Em002 document set. A glossary can be found in link:em002-6.pdf[Em002-6 FAQ about Publishing OSS].
+
+[horizontal]
+include::partials/abbreviations.en.adoc[tags=abbr-em002]
+endif::[]
+
+ifeval::["{lang}" == "de"]
+NOTE: Dieses Dokument ist ein laufend weiterentwickelter Entwurf und Teil der Hilfsmittel, welche die Bundesverwaltung bei der Veröffentlichung von Open-Source-Code unterstützen. Weitere Informationen finden Sie im link:{url-repo}/tree/main[README].
+
+'''
+
+== Einleitung
+
+=== Ziel und Zweck
+
+Nach Artikel 9 Absatz 1 des Bundesgesetzes vom 17. März 2023footnote:[SR 172.019] über den Einsatz elektronischer Mittel zur Erfüllung von Behördenaufgaben (EMBAG) müssen Behörden den Quellcode von Software offenlegen, die sie zur Erfüllung ihrer Aufgaben entwickeln oder entwickeln lassen, sofern nicht Rechte Dritter oder sicherheitsrelevante Gründe dies ausschliessen oder einschränken. Damit entfällt die Rechtsunsicherheit bei der Veröffentlichung von Software durch Bundesbehörden.
+
+In den vergangenen Jahren hat sich gezeigt, dass die Bedeutung von Open-Source-Software (OSS) in der Bundesverwaltung insgesamt weiter zugenommen hat.
+
+Diese strategischen Leitlinien beschreiben die Grundlagen von Open-Source-Software und den Umgang damit in der Bundesverwaltung. Das Dokument legt sechs Ziele fest und schlägt neun Massnahmen zu deren Erfüllung vor.
+
+Es verweist zudem auf weitere relevante Strategien der öffentlichen Hand zum Thema Open Source.
+
+=== Ausgangslage
+
+2005 veröffentlichte das Informatiksteuerungsorgan des Bundes (ISB) die erste Fassung einer OSS-Strategie für die Bundesverwaltung. Als wichtigster Grundsatz wurde damals die Gleichbehandlung von OSS mit Closed-Source-Software bei der Beschaffung festgelegt.
+
+Seit der Veröffentlichung 2005 hat die Verbreitung von Open-Source-Software stetig zugenommen. Heute nutzt gemäss dem Bericht «Open Source Studie Schweiz 2024» eine deutliche Mehrheit der Unternehmen und Behörden Open-Source-Software in vielen unterschiedlichen Bereichen. In der Softwarebranche gibt es nur sehr wenige Unternehmen, die nicht mit Open-Source-Werkzeugen und -Komponenten arbeiten.
+
+Am 1. Februar 2019 traten diese Strategischen Leitlinien für Open-Source-Software in der Bundesverwaltung sowie der Praxisleitfaden als Version 1.0 in Kraft. Mit dem Erlass des EMBAG und den neuen Pflichten nach Artikel 9 wurde es notwendig, beide Dokumente auf den neuen Stand zu bringen und zusätzliche Hilfsmittel für die Bundesbehörden zu schaffen.
+
+=== Vorgehen
+
+Für die Umsetzung des EMBAG sind die Bundesämter selbst verantwortlich. Angesichts der wachsenden Bedeutung von Open Source wurde jedoch entschieden, den Praxisleitfaden _link:em002-1.pdf[Em002-1]_ gemeinsam mit allen Anspruchsgruppen zu überarbeiten. Zudem wurden zusätzliche Hilfsmittel für die Umsetzung des EMBAG ergänzt.
+
+Der Praxisleitfaden definiert die notwendigen Begriffe, legt die Konstellationen für den Einsatz von Open-Source-Software dar, zeigt, wo und wie Alternativen zu bestehender kommerzieller Software gefunden werden können, wie Open Source beschafft werden soll, welche Geschäftsmodelle es für Open Source gibt und welche Supportmodelle beim Einsatz von Open Source möglich sind. Die weiteren Hilfsmittel beantworten häufig gestellte Fragen und geben Anleitung zur Freigabe von Open-Source-Software nach EMBAG. Sie behandeln sämtliche Fragen rund um OSS-Lizenzen und zeigen, wie eine Community um eine Software aufgebaut werden kann. Mehrere Checklisten zur Orientierung und Dokumentation stehen den Bundesbehörden ebenfalls zur Verfügung.
+
+Auch die Dokumente zur Beschaffung wurden angepasst, und es wurden ein zusätzliches Merkblatt [KBB-MB], eine Wegleitung [BBL-WL] sowie eine Checkliste [BBL-CL] erarbeitet.
+
+Bestehende Unsicherheiten werden mit diesen strategischen Leitlinien, dem begleitenden Praxisleitfaden und den Handlungsempfehlungen sowie den zusätzlichen Hilfsmitteln so weit wie möglich ausgeräumt.
+
+== Bezug zu anderen Strategien
+
+Diese Strategischen Leitlinien für Open-Source-Software in der Bundesverwaltung sind auf vier aktuelle Strategien der öffentlichen Hand und auf das EMBAG abgestimmt.footnote:[SR 172.019: https://www.fedlex.admin.ch/eli/cc/2023/682/de] Diese enthalten einen direkten oder indirekten Bezug zum Thema Open-Source-Software und zur IT-Zusammenarbeit zwischen öffentlichen Institutionen:
+
+Die *Strategie Digitale Bundesverwaltung* [SB001] legt acht Grundsätze und vier Schwerpunkte fest. Mit dem Einsatz von Open-Source-Software leistet die Bundesverwaltung einen Beitrag zum Schwerpunkt 4 «Digitale Souveränität stärken». Eine Open-Source-Lösung kann beliebig oft wiederverwendet und aufgrund ihres offenen Quellcodes an die individuellen Bedürfnisse der Bundesverwaltung angepasst werden.
+
+Der Gedanke der digitalen Nachhaltigkeit und der digitalen Souveränität kommt auch in der **Strategie Digitale Verwaltung Schweiz 2024–2027**footnote:[Strategie Digitale Verwaltung Schweiz 2024–2027: https://www.digital-public-services-switzerland.ch/strategy] zum Tragen. Bund und Kantone schaffen für diese Mehrfachnutzung geeignete Rahmenbedingungen. Basismodule für den Ausbau von E-Government werden «einmal umgesetzt und gemeinsam genutzt». Die Wahl von Open-Source-Software erleichtert die Wiederverwendung von IT-Lösungen.
+
+Gemäss der **Strategie Digitale Schweiz**footnote:[https://digital.swiss/de/] ist es für den Erfolg der Schweiz im digitalen Raum entscheidend, die Vernetzung der föderalen Ebenen zu stärken. Besonderes Augenmerk ist daher auf die Koordination zwischen Bund, Kantonen und Gemeinden sowie auf die Zusammenarbeit zwischen den schweizweit im Bereich der Digitalisierung tätigen Organisationen zu legen. Der Bundesrat mass zudem der digitalen Souveränität der Schweiz als Fokusthema 2023 besondere Bedeutung bei.footnote:[https://digital.swiss/de/strategie/fokusthemen/digitale-souveraenitaet]
+
+In der **Strategie Open Government Data Schweiz (2019–2023)**footnote:[Strategie Open Government Data 2019 – 2023] hält der Bundesrat fest, dass Daten der Bundesverwaltung, die nicht personenbezogen und nicht sicherheitskritisch sind, nach dem Grundsatz Open by Default veröffentlicht werden sollen. Die Bundesverwaltung hat hierfür das Portal opendata.swiss lanciert.footnote:[https://opendata.swiss/de] Bundesämter, Kantone, Städte und weitere öffentliche Organisationen haben dort derzeit über 11 700 Datensätze veröffentlicht.
+
+Der Masterplan Open Government Data 2024–2027footnote:[https://www.bfs.admin.ch/asset/de/28425806] setzt den Grundsatz Open by Default um.
+
+== Governance und Hilfsmittel
+
+Wenn von Open-Source-Software die Rede ist, muss zwischen *Consuming* (Nutzen), *Contributing* (Beitragen zu bestehendem Code) und *Creating* (also neuen Projekten) unterschieden werden.
+
+image::./assets/four-cs/four-cs.de.svg[Die 4 C im Kontext von OSS]
+
+Abbildung 1: Die 4 C im Kontext von OSS
+
+*Collaboration* ist zudem stets im Hintergrund denkbar. Beim Creating muss sie von der Bundesverwaltung angestossen werden, beim Contributing besteht sie bereits, und beim Consuming kann sie ebenfalls hilfreich sein (z. B. Anwendergruppe).
+
+Beim *Consuming* von Open-Source-Software soll diese gleichwertig zu proprietärer Software behandelt und bewertet werden.
+
+Beim *Entwickeln* von Software ist die Open-Source-Freigabe grundsätzlich obligatorisch, vorbehältlich der in Art. 9 EMBAG festgelegten Ausnahmen (Rechte Dritter und sicherheitsrelevante Gründe).
+
+Diese Ausnahmen werden in link:em002-2.pdf[Em002-2 Anleitung zur Veröffentlichung von OSS] behandelt.
+
+Die Bundesbehörden, also die Verwaltungseinheiten der Bundesverwaltung, sind selbst für die korrekte Einhaltung verantwortlich; es gibt keine zentrale Zuständigkeit.
+
+Die *Veröffentlichung* bringt insbesondere dann Mehrwert, wenn eine *Community* von Interessierten entsteht und gemeinsam an der Software arbeitet. Arbeitet die Community an einem Projekt mit und lässt die Bundesverwaltung diese Beiträge zu, so entstehen wirtschaftlicher Nutzen und Synergieeffekte.footnote:[https://test.bitkom.org/sites/main/files/2023-03/BitkomLeitfadenOpenSourceSoftware31.pdf, Kapitel 4]
+
+In der Praxis umfasst die Freigabe oft nicht nur den Quellcode, sondern auch alle weiteren Aspekte (Dokumentation, Governance, Build-Anleitungen usw.).
+
+Grundsätzlich besteht für die Bundesverwaltung keine Pflicht, Communities aufzubauen; der gesetzliche Auftrag verlangt lediglich die Veröffentlichung des Quellcodes. Die Bundesverwaltung sollte vorrangig dort in Communities investieren, wo der Nutzen für den Bund und für Dritte gross und der Aufwand möglichst gering ist.
+
+Derzeit gibt es keine gemeinsame Plattform des Bundes für das *Entwickeln und Veröffentlichen von Quellcode*. Jede Behörde muss daher selbst eine Plattform (Repository) für die Veröffentlichung wählen. Der Praxisleitfaden in link:em002-2.pdf[Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software] und die zugehörigen Checklisten legen fest, wie mit einer Plattform zu arbeiten ist und welche Eigenschaften sie erfüllen muss.
+
+Die *Lizenzwahl* wird im Leitfaden OSS-Lizenzierung link:em002-3.pdf[Em002-3]) behandelt, der eine Auswahl von Standardlizenzen vorstellt und deren Einsatz erläutert. Eigene Lizenztexte soll die Bundesverwaltung nur in begründeten Fällen nach Art. 9 Abs. 4 EMBAG verwenden.
+
+Beim Einsatz und bei der Entwicklung von OSS ist der **Support**footnote:[Mindestens während des Lebenszyklus mittels Verträgen oder einer Community.] stets zu regeln (auch wenn darauf verzichtet wird). Die zuständige Verwaltungseinheit regelt dies im Freigabeprozess oder bei der Definition der Community. Das EMBAG macht hierzu keine Vorgaben, und es werden keine zusätzlichen Finanzmittel oder Personalressourcen für den Support bereitgestellt. Es kann sinnvoll sein, Support und gemeinsame Weiterentwicklung einzubeziehen, wo der Nutzen für Schweizer Behörden oder die Schweizer Wirtschaft als ausreichend gross erachtet wird (Ökosystemkosten) und/oder eine Kostenteilung oder Zusammenarbeit angestrebt wird. Übernimmt dies der Lieferant, so können seine Supportkosten von den Nutzenden getragen werden.
+
+Die *Beschaffung von OSS* erfolgt über den regulären Beschaffungsprozess der Bundesverwaltung. Das BBL stellt die entsprechenden Dokumente und Hilfsmittel bereit.
+
+Zusätzlich steht ein _Merkblatt zur Softwarebeschaffung und Art. 9 EMBAG_ zur Verfügungfootnote:[Verfügbar unter: https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html und https://perimap.admin.ch/goto_perimap_file_46835_download.html] _[KBB-MB]_ (siehe Abbildung 2).
+
+Rechtliche und praktische Überlegungen führen dazu, dass die Pflicht zur OSS-Freigabe unter Umständen an einen Lieferanten übertragen werden kann (bei der Ausschreibung oder im Betrieb). Die Beschaffungshilfsmittel und der Freigabeprozess bestimmen, wie dies mit dem Lieferanten anzugehen ist. Dies wird grösstenteils durch Ergänzungen bestehender Prozesse, Vertragsentwürfe und Hilfsmittel erreicht.
+
+Das organisatorische Vorgehen ist in link:em002-2.pdf[Em002-2 Anleitung zur Veröffentlichung von Open-Source-Software] und den zugehörigen Hilfsmitteln geregelt.
+
+*OSS wird beschaffungsrechtlich gleich behandelt wie proprietäre Software.* Da für OSS nach der Definition der Open Source Initiative (OSI) keine Lizenzgebühren anfallen, kann Software grundsätzlich ohne Ausschreibung heruntergeladen und genutzt werden. Nur die von Unternehmen zu erbringenden Leistungen (z. B. Support, Engineering) unterstehen dann dem Beschaffungsrecht und müssen ausgeschrieben werden.
+
+Wo nötig, werden die relevanten Aspekte aus den Hilfsmitteln in die Projektmanagementprozesse des Bundes (also HERMES) integriert.
+
+Open Development (direkte offene Entwicklung auf einem öffentlich zugänglichen Repository) und die Beteiligung an bestehenden Projekten (Contribution) werden ebenfalls in den Erläuterungen in link:em002-4.pdf[Em002-4 Leitfaden OSS-Community] behandelt.
+
+=== Übersicht über die OSS-Dokumente
+
+Die folgende Grafik gibt einen Überblick über die für OSS relevanten Dokumente in der Bundesverwaltung.
+
+include::partials/document-map.de.adoc[]
+
+Abbildung 2: Dokumente im Zusammenhang mit Art. 9 EMBAG
+
+== Ziele
+
+Die folgenden übergeordneten, langfristigen Ziele zeigen, wie die Bundesverwaltung das Potenzial von Open-Source-Software nutzt und die Risiken und Herausforderungen angeht:
+
+A) Einhaltung der gesetzlichen Vorgaben (also des EMBAG):: Die Freigabe von Open-Source-Software richtet sich nach Artikel 9 EMBAG. Die Einhaltung dieser gesetzlichen Vorgabe ist ein zentraler Aspekt dieser Leitlinien und der zugehörigen Dokumente. Die Bundesbehörden sollen diesen Artikel einhalten und den Nutzen für die Bundesverwaltung und die Schweiz maximieren. Für die Umsetzung sind die Organisationseinheiten selbst verantwortlich.
+
+B) Innovation und Effizienz steigern:: Open-Source-Software bildet heute die Grundlage moderner IT. Aufbauend auf den Millionen frei verfügbarer Komponenten und Lösungen lassen sich eigenständige Anwendungen rasch entwickeln und betreiben. Die damit verbundenen Zeit- und Ressourceneinsparungen sowie die mit Open-Source-Software verbundenen Architekturprinzipien wie Interoperabilität, Agilität und Microservices steigern die Innovationsfähigkeit und Effizienz der Softwareentwicklung. Dies wiederum beschleunigt die Digitalisierung der Bundesverwaltung. Durch die Freigabe von Open-Source-Software kann die Übernahme digitaler Lösungen im Bundesumfeld beschleunigt und können Synergieeffekte genutzt werden.
+
+C) Eine Kultur der Zusammenarbeit fördern:: Open-Source-Software fördert durch das Teilen von Quellcode, offene Kommunikation und Praktiken der gemeinsamen Weiterentwicklung eine Kultur der Zusammenarbeit in der IT. Diese Grundsätze lassen sich anwenden, um die Zusammenarbeit in der IT innerhalb der Bundesverwaltung, mit den Kantonen und mit weiteren öffentlichen Institutionen zu verstärken. Dies stärkt die digitale Souveränität und verringert Abhängigkeiten von Softwareanbietern.
+
+D) Klarheit schaffen und Risiken minimieren:: Informationen zu häufig verwendeten Open-Source-Lizenzen sollen es der Bundesverwaltung ermöglichen, die richtigen Lizenzen auszuwählen. Dies minimiert rechtliche Risiken. Technische und rechtliche Empfehlungen befähigen die Bundesverwaltung, Open-Source-Software zu nutzen und freizugeben.
+
+E) Übersicht schaffen, um Synergien zu nutzen:: Open-Source-Software wird derzeit an zahlreichen Stellen innerhalb der Bundesverwaltung auf unterschiedliche Weise eingesetzt. Es ist viel Wissen und Erfahrung vorhanden, doch die Synergien lassen sich noch nicht nutzen, da eine Übersicht über die eingesetzten Open-Source-Lösungen fehlt. Eine solche Übersicht und die gemeinsame Beschaffung von Leistungen werden es ermöglichen, das Potenzial von Open-Source-Software besser auszuschöpfen, was Ressourcen spart und Synergien schafft.
+
+F) Attraktivität als IT-Arbeitgeber steigern:: Open-Source-Software ist bei vielen hoch qualifizierten IT-Fachpersonen beliebt. Der Einsatz moderner Open-Source-Technologien und die Anwendung von Open-Source-Entwicklungsmethoden motivieren viele Mitarbeitende und steigern die Attraktivität der Bundesverwaltung als Arbeitgeberin. Für den Einsatz von Open-Source-Software benötigt der Bund Fachpersonen mit Wissen und Erfahrung im Bereich Open-Source-Software; bei der Rekrutierung von Fachpersonen sollte daher darauf hingewirkt werden, das interne Open-Source-Know-how auszubauen.
+
+== Massnahmen
+
+Die folgenden Massnahmen sollen zur Erreichung der oben dargelegten Ziele beitragen. Die Massnahmen werden zu gegebener Zeit ergänzt oder ersetzt und an veränderte Gegebenheiten angepasst.
+
+Die folgende Übersicht veranschaulicht, wie die Ziele mit den entsprechenden Massnahmen verknüpft sind. Diese unterstützen die Umsetzung der jeweiligen Ziele, können sich aber auch auf andere Ziele auswirken.
+
+A) Einhaltung der gesetzlichen Vorgaben (EMBAG)::
+1) Den _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung link:em002-1.pdf[Em002-1]_ umsetzen +
+2) Die _Anleitung zur Veröffentlichung von Open-Source-Software link:em002-2.pdf[Em002-2]_ und die daraus abgeleiteten Hilfsmittel umsetzen. +
+3) Die Beschaffungsstellen bauen Open-Source-Know-how auf und unterstützen damit die Bundesverwaltung.
+
+B) Innovation und Effizienz steigern::
+1) Den _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung link:em002-1.pdf[Em002-1]_ umsetzen +
+3) Die Beschaffungsstellen können mit Open Source umgehen und Art. 9 EMBAG optimal unterstützen. +
+8) Den Aufbau von Communities fördern
+
+C) Eine Kultur der Zusammenarbeit fördern::
+1) Den _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung link:em002-1.pdf[Em002-1]_ umsetzen +
+4) Den Wissens- und Erfahrungsaustausch fördern +
+8) Den Aufbau von Communities fördern +
+9) Die Möglichkeit einer eigenen Veröffentlichungsplattform prüfen; Open Development fördern
+
+D) Klarheit schaffen und Risiken minimieren::
+1) Den _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung link:em002-1.pdf[Em002-1]_ umsetzen +
+2) Die _Anleitung zur Veröffentlichung von Open-Source-Software link:em002-2.pdf[Em002-2]_ und die daraus abgeleiteten Hilfsmittel umsetzen.
+
+E) Übersicht schaffen, um Synergien zu nutzen::
+6) Die gemeinsame Beschaffung von Leistungen umsetzen +
+7) Eine Übersicht über eingesetzte, freigegebene und mitentwickelte Open-Source-Software schaffen +
+8) Den Aufbau von Communities fördern
+
+F) Attraktivität als IT-Arbeitgeber steigern::
+5) Eine Open-Source-Kultur fördern und kommunizieren +
+8) Den Aufbau von Communities fördern
+
+=== Beschreibung der Massnahmen
+
+Massnahme 1: Den _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung link:em002-1.pdf[Em002-1]_ umsetzen.::
+Obwohl der Begriff Open-Source-Software bereits über 20 Jahre alt ist, führen die stetige Verbreitung von Open-Source-Software und die laufende Entwicklung von Anwendungsszenarien fortwährend zu neuen Praktiken und Fragen. Neu- und Weiterentwicklungen von Open-Source-Lösungen bilden zudem immer häufiger vollwertige Alternativen zu proprietärer Software. Mit dem EMBAG kommt die Pflicht zur Veröffentlichung von Eigenentwicklungen hinzu.
++
+Der _Praxisleitfaden für Open-Source-Software in der Bundesverwaltung_ gibt einen Überblick und eine Einführung in das Thema, zeigt die Vor- und Nachteile von Open-Source-Software auf und erläutert alle weiteren Hilfsmittel. Er enthält zudem Best Practices, bewährte Alternativen und praktische Empfehlungen dazu, wie die Bundesverwaltung mit Open-Source-Software umgehen soll.
++
+Dieser Praxisleitfaden und die weiteren Hilfsmittel sollen von den Bundesbehörden im Umgang mit Open-Source-Software und Freigaben genutzt und umgesetzt werden.
++
+Als kurze Einführung in das Thema stehen ein _Merkblatt zur Anwendung von Art. 9 EMBAG_ sowie link:em002-6.pdf[Em002-6 FAQ zur Veröffentlichung von OSS (OSS-FAQ)] zur Verfügung.
+
+Massnahme 2: Die Anleitung zur Veröffentlichung von Open-Source-Software link:em002-2.pdf[Em002-2] und die daraus abgeleiteten Hilfsmittel umsetzen.::
+Der effiziente Einsatz von OSS in der Softwareentwicklung erfordert oft Beiträge in Form von Fehlerbehebungen und funktionalen Erweiterungen. Mit dem EMBAG besteht zudem eine Pflicht zur Freigabe selbst erstellter Software. Die nötige Orientierung bieten verschiedene Hilfsmittel.
++
+Die Checklisten sind Teil der Anleitung zur Veröffentlichung von OSS. Sie sollen ergänzend zu den entsprechenden Richtlinien der Verwaltungseinheiten vor und während der Entwicklung eingesetzt werden.
++
+Behandelt wird auch der Umgang mit Legacy-Code nach Art. 9 EMBAG. Ziel ist es, pragmatische Lösungen zu finden und umzusetzen.
++
+Lizenzen sind im OSS-Umfeld besonders wichtig. Bei der Freigabe, Beschaffung und Nutzung von Software müssen die Lizenzen auf das rechtlich Machbare und die gewünschte Wirkung abgestimmt werden. Das nötige Wissen und die entsprechenden Entscheide sollen dokumentiert werden. In diesem Zusammenhang werden auch die erforderlichen Zusatzdokumente wie das Contributor Licence Agreement (CLA) bereitgestellt.
++
+Um die Anwendung von Art. 9 EMBAG zu erleichtern, werden Ergänzungen an der Projektmanagementmethode des Bundes (HERMES) vorgenommen. Die Verwaltungseinheiten sollen die notwendigen Hilfsmittel im regulären Prozess vorfinden.
+
+Massnahme 3: Die Beschaffungsstellen bauen Open-Source-Know-how auf und unterstützen damit die Bundesverwaltung.::
+Für die Beschaffungsaspekte wurde das neue link:em002-7.pdf[Em002-7 Strategische Aspekte der Beschaffung und OSS] erstellt.
++
+Zur Sicherstellung eines breiten Wettbewerbs verlangt die Beschaffung, dass Open- und Closed-Source-Software gleich behandelt werden. Die erhöhten Anforderungen im Zusammenhang mit Art. 9 EMBAG bezüglich der für die Softwareveröffentlichung zu beschaffenden Mittel sind zu berücksichtigen.
++
+Das Kompetenzzentrum Beschaffungswesen Bund (KBB) hat unter folgendem Link ein Merkblatt zur Softwarebeschaffung und Art. 9 EMBAG [KBB-MB] veröffentlicht: link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html].
++
+Weitere Unterstützung steht im BBL-Intranet (nur aus dem Bundesnetz zugänglich) mit der link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[Wegleitung Open Source in der Beschaffung] [BBL-WL] und der link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[Checkliste Integral-Ausnahme Art. 9 EMBAG] [BBL-CL] zur Verfügung.
+
+Massnahme 4: Den Wissens- und Erfahrungsaustausch fördern::
+Das Erstellen und Nutzen von Open-Source-Software erfordert vertieftes, spezialisiertes Know-how. Gleichzeitig entwickeln sich Open-Source-Lösungen laufend weiter und es werden neue Open-Source-Projekte lanciert. Es ist daher eine Herausforderung, einen umfassenden Überblick über aktuelle Trends und Technologien zu behalten.
++
+Um den professionellen Einsatz von Open Source zu fördern und den Wissens- und Erfahrungsaustausch zu erleichtern, sollen Informationen innerhalb einer erweiterten Interessengemeinschaft geteilt und die Mitarbeitenden innerhalb der Bundesverwaltung kompetent unterstützt werden.
+
+Massnahme 5: Eine Open-Source-Kultur fördern und kommunizieren::
+Die fortschreitende Digitalisierung hat den Fachkräftemangel in der IT weiter verschärft. Dies erschwert auch den Leistungserbringern der Bundesverwaltung die Rekrutierung von qualifiziertem IT-Personal. Der Einsatz von Open-Source-Software und die damit verbundene Entwicklerkultur sind bekanntermassen ein Argument für Fachpersonen, sich auf solche Stellen zu bewerben.
++
+Um in der Öffentlichkeit als «Open-Source-freundliche» Arbeitgeberin wahrgenommen zu werden, sollen die verschiedenen Massnahmen und die eingesetzten Open-Source-Lösungen aktiv in Form eines Technologieradars kommuniziert werden.footnote:[Technologieradare sollen möglichst breit eingesetzt werden. Das heisst, wenn möglich auf Stufe der Bundesbehörden oder gar der Bundesverwaltung.] Für die Arbeitgeberattraktivität ist es zudem wichtig, Bundesangestellten zu erlauben, zu bestehender Open-Source-Software beizutragen.
+
+Massnahme 6: Die gemeinsame Beschaffung von Leistungen umsetzen::
+Wartung und Support von Open-Source-Software werden derzeit von internen Mitarbeitenden der Bundesverwaltung erbracht, während externe Lieferanten für bestimmte Open-Source-Lösungen Leistungen anbieten. Diese Leistungen werden häufig von den jeweiligen Ämtern eigenständig beschafft, was zu Doppelspurigkeiten und den damit verbundenen finanziellen Einbussen führen kann.
++
+Die gemeinsame Beschaffung von Leistungen für Open-Source-Software soll die Zuverlässigkeit von Wartung und Support im Betrieb erhöhen und den Einsatz von Open-Source-Lösungen vereinfachen. Auf Basis des Technologieradars (siehe Massnahme 5) sollen Leistungen für die am weitesten verbreiteten Open-Source-Systeme und -Technologien zentral beschafft werden. Diese Leistungen können anschliessend von allen Ämtern nach Bedarf bezogen werden.footnote:[Dies betrifft den Support für die eingesetzte Software. Support durch Dritte für nach EMBAG freigegebene Software ist möglich und kann verrechnet werden. Dies wird in link:em002-4.pdf[Em002-4 Leitfaden OSS-Community] behandelt.]
+
+Massnahme 7: Eine Übersicht über eingesetzte, freigegebene und mitentwickelte Open-Source-Software schaffen.::
+Da beim Einsatz von Open-Source-Software keine Lizenzen gekauft werden müssen, entfällt oft der aufwendige Beschaffungsprozess.
++
+Dies erschwert die Nachverfolgung, wo die Bundesverwaltung welche Open-Source-Software einsetzt. Dadurch kann das Potenzial von Open-Source-Software – etwa die Nutzung von Synergien, die Bildung von Communities für den Erfahrungsaustausch usw. – nicht voll ausgeschöpft werden.
++
+Ein Technologieradar innerhalb der Bundesverwaltung soll einen Überblick darüber geben, wo welche Open-Source-Software eingesetzt wird und wer über welches Know-how verfügt.
+
+Massnahme 8: Den Aufbau von Communities fördern::
+Der Aufbau von und die Beteiligung an Communities für die Projektentwicklung sind für OSS sehr wichtig. Daraus ergeben sich erhebliche Synergien. Es kann sein, dass das Projekt bereits besteht und der Bund sich lediglich beteiligt, oder der Bund kann das Projekt leiten, oder es kann sich auch um eine Zusammenarbeit handeln. Auf eine Community zu verzichten, ist ebenfalls ein wichtiger Entscheid. Die direkte Entwicklung auf einem offenen Repository (ohne nachträgliche Freigabe) kann weitere Effizienzgewinne bringen und die gemeinsame Entwicklung fördern. Em002-4 bietet Orientierung und Motivation für den Aufbau von Communities durch die Bundesbehörden.
+
+Massnahme 9: Die Möglichkeit einer eigenen Veröffentlichungsplattform prüfen; Open Development fördern::
+Der Aufbau und Betrieb einer internen oder schweizerischen Veröffentlichungsplattform wird geprüft und nach einem entsprechenden Entscheid umgesetzt.
++
+Ziel einer eigenständigen Plattform für die Bundesverwaltung ist die Wahrung der digitalen Souveränität und Unabhängigkeit. Die Zusammenarbeit wird vereinfacht und gleichzeitig entsteht eine Übersicht über die Aktivitäten.
++
+Eine föderale Zusammenarbeit über alle Behörden der Schweiz hinweg (ähnlich opencode.de) wird geprüft (z. B. DVS oder eOperations Schweiz).
+
+== Anhänge
+
+=== Änderungen gegenüber der Vorversion
+
+* Kleinere redaktionelle Änderungen und Verbesserungen.
+* Das Faktenblatt Em002-5 wurde durch das Merkblatt OSS-Hilfsmittel ersetzt.
+* Neu hinzugekommen ist das Dokument «`link:em002-7.pdf[Em002-7 Beschaffung und OSS]`».
+* Neue Grafik mit den 4 C im Kontext von OSS (Ergänzung um «Collaboration»).
+* Neue Verweise auf BBL und KBB.
+
+=== Referenzen zu den OSS-Hilfsmitteln
+
+Die folgende Referenzliste führt die Dokumente zum Dokumentensatz link:em002.pdf[Em002 Hilfsmittel für Open-Source-Software] in der Bundesverwaltung auf.
+
+NOTE: Die Hilfsmittel und insbesondere die Checklisten beruhen teilweise auf den *OSS-Dokumenten des Kantons Bern*, die unter einer BSD3-Lizenz veröffentlicht sind (link:https://github.com/kanton-bern/oss[https://github.com/kanton-bern/oss]).
+
+Die aktuellen Em002-Dokumente werden auf der Seite OSS-Hilfsmittel der Bundeskanzlei veröffentlicht. https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software.html.
+
+Die Dokumente werden zudem auf GitHub veröffentlicht. Dort kann auch Rückmeldung gegeben werden. {url-repo}
+
+include::partials/references.de.adoc[tags=ref-em002-tools]
+
+Visuelle Übersicht über die OSS-Hilfsmittel:
+
+include::partials/document-map.de.adoc[]
+
+Abbildung 3: Dokumente im Zusammenhang mit Art. 9 EMBAG
+
+=== Allgemeine Referenzen
+
+Alle Referenzen zum Em002-Dokumentensatz finden sich hier *in Em002 Strategische Leitlinien [Em002*].
+
+include::partials/references.de.adoc[tags=ref-em002-general]
+
+=== Abkürzungen
+
+Dieses Abkürzungsverzeichnis enthält alle im OSS-Dokumentensatz Em002 verwendeten Abkürzungen. Ein Glossar findet sich in link:em002-6.pdf[Em002-6 FAQ zur Veröffentlichung von OSS].
+
+[horizontal]
+include::partials/abbreviations.de.adoc[tags=abbr-em002]
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+NOTE: Le présent document est un projet en cours d'élaboration et fait partie des outils destinés à soutenir l'administration fédérale dans la publication de code open source. Pour de plus amples informations, voir le link:{url-repo}/tree/main[README] principal.
+
+'''
+
+== Introduction
+
+=== But et objet
+
+Conformément à l'article 9, alinéa 1, de la loi fédérale du 17 mars 2023footnote:[RS 172.019] sur l'utilisation des moyens électroniques pour l'exécution des tâches des autorités (LMETA), les autorités doivent publier le code source des logiciels qu'elles développent ou font développer pour accomplir leurs tâches, pour autant que des droits de tiers ou des motifs relevant de la sécurité ne l'excluent ou ne le restreignent. L'insécurité juridique entourant la publication de logiciels par les autorités fédérales est ainsi levée.
+
+Ces dernières années ont montré que l'importance des logiciels open source (OSS) au sein de l'administration fédérale n'a globalement cessé de croître.
+
+Les présentes lignes directrices stratégiques décrivent les fondements des logiciels open source et la manière dont ceux-ci sont traités au sein de l'administration fédérale. Le document fixe six objectifs et propose neuf mesures pour les atteindre.
+
+Il renvoie en outre à d'autres stratégies pertinentes du secteur public en matière d'open source.
+
+=== Contexte
+
+En 2005, l'Unité de pilotage informatique de la Confédération (USIC) a publié la première version d'une stratégie OSS pour l'administration fédérale. Le principe le plus important défini à l'époque était l'égalité de traitement entre les OSS et les logiciels propriétaires lors des acquisitions.
+
+Depuis cette publication de 2005, la diffusion des logiciels open source n'a cessé de croître. Aujourd'hui, selon le rapport « Étude Open Source Suisse 2024 », une nette majorité des entreprises et des autorités utilisent des logiciels open source dans de très nombreux domaines. Dans le secteur du logiciel, très peu d'entreprises ne travaillent pas avec des outils et des composants open source.
+
+Le 1er février 2019, les présentes Lignes directrices stratégiques pour les logiciels open source dans l'administration fédérale ainsi que le guide pratique sont entrés en vigueur en version 1.0. Avec l'adoption de la LMETA et les nouvelles obligations découlant de son article 9, il est devenu nécessaire d'actualiser ces deux documents et de créer des outils supplémentaires pour les autorités fédérales.
+
+=== Procédure
+
+La mise en œuvre de la LMETA incombe aux offices fédéraux eux-mêmes. Compte tenu de l'importance croissante de l'open source, il a toutefois été décidé de réviser le guide pratique _link:em002-1.pdf[Em002-1]_ en concertation avec toutes les parties prenantes. Des outils supplémentaires pour la mise en œuvre de la LMETA ont en outre été ajoutés.
+
+Le guide pratique définit les notions nécessaires, expose les constellations d'utilisation des logiciels open source, indique où et comment trouver des alternatives aux logiciels commerciaux existants, comment acquérir de l'open source, quels modèles d'affaires existent pour l'open source et quels modèles de support sont possibles lors de son utilisation. Les autres outils répondent aux questions fréquentes et donnent des indications sur la publication de logiciels open source conformément à la LMETA. Ils traitent de toutes les questions relatives aux licences OSS et montrent comment constituer une communauté autour d'un logiciel. Plusieurs listes de contrôle destinées à l'orientation et à la documentation sont également mises à la disposition des autorités fédérales.
+
+Les documents relatifs aux acquisitions ont eux aussi été adaptés, et un aide-mémoire supplémentaire [KBB-MB], des directives [BBL-WL] et une liste de contrôle [BBL-CL] ont été élaborés.
+
+Les incertitudes existantes sont levées dans toute la mesure du possible par les présentes lignes directrices stratégiques, le guide pratique qui les accompagne et les recommandations d'action, ainsi que par les outils supplémentaires.
+
+== Lien avec d'autres stratégies
+
+Les présentes Lignes directrices stratégiques pour les logiciels open source dans l'administration fédérale sont alignées sur quatre stratégies actuelles du secteur public et sur la LMETA.footnote:[RS 172.019 : https://www.fedlex.admin.ch/eli/cc/2023/682/fr] Celles-ci comportent un lien direct ou indirect avec le thème des logiciels open source et de la collaboration informatique entre institutions publiques :
+
+La *Stratégie Administration fédérale numérique* [SB001] fixe huit principes et quatre priorités. En utilisant des logiciels open source, l'administration fédérale contribue à la priorité 4, « Renforcer la souveraineté numérique ». Une solution open source peut être réutilisée un nombre illimité de fois et adaptée aux besoins propres de l'administration fédérale grâce à son code source ouvert.
+
+L'idée de durabilité numérique et de souveraineté numérique se retrouve également dans la **Stratégie Administration numérique suisse 2024–2027**footnote:[Stratégie Administration numérique suisse 2024–2027 : https://www.digital-public-services-switzerland.ch/strategy]. La Confédération et les cantons créent des conditions-cadres appropriées pour cette utilisation multiple. Les modules de base destinés au développement de la cyberadministration sont « réalisés une fois et utilisés en commun ». Le choix de logiciels open source facilite la réutilisation des solutions informatiques.
+
+Selon la **Stratégie Suisse numérique**footnote:[https://digital.swiss/fr/], il est déterminant pour le succès de la Suisse dans l'espace numérique de renforcer la mise en réseau des niveaux fédéraux. Une attention particulière doit donc être portée à la coordination entre la Confédération, les cantons et les communes ainsi qu'à la coopération entre les organisations actives dans le domaine de la numérisation dans toute la Suisse. Le Conseil fédéral a en outre accordé une importance particulière à la souveraineté numérique de la Suisse en tant que thème prioritaire pour 2023.footnote:[https://digital.swiss/fr/strategie/themes-prioritaires/souverainete-numerique]
+
+Dans la **Stratégie Open Government Data Suisse (2019–2023)**footnote:[Stratégie Open Government Data 2019 – 2023], le Conseil fédéral retient que les données de l'administration fédérale qui ne sont ni personnelles ni critiques pour la sécurité doivent être publiées selon le principe Open by Default. L'administration fédérale a lancé à cet effet le portail opendata.swiss.footnote:[https://opendata.swiss/fr] Des offices fédéraux, des cantons, des villes et d'autres organisations publiques y ont actuellement publié plus de 11 700 jeux de données.
+
+Le plan directeur Open Government Data 2024–2027footnote:[https://www.bfs.admin.ch/asset/fr/28425806] met en œuvre le principe Open by Default.
+
+== Gouvernance et outils
+
+Lorsqu'il est question de logiciels open source, il convient de distinguer entre *consuming* (utiliser), *contributing* (contribuer à du code existant) et *creating* (c'est-à-dire de nouveaux projets).
+
+image::./assets/four-cs/four-cs.fr.svg[Les 4 C dans le contexte de l'OSS]
+
+Figure 1 : Les 4 C dans le contexte de l'OSS
+
+La *collaboration* est en outre toujours envisageable en arrière-plan. Dans le cas du creating, elle doit être initiée par l'administration fédérale ; dans celui du contributing, elle existe déjà ; et dans celui du consuming, elle peut également être utile (p. ex. groupe d'utilisateurs).
+
+Lors du *consuming* de logiciels open source, ceux-ci doivent être traités et évalués à égalité avec les logiciels propriétaires.
+
+Lors du *développement* de logiciels, la publication en open source est en principe obligatoire, sous réserve des exceptions prévues à l'art. 9 LMETA (droits de tiers et motifs relevant de la sécurité).
+
+Ces exceptions sont traitées dans link:em002-2.pdf[Em002-2 Instructions pour la publication d'OSS].
+
+Les autorités fédérales, c'est-à-dire les unités administratives de l'administration fédérale, sont elles-mêmes responsables du respect correct de ces règles ; il n'existe aucune compétence centralisée.
+
+La *publication* apporte une plus-value en particulier lorsqu'une *communauté* de personnes intéressées se forme et travaille en commun sur le logiciel. Si la communauté collabore à un projet et que l'administration fédérale admet ces contributions, il en résulte des bénéfices économiques et des effets de synergie.footnote:[https://test.bitkom.org/sites/main/files/2023-03/BitkomLeitfadenOpenSourceSoftware31.pdf, chapitre 4 (en allemand)]
+
+Dans la pratique, la publication ne porte souvent pas seulement sur le code source, mais aussi sur tous les autres aspects (documentation, gouvernance, instructions de compilation, etc.).
+
+En principe, l'administration fédérale n'a aucune obligation de constituer des communautés ; le mandat légal exige uniquement la publication du code source. L'administration fédérale devrait investir en priorité dans les communautés là où le bénéfice pour la Confédération et pour des tiers est important et où la charge est la plus faible possible.
+
+Il n'existe actuellement aucune plateforme fédérale commune pour le *développement et la publication de code source*. Chaque autorité doit donc choisir elle-même une plateforme (dépôt) pour la publication. Le guide pratique figurant dans link:em002-2.pdf[Em002-2 Instructions pour la publication de logiciels open source] et les listes de contrôle correspondantes définissent comment travailler avec une plateforme et quelles caractéristiques celle-ci doit présenter.
+
+Le *choix de la licence* est traité dans le link:em002-3.pdf[Em002-3 Guide de licences OSS]), qui présente une sélection de licences standard et explique leurs usages. L'administration fédérale ne devrait utiliser ses propres textes de licence que dans des cas justifiés, conformément à l'art. 9, al. 4, LMETA.
+
+Lors de l'utilisation et du développement d'OSS, le **support**footnote:[Au moins pendant le cycle de vie, au moyen de contrats ou d'une communauté.] doit toujours être réglé (même s'il y est renoncé). L'unité administrative compétente règle ce point dans le processus de publication ou lors de la définition de la communauté. La LMETA ne prévoit rien à ce sujet, et aucun financement ni personnel supplémentaire ne sera mis à disposition pour le support. Il peut être judicieux d'inclure le support et le développement commun là où le bénéfice pour les autorités suisses ou l'économie suisse est jugé suffisamment important (coûts d'écosystème) et/ou lorsqu'un partage des coûts ou une coopération est recherché. Si le fournisseur s'en charge, ses coûts de support peuvent être supportés par les utilisateurs.
+
+L'*acquisition d'OSS* s'effectue via le processus d'acquisition ordinaire de l'administration fédérale. L'OFCL met à disposition les documents et outils correspondants.
+
+Un _aide-mémoire sur l'acquisition de logiciels et l'art. 9 LMETA_ est en outre disponiblefootnote:[Disponible ici (en allemand) : https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html et https://perimap.admin.ch/goto_perimap_file_46835_download.html] _[KBB-MB]_ (voir figure 2).
+
+Des considérations juridiques et pratiques font que l'obligation de publier en OSS peut, dans certaines circonstances, être transférée à un fournisseur (lors de l'appel d'offres ou en exploitation). Les outils d'acquisition et le processus de publication déterminent comment aborder ce point avec le fournisseur. Cela est réalisé pour l'essentiel en complétant les processus, les projets de contrat et les outils existants.
+
+La procédure organisationnelle est réglée dans link:em002-2.pdf[Em002-2 Instructions pour la publication de logiciels open source] et dans les outils correspondants.
+
+*Du point de vue du droit des marchés publics, les OSS sont traités à égalité avec les logiciels propriétaires.* Comme aucune redevance de licence n'est due pour les OSS selon la définition de l'Open Source Initiative (OSI), un logiciel peut en principe être téléchargé et utilisé sans appel d'offres. Seules les prestations à fournir par des entreprises (p. ex. support, ingénierie) sont alors soumises au droit des marchés publics et doivent faire l'objet d'un appel d'offres.
+
+Là où c'est nécessaire, les aspects pertinents des outils sont intégrés dans les processus de gestion de projet de la Confédération (c'est-à-dire HERMES).
+
+L'open development (développement ouvert directement sur un dépôt librement accessible) et la participation à des projets existants (contribution) sont également traités dans les explications figurant dans link:em002-4.pdf[Em002-4 Guide des communautés OSS].
+
+=== Vue d'ensemble des documents OSS
+
+Le schéma suivant donne une vue d'ensemble des documents pertinents pour l'OSS au sein de l'administration fédérale.
+
+include::partials/document-map.fr.adoc[]
+
+Figure 2 : Documents en lien avec l'art. 9 LMETA
+
+== Objectifs
+
+Les objectifs transversaux et à long terme suivants montrent comment l'administration fédérale exploite le potentiel des logiciels open source et répond aux risques et aux défis :
+
+A) Respect des exigences légales (c'est-à-dire de la LMETA):: La publication de logiciels open source est régie par l'article 9 LMETA. Le respect de cette exigence légale est un aspect central des présentes lignes directrices et des documents qui s'y rapportent. Les autorités fédérales doivent respecter cet article et maximiser le bénéfice pour l'administration fédérale et pour la Suisse. La mise en œuvre incombe aux unités d'organisation elles-mêmes.
+
+B) Accroître l'innovation et l'efficience:: Les logiciels open source constituent aujourd'hui le socle de l'informatique moderne. En s'appuyant sur les millions de composants et de solutions librement disponibles, des applications autonomes peuvent être développées et exploitées rapidement. Les économies de temps et de ressources qui en découlent, ainsi que les principes d'architecture associés aux logiciels open source tels que l'interopérabilité, l'agilité et les microservices, accroissent la capacité d'innovation et l'efficience du développement logiciel. Cela accélère à son tour la numérisation de l'administration fédérale. La publication de logiciels open source permet d'accélérer l'adoption de solutions numériques dans l'environnement fédéral et d'exploiter des effets de synergie.
+
+C) Promouvoir une culture de la collaboration:: Les logiciels open source favorisent une culture de la collaboration en informatique grâce au partage du code source, à une communication ouverte et à des pratiques de développement commun. Ces principes peuvent être appliqués pour renforcer la collaboration informatique au sein de l'administration fédérale, avec les cantons et avec d'autres institutions publiques. Cela renforce la souveraineté numérique et réduit les dépendances vis-à-vis des fournisseurs de logiciels.
+
+D) Créer de la clarté et minimiser les risques:: Les informations sur les licences open source fréquemment utilisées doivent permettre à l'administration fédérale de choisir les bonnes licences. Cela minimise les risques juridiques. Des recommandations techniques et juridiques permettent à l'administration fédérale d'utiliser et de publier des logiciels open source.
+
+E) Créer une vue d'ensemble pour exploiter les synergies:: Les logiciels open source sont actuellement utilisés de diverses manières à de nombreux endroits au sein de l'administration fédérale. Beaucoup de savoir et d'expérience sont disponibles, mais les synergies ne peuvent pas encore être exploitées faute d'une vue d'ensemble des solutions open source utilisées. Une telle vue d'ensemble et l'acquisition commune de prestations permettront de mieux exploiter le potentiel des logiciels open source, ce qui économise des ressources et crée des synergies.
+
+F) Accroître l'attractivité en tant qu'employeur informatique:: Les logiciels open source sont appréciés par de nombreux spécialistes informatiques hautement qualifiés. L'utilisation de technologies open source modernes et l'application de méthodes de développement open source motivent de nombreux collaborateurs et accroissent l'attractivité de l'administration fédérale en tant qu'employeur. Pour utiliser des logiciels open source, la Confédération a besoin de spécialistes disposant de connaissances et d'expérience dans ce domaine ; il convient donc, lors du recrutement de spécialistes, de veiller à développer le savoir-faire interne en matière d'open source.
+
+== Mesures
+
+Les mesures suivantes doivent contribuer à atteindre les objectifs exposés ci-dessus. Elles seront complétées ou remplacées en temps voulu et adaptées à l'évolution des circonstances.
+
+La liste suivante illustre les liens entre les objectifs et les mesures correspondantes. Celles-ci soutiennent la mise en œuvre des objectifs concernés, mais peuvent aussi avoir un effet sur d'autres objectifs.
+
+A) Respect des exigences légales (LMETA)::
+1) Mettre en œuvre le _Guide pratique pour les logiciels open source dans l'administration fédérale link:em002-1.pdf[Em002-1]_ +
+2) Mettre en œuvre les _Instructions pour la publication de logiciels open source link:em002-2.pdf[Em002-2]_ et les outils qui en découlent. +
+3) Les services d'achat développent un savoir-faire en matière d'open source et soutiennent ainsi l'administration fédérale.
+
+B) Accroître l'innovation et l'efficience::
+1) Mettre en œuvre le _Guide pratique pour les logiciels open source dans l'administration fédérale link:em002-1.pdf[Em002-1]_ +
+3) Les services d'achat savent gérer l'open source et soutenir de manière optimale l'art. 9 LMETA. +
+8) Promouvoir la constitution de communautés
+
+C) Promouvoir une culture de la collaboration::
+1) Mettre en œuvre le _Guide pratique pour les logiciels open source dans l'administration fédérale link:em002-1.pdf[Em002-1]_ +
+4) Promouvoir l'échange de savoir et d'expérience +
+8) Promouvoir la constitution de communautés +
+9) Examiner la possibilité d'une plateforme de publication propre ; promouvoir l'open development
+
+D) Créer de la clarté et minimiser les risques::
+1) Mettre en œuvre le _Guide pratique pour les logiciels open source dans l'administration fédérale link:em002-1.pdf[Em002-1]_ +
+2) Mettre en œuvre les _Instructions pour la publication de logiciels open source link:em002-2.pdf[Em002-2]_ et les outils qui en découlent.
+
+E) Créer une vue d'ensemble pour exploiter les synergies::
+6) Mettre en œuvre l'acquisition commune de prestations +
+7) Créer une vue d'ensemble des logiciels open source utilisés, publiés et codéveloppés +
+8) Promouvoir la constitution de communautés
+
+F) Accroître l'attractivité en tant qu'employeur informatique::
+5) Promouvoir et communiquer une culture open source +
+8) Promouvoir la constitution de communautés
+
+=== Description des mesures
+
+Mesure 1 : Mettre en œuvre le _Guide pratique pour les logiciels open source dans l'administration fédérale link:em002-1.pdf[Em002-1]_.::
+Bien que la notion de logiciel open source ait déjà plus de 20 ans, la diffusion constante de ces logiciels et l'évolution continue des scénarios d'application donnent sans cesse lieu à de nouvelles pratiques et questions. Les nouveaux développements et les développements ultérieurs de solutions open source constituent en outre de plus en plus souvent des alternatives à part entière aux logiciels propriétaires. Avec la LMETA s'ajoute l'obligation de publier les développements réalisés en interne.
++
+Le _Guide pratique pour les logiciels open source dans l'administration fédérale_ donne une vue d'ensemble et une introduction au sujet, expose les avantages et les inconvénients des logiciels open source et explique tous les autres outils. Il contient également des bonnes pratiques, des alternatives éprouvées et des recommandations pratiques sur la manière dont l'administration fédérale doit gérer les logiciels open source.
++
+Ce guide pratique et les autres outils doivent être utilisés et mis en œuvre par les autorités fédérales dans leur gestion des logiciels open source et des publications.
++
+En guise de brève introduction au sujet, un _aide-mémoire sur l'application de l'art. 9 LMETA_ et la link:em002-6.pdf[Em002-6 FAQ sur la publication d'OSS (FAQ-OSS)] sont disponibles.
+
+Mesure 2 : Mettre en œuvre les Instructions pour la publication de logiciels open source link:em002-2.pdf[Em002-2] et les outils qui en découlent.::
+L'utilisation efficiente des OSS dans le développement logiciel requiert souvent des contributions sous forme de corrections d'erreurs et d'extensions fonctionnelles. Avec la LMETA s'ajoute une obligation de publier les logiciels créés en propre. Les orientations nécessaires sont fournies par différents outils.
++
+Les listes de contrôle font partie des instructions pour la publication d'OSS. Elles doivent être utilisées en complément des directives correspondantes des unités administratives, avant et pendant le développement.
++
+Le traitement du code existant au sens de l'art. 9 LMETA est également abordé. L'objectif est de trouver et de mettre en œuvre des solutions pragmatiques.
++
+Les licences revêtent une importance particulière dans l'environnement OSS. Lors de la publication, de l'acquisition et de l'utilisation de logiciels, les licences doivent être alignées sur ce qui est juridiquement réalisable et sur l'effet recherché. Les connaissances nécessaires et les décisions correspondantes doivent être documentées. Dans ce contexte, les documents complémentaires nécessaires, tels que le Contributor Licence Agreement (CLA), sont également mis à disposition.
++
+Afin de faciliter l'application de l'art. 9 LMETA, des compléments seront apportés à la méthode de gestion de projet de la Confédération (HERMES). Les unités administratives doivent trouver les outils nécessaires dans le processus ordinaire.
+
+Mesure 3 : Les services d'achat développent un savoir-faire en matière d'open source et soutiennent ainsi l'administration fédérale.::
+Le nouveau document link:em002-7.pdf[Em002-7 Aspects stratégiques des achats et OSS] a été créé pour traiter les aspects liés aux acquisitions.
++
+Afin de garantir une large concurrence, les acquisitions exigent que les logiciels open source et propriétaires soient traités à égalité. Les exigences accrues liées à l'art. 9 LMETA concernant les moyens à acquérir pour la publication de logiciels doivent être prises en compte.
++
+Le Centre de compétence des marchés publics de la Confédération (CCMP) a publié un aide-mémoire sur l'acquisition de logiciels et l'art. 9 LMETA [KBB-MB] sous le lien suivant : link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html].
++
+Une aide supplémentaire est disponible sur l'intranet de l'OFCL (accessible uniquement depuis le réseau fédéral) avec les link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[directives Open Source dans les acquisitions] [BBL-WL] et la link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[liste de contrôle pour l'exception forfaitaire selon l'art. 9 LMETA] [BBL-CL].
+
+Mesure 4 : Promouvoir l'échange de savoir et d'expérience::
+La création et l'utilisation de logiciels open source requièrent un savoir-faire approfondi et spécialisé. Parallèlement, les solutions open source évoluent constamment et de nouveaux projets open source sont lancés. Il est donc difficile de conserver une vue d'ensemble complète des tendances et technologies actuelles.
++
+Afin de promouvoir l'utilisation professionnelle de l'open source et de faciliter l'échange de savoir et d'expérience, les informations doivent être partagées au sein d'une communauté d'intérêts élargie et les collaborateurs de l'administration fédérale doivent être soutenus avec compétence.
+
+Mesure 5 : Promouvoir et communiquer une culture open source::
+La numérisation croissante a encore aggravé la pénurie de personnel qualifié en informatique. Cela complique également le recrutement de personnel informatique qualifié pour les prestataires de l'administration fédérale. L'utilisation de logiciels open source et la culture de développement qui y est associée constituent, comme on le sait, un argument incitant les spécialistes à postuler à de tels postes.
++
+Pour être perçue par le public comme un employeur « favorable à l'open source », l'administration devrait communiquer activement sur les différentes mesures et sur les solutions open source utilisées, sous la forme d'un radar technologique.footnote:[Les radars technologiques doivent être utilisés aussi largement que possible, c'est-à-dire si possible au niveau des autorités fédérales, voire de l'administration fédérale.] Pour l'attractivité de l'employeur, il est en outre important de permettre aux employés de la Confédération de contribuer à des logiciels open source existants.
+
+Mesure 6 : Mettre en œuvre l'acquisition commune de prestations::
+La maintenance et le support des logiciels open source sont actuellement assurés par des collaborateurs internes de l'administration fédérale, tandis que des fournisseurs externes proposent des prestations pour certaines solutions open source. Ces prestations sont souvent acquises de manière autonome par les offices concernés, ce qui peut entraîner des doublons et les pertes financières qui en découlent.
++
+L'acquisition commune de prestations pour les logiciels open source doit accroître la fiabilité de la maintenance et du support en exploitation et simplifier l'utilisation de solutions open source. Sur la base du radar technologique (voir mesure 5), des prestations pour les systèmes et technologies open source les plus répandus doivent être acquises de manière centralisée. Ces prestations peuvent ensuite être obtenues par tous les offices selon leurs besoins.footnote:[Cela concerne le support du logiciel utilisé. Un support par des tiers pour des logiciels publiés selon la LMETA est possible et peut être facturé. Ce point est traité dans link:em002-4.pdf[Em002-4 Guide des communautés OSS].]
+
+Mesure 7 : Créer une vue d'ensemble des logiciels open source utilisés, publiés et codéveloppés.::
+Comme il n'est pas nécessaire d'acheter des licences lors de l'utilisation de logiciels open source, le processus d'acquisition, souvent lourd, disparaît fréquemment.
++
+Il devient dès lors difficile de savoir où l'administration fédérale utilise quels logiciels open source. De ce fait, le potentiel des logiciels open source — comme l'exploitation des synergies, la formation de communautés pour l'échange d'expériences, etc. — ne peut pas être pleinement mis à profit.
++
+Un radar technologique au sein de l'administration fédérale doit donner une vue d'ensemble indiquant où quels logiciels open source sont utilisés et qui dispose de quel savoir-faire.
+
+Mesure 8 : Promouvoir la constitution de communautés::
+La constitution de communautés pour le développement de projets et la participation à celles-ci sont très importantes pour l'OSS. Il en résulte des synergies considérables. Il se peut que le projet existe déjà et que la Confédération y participe seulement, ou que la Confédération dirige le projet, ou encore qu'il s'agisse d'une collaboration. Renoncer à une communauté est également une décision importante. Le développement direct sur un dépôt ouvert (sans publication ultérieure) peut apporter des gains d'efficience supplémentaires et favoriser le développement commun. Em002-4 fournit des orientations et des arguments en faveur de la constitution de communautés par les autorités fédérales.
+
+Mesure 9 : Examiner la possibilité d'une plateforme de publication propre ; promouvoir l'open development::
+La mise en place et l'exploitation d'une plateforme de publication interne ou suisse seront examinées et réalisées une fois la décision correspondante prise.
++
+L'objectif d'une plateforme indépendante pour l'administration fédérale est de préserver la souveraineté numérique et l'indépendance. La collaboration s'en trouve simplifiée et, dans le même temps, une vue d'ensemble des activités est créée.
++
+Une coopération fédérale entre toutes les autorités de Suisse (à l'instar d'opencode.de) est à l'examen (p. ex. ANS ou eOperations Suisse).
+
+== Annexes
+
+=== Modifications par rapport à la version précédente
+
+* Modifications et améliorations rédactionnelles mineures.
+* La fiche d'information Em002-5 a été remplacée par l'aide-mémoire Outils OSS.
+* Le document «`link:em002-7.pdf[Em002-7 Acquisitions et OSS]`» a été ajouté.
+* Nouveau schéma représentant les 4 C dans le contexte de l'OSS (ajout de « collaboration »).
+* Nouvelles références à l'OFCL et au CCMP.
+
+=== Références relatives aux outils OSS
+
+La liste de référence suivante recense les documents relatifs au jeu de documents link:em002.pdf[Em002 Outils pour les logiciels open source] dans l'administration fédérale.
+
+NOTE: Les outils et en particulier les listes de contrôle s'appuient en partie sur les *documents OSS du canton de Berne*, publiés sous licence BSD3 (link:https://github.com/kanton-bern/oss[https://github.com/kanton-bern/oss]).
+
+Les documents Em002 actuels sont publiés sur la page Outils OSS de la Chancellerie fédérale. https://www.bk.admin.ch/bk/fr/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software.html.
+
+Les documents sont en outre publiés sur GitHub. Il est également possible d'y donner son avis. {url-repo}
+
+include::partials/references.fr.adoc[tags=ref-em002-tools]
+
+Vue d'ensemble visuelle des outils OSS :
+
+include::partials/document-map.fr.adoc[]
+
+Figure 3 : Documents en lien avec l'art. 9 LMETA
+
+=== Références générales
+
+Toutes les références relatives au jeu de documents Em002 figurent ici *dans Em002 Lignes directrices stratégiques [Em002*].
+
+include::partials/references.fr.adoc[tags=ref-em002-general]
+
+=== Abréviations
+
+La présente liste d'abréviations contient toutes les abréviations utilisées dans le jeu de documents OSS Em002. Un glossaire figure dans link:em002-6.pdf[Em002-6 FAQ sur la publication d'OSS].
+
+[horizontal]
+include::partials/abbreviations.fr.adoc[tags=abbr-em002]
+endif::[]
+
+ifeval::["{lang}" == "it"]
+NOTE: Il presente documento è una bozza in continua evoluzione e fa parte degli strumenti destinati a sostenere l'Amministrazione federale nella pubblicazione di codice open source. Per maggiori informazioni si veda il link:{url-repo}/tree/main[README] principale.
+
+'''
+
+== Introduzione
+
+=== Scopo e obiettivo
+
+Secondo l'articolo 9 capoverso 1 della legge federale del 17 marzo 2023footnote:[RS 172.019] sull'impiego di mezzi elettronici per l'adempimento dei compiti delle autorità (LMeCA), le autorità devono pubblicare il codice sorgente del software che sviluppano o fanno sviluppare per adempiere i loro compiti, sempre che diritti di terzi o motivi rilevanti per la sicurezza non lo escludano o lo limitino. Viene così eliminata l'incertezza giuridica riguardo alla pubblicazione di software da parte delle autorità federali.
+
+Negli ultimi anni è emerso che l'importanza del software open source (OSS) nell'Amministrazione federale ha complessivamente continuato a crescere.
+
+Le presenti linee guida strategiche descrivono i fondamenti del software open source e il modo in cui esso viene trattato nell'Amministrazione federale. Il documento fissa sei obiettivi e propone nove misure per conseguirli.
+
+Rinvia inoltre ad altre strategie rilevanti dell'ente pubblico in materia di open source.
+
+=== Situazione iniziale
+
+Nel 2005 l'Organo direzione informatica della Confederazione (ODIC) ha pubblicato la prima versione di una strategia OSS per l'Amministrazione federale. Il principio più importante definito all'epoca era la parità di trattamento tra OSS e software proprietario negli acquisti.
+
+Dalla pubblicazione del 2005 la diffusione del software open source è costantemente aumentata. Oggi, secondo il rapporto «Studio Open Source Svizzera 2024», una netta maggioranza delle imprese e delle autorità utilizza software open source in moltissimi ambiti. Nel settore del software sono pochissime le imprese che non lavorano con strumenti e componenti open source.
+
+Il 1° febbraio 2019 le presenti Linee guida strategiche per il software open source nell'Amministrazione federale e la guida pratica sono entrate in vigore nella versione 1.0. Con l'adozione della LMeCA e i nuovi obblighi secondo l'articolo 9 si è reso necessario aggiornare entrambi i documenti e creare strumenti supplementari per le autorità federali.
+
+=== Procedura
+
+L'attuazione della LMeCA compete agli uffici federali stessi. Vista la crescente importanza dell'open source si è tuttavia deciso di rielaborare la guida pratica _link:em002-1.pdf[Em002-1]_ insieme a tutte le parti interessate. Sono inoltre stati aggiunti strumenti supplementari per l'attuazione della LMeCA.
+
+La guida pratica definisce i concetti necessari, illustra le costellazioni d'impiego del software open source, indica dove e come trovare alternative al software commerciale esistente, come acquistare open source, quali modelli di business esistono per l'open source e quali modelli di supporto sono possibili nel suo impiego. Gli altri strumenti rispondono alle domande frequenti e forniscono indicazioni sulla pubblicazione di software open source secondo la LMeCA. Trattano tutte le questioni relative alle licenze OSS e mostrano come costituire una community attorno a un software. Diverse liste di controllo per l'orientamento e la documentazione sono parimenti messe a disposizione delle autorità federali.
+
+Anche i documenti relativi agli acquisti sono stati adeguati e sono stati elaborati un promemoria supplementare [KBB-MB], direttive [BBL-WL] e una lista di controllo [BBL-CL].
+
+Le incertezze esistenti vengono eliminate per quanto possibile con le presenti linee guida strategiche, la guida pratica che le accompagna e le raccomandazioni d'azione, nonché con gli strumenti supplementari.
+
+== Rapporto con altre strategie
+
+Le presenti Linee guida strategiche per il software open source nell'Amministrazione federale sono allineate a quattro attuali strategie dell'ente pubblico e alla LMeCA.footnote:[RS 172.019: https://www.fedlex.admin.ch/eli/cc/2023/682/it] Esse contengono un riferimento diretto o indiretto al tema del software open source e della collaborazione informatica tra istituzioni pubbliche:
+
+La *Strategia Amministrazione federale digitale* [SB001] fissa otto principi e quattro priorità. Impiegando software open source l'Amministrazione federale contribuisce alla priorità 4 «Rafforzare la sovranità digitale». Una soluzione open source può essere riutilizzata un numero illimitato di volte e adattata alle esigenze specifiche dell'Amministrazione federale grazie al suo codice sorgente aperto.
+
+L'idea di sostenibilità digitale e di sovranità digitale emerge anche nella **Strategia Amministrazione digitale Svizzera 2024–2027**footnote:[Strategia Amministrazione digitale Svizzera 2024–2027: https://www.digital-public-services-switzerland.ch/strategy]. La Confederazione e i Cantoni creano condizioni quadro adeguate per questo utilizzo multiplo. I moduli di base per lo sviluppo del governo elettronico vengono «realizzati una volta e utilizzati in comune». La scelta di software open source facilita il riutilizzo delle soluzioni informatiche.
+
+Secondo la **Strategia Svizzera digitale**footnote:[https://digital.swiss/it/] è determinante per il successo della Svizzera nello spazio digitale rafforzare l'interconnessione dei livelli federali. Occorre pertanto prestare particolare attenzione al coordinamento tra Confederazione, Cantoni e Comuni nonché alla cooperazione tra le organizzazioni attive nel settore della digitalizzazione in tutta la Svizzera. Il Consiglio federale ha inoltre attribuito particolare importanza alla sovranità digitale della Svizzera quale tema prioritario per il 2023.footnote:[https://digital.swiss/it/strategia/temi-prioritari/sovranita-digitale]
+
+Nella **Strategia Open Government Data Svizzera (2019–2023)**footnote:[Strategia Open Government Data 2019 – 2023] il Consiglio federale stabilisce che i dati dell'Amministrazione federale non personali e non critici per la sicurezza devono essere pubblicati secondo il principio Open by Default. A tal fine l'Amministrazione federale ha lanciato il portale opendata.swiss.footnote:[https://opendata.swiss/it] Uffici federali, Cantoni, città e altre organizzazioni pubbliche vi hanno attualmente pubblicato oltre 11 700 set di dati.
+
+Il piano direttore Open Government Data 2024–2027footnote:[https://www.bfs.admin.ch/asset/it/28425806] attua il principio Open by Default.
+
+== Governance e strumenti
+
+Quando si parla di software open source occorre distinguere tra *consuming* (utilizzare), *contributing* (contribuire a codice esistente) e *creating* (ossia nuovi progetti).
+
+image::./assets/four-cs/four-cs.it.svg[Le 4 C nel contesto dell'OSS]
+
+Figura 1: Le 4 C nel contesto dell'OSS
+
+La *collaboration* è inoltre sempre ipotizzabile sullo sfondo. Nel caso del creating deve essere avviata dall'Amministrazione federale, nel caso del contributing esiste già e nel caso del consuming può parimenti risultare utile (p. es. gruppo di utenti).
+
+Nel *consuming* di software open source questo va trattato e valutato alla pari del software proprietario.
+
+Nello *sviluppo* di software la pubblicazione open source è in linea di principio obbligatoria, fatte salve le eccezioni previste dall'art. 9 LMeCA (diritti di terzi e motivi rilevanti per la sicurezza).
+
+Tali eccezioni sono trattate in link:em002-2.pdf[Em002-2 Istruzioni per la pubblicazione di OSS].
+
+Le autorità federali, ossia le unità amministrative dell'Amministrazione federale, sono esse stesse responsabili del corretto rispetto di queste regole; non esiste una competenza centralizzata.
+
+La *pubblicazione* apporta un valore aggiunto soprattutto quando si forma una *community* di persone interessate che lavora congiuntamente al software. Se la community collabora a un progetto e l'Amministrazione federale ammette tali contributi, ne derivano benefici economici ed effetti di sinergia.footnote:[https://test.bitkom.org/sites/main/files/2023-03/BitkomLeitfadenOpenSourceSoftware31.pdf, capitolo 4 (in tedesco)]
+
+Nella pratica la pubblicazione comprende spesso non soltanto il codice sorgente, ma anche tutti gli altri aspetti (documentazione, governance, istruzioni di build ecc.).
+
+In linea di principio l'Amministrazione federale non ha alcun obbligo di costituire community; il mandato legale richiede unicamente la pubblicazione del codice sorgente. L'Amministrazione federale dovrebbe investire prioritariamente nelle community laddove il beneficio per la Confederazione e per i terzi è elevato e l'onere è il più contenuto possibile.
+
+Attualmente non esiste una piattaforma comune della Confederazione per lo *sviluppo e la pubblicazione di codice sorgente*. Ogni autorità deve quindi scegliere autonomamente una piattaforma (repository) per la pubblicazione. La guida pratica contenuta in link:em002-2.pdf[Em002-2 Istruzioni per la pubblicazione di software open source] e le relative liste di controllo stabiliscono come lavorare con una piattaforma e quali caratteristiche essa deve soddisfare.
+
+La *scelta della licenza* è trattata nella link:em002-3.pdf[Em002-3 Guida alle licenze OSS]), che presenta una selezione di licenze standard e ne illustra gli impieghi. L'Amministrazione federale dovrebbe utilizzare testi di licenza propri soltanto in casi motivati, conformemente all'art. 9 cpv. 4 LMeCA.
+
+Nell'impiego e nello sviluppo di OSS il **supporto**footnote:[Almeno durante il ciclo di vita, mediante contratti o una community.] va sempre disciplinato (anche se vi si rinuncia). L'unità amministrativa competente lo disciplina nel processo di pubblicazione o in sede di definizione della community. La LMeCA non prevede nulla al riguardo e non saranno messi a disposizione mezzi finanziari o risorse di personale supplementari per il supporto. Può essere opportuno includere il supporto e lo sviluppo congiunto laddove il beneficio per le autorità svizzere o per l'economia svizzera è ritenuto sufficientemente elevato (costi dell'ecosistema) e/o si mira a una ripartizione dei costi o a una cooperazione. Se se ne fa carico il fornitore, i suoi costi di supporto possono essere sostenuti dagli utenti.
+
+L'*acquisto di OSS* avviene tramite il normale processo d'acquisto dell'Amministrazione federale. L'UFCL mette a disposizione i relativi documenti e strumenti.
+
+È inoltre disponibile un _promemoria sull'acquisto di software e l'art. 9 LMeCA_footnote:[Disponibile qui (in tedesco): https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html e https://perimap.admin.ch/goto_perimap_file_46835_download.html] _[KBB-MB]_ (cfr. figura 2).
+
+Considerazioni giuridiche e pratiche fanno sì che l'obbligo di pubblicazione OSS possa in determinate circostanze essere trasferito a un fornitore (in sede di gara o durante l'esercizio). Gli strumenti d'acquisto e il processo di pubblicazione stabiliscono come affrontare la questione con il fornitore. Ciò avviene in gran parte integrando i processi, le bozze di contratto e gli strumenti esistenti.
+
+La procedura organizzativa è disciplinata in link:em002-2.pdf[Em002-2 Istruzioni per la pubblicazione di software open source] e nei relativi strumenti.
+
+*Dal profilo del diritto degli acquisti pubblici l'OSS è trattato alla pari del software proprietario.* Poiché per l'OSS, secondo la definizione dell'Open Source Initiative (OSI), non sono dovute tasse di licenza, il software può in linea di principio essere scaricato e utilizzato senza gara pubblica. Soltanto le prestazioni che devono essere fornite da imprese (p. es. supporto, engineering) sottostanno quindi al diritto degli acquisti pubblici e devono essere messe a concorso.
+
+Ove necessario, gli aspetti rilevanti degli strumenti sono integrati nei processi di gestione dei progetti della Confederazione (ossia HERMES).
+
+L'open development (sviluppo aperto direttamente su un repository liberamente accessibile) e la partecipazione a progetti esistenti (contribution) sono parimenti trattati nelle spiegazioni contenute in link:em002-4.pdf[Em002-4 Guida alle community OSS].
+
+=== Panoramica dei documenti OSS
+
+Il grafico seguente offre una panoramica dei documenti rilevanti per l'OSS nell'Amministrazione federale.
+
+include::partials/document-map.it.adoc[]
+
+Figura 2: Documenti in relazione all'art. 9 LMeCA
+
+== Obiettivi
+
+I seguenti obiettivi generali e a lungo termine mostrano come l'Amministrazione federale sfrutta il potenziale del software open source e affronta i rischi e le sfide:
+
+A) Rispetto delle prescrizioni legali (ossia della LMeCA):: La pubblicazione di software open source è retta dall'articolo 9 LMeCA. Il rispetto di questa prescrizione legale è un aspetto centrale delle presenti linee guida e dei documenti correlati. Le autorità federali devono rispettare tale articolo e massimizzare il beneficio per l'Amministrazione federale e per la Svizzera. L'attuazione compete alle unità organizzative stesse.
+
+B) Accrescere innovazione ed efficienza:: Il software open source costituisce oggi la base dell'informatica moderna. Sulla scorta dei milioni di componenti e soluzioni liberamente disponibili è possibile sviluppare ed esercire rapidamente applicazioni autonome. I conseguenti risparmi di tempo e risorse nonché i principi architetturali associati al software open source, quali interoperabilità, agilità e microservizi, accrescono la capacità innovativa e l'efficienza dello sviluppo software. Ciò accelera a sua volta la digitalizzazione dell'Amministrazione federale. Mediante la pubblicazione di software open source è possibile accelerare l'adozione di soluzioni digitali in ambito federale e sfruttare effetti di sinergia.
+
+C) Promuovere una cultura della collaborazione:: Il software open source promuove, attraverso la condivisione del codice sorgente, la comunicazione aperta e le pratiche di sviluppo congiunto, una cultura della collaborazione in ambito informatico. Questi principi possono essere applicati per rafforzare la collaborazione informatica all'interno dell'Amministrazione federale, con i Cantoni e con altre istituzioni pubbliche. Ciò rafforza la sovranità digitale e riduce le dipendenze dai fornitori di software.
+
+D) Creare chiarezza e ridurre al minimo i rischi:: Le informazioni sulle licenze open source di uso frequente devono consentire all'Amministrazione federale di scegliere le licenze giuste. Ciò riduce al minimo i rischi giuridici. Raccomandazioni tecniche e giuridiche mettono l'Amministrazione federale in condizione di utilizzare e pubblicare software open source.
+
+E) Creare una panoramica per sfruttare le sinergie:: Il software open source è attualmente impiegato in numerosi punti dell'Amministrazione federale in modi diversi. Vi sono molte conoscenze ed esperienze, ma le sinergie non possono ancora essere sfruttate poiché manca una panoramica delle soluzioni open source impiegate. Una simile panoramica e l'acquisto congiunto di prestazioni consentiranno di sfruttare meglio il potenziale del software open source, il che permette di risparmiare risorse e crea sinergie.
+
+F) Accrescere l'attrattiva quale datore di lavoro nel settore informatico:: Il software open source è apprezzato da molti specialisti informatici altamente qualificati. L'impiego di moderne tecnologie open source e l'applicazione di metodi di sviluppo open source motivano molti collaboratori e accrescono l'attrattiva dell'Amministrazione federale quale datore di lavoro. Per impiegare software open source la Confederazione necessita di specialisti con conoscenze ed esperienza in materia; nel reclutamento di specialisti occorre pertanto adoperarsi per ampliare il know-how interno in materia di open source.
+
+== Misure
+
+Le misure seguenti devono contribuire al conseguimento degli obiettivi sopra esposti. Saranno completate o sostituite a tempo debito e adeguate al mutare delle circostanze.
+
+L'elenco seguente illustra come gli obiettivi sono collegati alle misure corrispondenti. Queste sostengono l'attuazione dei rispettivi obiettivi, ma possono ripercuotersi anche su altri obiettivi.
+
+A) Rispetto delle prescrizioni legali (LMeCA)::
+1) Attuare la _Guida pratica per il software open source nell'Amministrazione federale link:em002-1.pdf[Em002-1]_ +
+2) Attuare le _Istruzioni per la pubblicazione di software open source link:em002-2.pdf[Em002-2]_ e gli strumenti che ne derivano. +
+3) I servizi d'acquisto sviluppano know-how in materia di open source sostenendo così l'Amministrazione federale.
+
+B) Accrescere innovazione ed efficienza::
+1) Attuare la _Guida pratica per il software open source nell'Amministrazione federale link:em002-1.pdf[Em002-1]_ +
+3) I servizi d'acquisto sanno gestire l'open source e sostenere in modo ottimale l'art. 9 LMeCA. +
+8) Promuovere la costituzione di community
+
+C) Promuovere una cultura della collaborazione::
+1) Attuare la _Guida pratica per il software open source nell'Amministrazione federale link:em002-1.pdf[Em002-1]_ +
+4) Promuovere lo scambio di conoscenze ed esperienze +
+8) Promuovere la costituzione di community +
+9) Esaminare la possibilità di una piattaforma di pubblicazione propria; promuovere l'open development
+
+D) Creare chiarezza e ridurre al minimo i rischi::
+1) Attuare la _Guida pratica per il software open source nell'Amministrazione federale link:em002-1.pdf[Em002-1]_ +
+2) Attuare le _Istruzioni per la pubblicazione di software open source link:em002-2.pdf[Em002-2]_ e gli strumenti che ne derivano.
+
+E) Creare una panoramica per sfruttare le sinergie::
+6) Attuare l'acquisto congiunto di prestazioni +
+7) Creare una panoramica del software open source impiegato, pubblicato e cosviluppato +
+8) Promuovere la costituzione di community
+
+F) Accrescere l'attrattiva quale datore di lavoro nel settore informatico::
+5) Promuovere e comunicare una cultura open source +
+8) Promuovere la costituzione di community
+
+=== Descrizione delle misure
+
+Misura 1: Attuare la _Guida pratica per il software open source nell'Amministrazione federale link:em002-1.pdf[Em002-1]_.::
+Sebbene il termine software open source abbia già oltre 20 anni, la costante diffusione di tale software e la continua evoluzione degli scenari applicativi danno luogo di continuo a nuove pratiche e questioni. Gli sviluppi nuovi e ulteriori di soluzioni open source costituiscono inoltre sempre più spesso alternative a pieno titolo al software proprietario. Con la LMeCA si aggiunge l'obbligo di pubblicare gli sviluppi realizzati internamente.
++
+La _Guida pratica per il software open source nell'Amministrazione federale_ offre una panoramica e un'introduzione al tema, illustra i vantaggi e gli svantaggi del software open source e spiega tutti gli altri strumenti. Contiene inoltre best practice, alternative collaudate e raccomandazioni pratiche su come l'Amministrazione federale deve gestire il software open source.
++
+Questa guida pratica e gli altri strumenti devono essere utilizzati e attuati dalle autorità federali nella gestione del software open source e delle pubblicazioni.
++
+Quale breve introduzione al tema sono disponibili un _promemoria sull'applicazione dell'art. 9 LMeCA_ e le link:em002-6.pdf[Em002-6 FAQ sulla pubblicazione di OSS (FAQ-OSS)].
+
+Misura 2: Attuare le Istruzioni per la pubblicazione di software open source link:em002-2.pdf[Em002-2] e gli strumenti che ne derivano.::
+L'impiego efficiente dell'OSS nello sviluppo software richiede spesso contributi sotto forma di correzioni di errori ed estensioni funzionali. Con la LMeCA sussiste inoltre l'obbligo di pubblicare il software creato in proprio. L'orientamento necessario è fornito da diversi strumenti.
++
+Le liste di controllo fanno parte delle istruzioni per la pubblicazione di OSS. Devono essere utilizzate a complemento delle corrispondenti direttive delle unità amministrative, prima e durante lo sviluppo.
++
+Viene trattata anche la gestione del codice preesistente secondo l'art. 9 LMeCA. L'obiettivo è trovare e attuare soluzioni pragmatiche.
++
+Le licenze rivestono particolare importanza nell'ambiente OSS. In sede di pubblicazione, acquisto e utilizzo di software le licenze devono essere allineate a quanto è giuridicamente fattibile e all'effetto desiderato. Le conoscenze necessarie e le relative decisioni devono essere documentate. In tale contesto sono messi a disposizione anche i documenti supplementari necessari, come il Contributor Licence Agreement (CLA).
++
+Per agevolare l'applicazione dell'art. 9 LMeCA saranno apportati complementi al metodo di gestione dei progetti della Confederazione (HERMES). Le unità amministrative devono trovare gli strumenti necessari nel processo ordinario.
+
+Misura 3: I servizi d'acquisto sviluppano know-how in materia di open source sostenendo così l'Amministrazione federale.::
+Per gli aspetti relativi agli acquisti è stato creato il nuovo documento link:em002-7.pdf[Em002-7 Aspetti strategici degli acquisti e OSS].
++
+Per garantire un'ampia concorrenza gli acquisti esigono che il software open source e quello proprietario siano trattati alla pari. Occorre tenere conto delle maggiori esigenze connesse all'art. 9 LMeCA riguardo ai mezzi da acquistare per la pubblicazione del software.
++
+Il Centro di competenza per gli acquisti pubblici della Confederazione (CCAP) ha pubblicato un promemoria sull'acquisto di software e l'art. 9 LMeCA [KBB-MB] al seguente link: link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html].
++
+Ulteriore sostegno è disponibile sull'intranet dell'UFCL (accessibile soltanto dalla rete federale) con le link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[direttive Open Source negli acquisti] [BBL-WL] e la link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[lista di controllo per l'eccezione forfettaria secondo l'art. 9 LMeCA] [BBL-CL].
+
+Misura 4: Promuovere lo scambio di conoscenze ed esperienze::
+La creazione e l'utilizzo di software open source richiedono un know-how approfondito e specialistico. Al tempo stesso le soluzioni open source evolvono costantemente e vengono lanciati nuovi progetti open source. È pertanto una sfida mantenere una panoramica completa delle tendenze e delle tecnologie attuali.
++
+Per promuovere l'impiego professionale dell'open source e agevolare lo scambio di conoscenze ed esperienze, le informazioni devono essere condivise in seno a una comunità d'interessi allargata e i collaboratori dell'Amministrazione federale devono essere sostenuti con competenza.
+
+Misura 5: Promuovere e comunicare una cultura open source::
+La digitalizzazione crescente ha ulteriormente acuito la carenza di personale qualificato nel settore informatico. Ciò rende difficile anche ai fornitori di prestazioni dell'Amministrazione federale reclutare personale informatico qualificato. L'impiego di software open source e la cultura di sviluppo che vi è associata costituiscono, com'è noto, un argomento che induce gli specialisti a candidarsi a tali posti.
++
+Per essere percepita dal pubblico quale datore di lavoro «favorevole all'open source», l'Amministrazione dovrebbe comunicare attivamente le diverse misure e le soluzioni open source impiegate sotto forma di un radar tecnologico.footnote:[I radar tecnologici devono essere impiegati il più ampiamente possibile, ossia se possibile a livello delle autorità federali o addirittura dell'Amministrazione federale.] Per l'attrattiva del datore di lavoro è inoltre importante consentire agli impiegati federali di contribuire a software open source esistente.
+
+Misura 6: Attuare l'acquisto congiunto di prestazioni::
+La manutenzione e il supporto del software open source sono attualmente assicurati da collaboratori interni dell'Amministrazione federale, mentre fornitori esterni offrono prestazioni per determinate soluzioni open source. Tali prestazioni sono spesso acquistate autonomamente dai rispettivi uffici, il che può comportare doppioni e le conseguenti perdite finanziarie.
++
+L'acquisto congiunto di prestazioni per il software open source deve accrescere l'affidabilità della manutenzione e del supporto in esercizio e semplificare l'impiego di soluzioni open source. Sulla base del radar tecnologico (cfr. misura 5) le prestazioni per i sistemi e le tecnologie open source più diffusi devono essere acquistate in modo centralizzato. Tali prestazioni possono poi essere ottenute da tutti gli uffici secondo il fabbisogno.footnote:[Ciò riguarda il supporto del software impiegato. Il supporto da parte di terzi per software pubblicato secondo la LMeCA è possibile e può essere fatturato. Questo aspetto è trattato in link:em002-4.pdf[Em002-4 Guida alle community OSS].]
+
+Misura 7: Creare una panoramica del software open source impiegato, pubblicato e cosviluppato.::
+Poiché nell'impiego di software open source non occorre acquistare licenze, viene spesso meno il dispendioso processo d'acquisto.
++
+Ciò rende difficile tracciare dove l'Amministrazione federale impiega quale software open source. Di conseguenza il potenziale del software open source — come lo sfruttamento delle sinergie, la formazione di community per lo scambio di esperienze ecc. — non può essere pienamente valorizzato.
++
+Un radar tecnologico in seno all'Amministrazione federale deve fornire una panoramica di dove viene impiegato quale software open source e di chi dispone di quale know-how.
+
+Misura 8: Promuovere la costituzione di community::
+La costituzione di community per lo sviluppo di progetti e la partecipazione ad esse sono molto importanti per l'OSS. Ne derivano sinergie considerevoli. Può darsi che il progetto esista già e che la Confederazione vi partecipi soltanto, oppure che la Confederazione diriga il progetto, o ancora che si tratti di una collaborazione. Anche rinunciare a una community è una decisione importante. Lo sviluppo diretto su un repository aperto (senza pubblicazione successiva) può apportare ulteriori guadagni di efficienza e promuovere lo sviluppo congiunto. Em002-4 fornisce orientamento e motivazione per la costituzione di community da parte delle autorità federali.
+
+Misura 9: Esaminare la possibilità di una piattaforma di pubblicazione propria; promuovere l'open development::
+La creazione e la gestione di una piattaforma di pubblicazione interna o svizzera saranno esaminate e attuate una volta presa la relativa decisione.
++
+L'obiettivo di una piattaforma autonoma per l'Amministrazione federale è preservare la sovranità e l'indipendenza digitali. La collaborazione viene semplificata e al tempo stesso si crea una panoramica delle attività.
++
+È allo studio una cooperazione federale tra tutte le autorità della Svizzera (analogamente a opencode.de), p. es. ADS o eOperations Svizzera.
+
+== Allegati
+
+=== Modifiche rispetto alla versione precedente
+
+* Modifiche e miglioramenti redazionali minori.
+* La scheda informativa Em002-5 è stata sostituita dal promemoria Strumenti OSS.
+* È stato aggiunto il documento «`link:em002-7.pdf[Em002-7 Acquisti e OSS]`».
+* Nuovo grafico raffigurante le 4 C nel contesto dell'OSS (aggiunta di «collaboration»).
+* Nuovi rinvii a UFCL e CCAP.
+
+=== Riferimenti agli strumenti OSS
+
+L'elenco di riferimento seguente elenca i documenti relativi alla serie link:em002.pdf[Em002 Strumenti per il software open source] nell'Amministrazione federale.
+
+NOTE: Gli strumenti e in particolare le liste di controllo si basano in parte sui *documenti OSS del Cantone di Berna*, pubblicati sotto licenza BSD3 (link:https://github.com/kanton-bern/oss[https://github.com/kanton-bern/oss]).
+
+Gli attuali documenti Em002 sono pubblicati sulla pagina Strumenti OSS della Cancelleria federale. https://www.bk.admin.ch/bk/it/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software.html.
+
+I documenti sono inoltre pubblicati su GitHub, dove è possibile fornire riscontri. {url-repo}
+
+include::partials/references.it.adoc[tags=ref-em002-tools]
+
+Panoramica visiva degli strumenti OSS:
+
+include::partials/document-map.it.adoc[]
+
+Figura 3: Documenti in relazione all'art. 9 LMeCA
+
+=== Riferimenti generali
+
+Tutti i riferimenti alla serie di documenti Em002 si trovano qui *in Em002 Linee guida strategiche [Em002*].
+
+include::partials/references.it.adoc[tags=ref-em002-general]
+
+=== Abbreviazioni
+
+Il presente elenco contiene tutte le abbreviazioni utilizzate nella serie di documenti OSS Em002. Un glossario figura in link:em002-6.pdf[Em002-6 FAQ sulla pubblicazione di OSS].
+
+[horizontal]
+include::partials/abbreviations.it.adoc[tags=abbr-em002]
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+NOTE: Quest document è ina sbozza ch'è vegn sviluppada vinavant e fa part dals meds che sustegnan l'administraziun federala en la publicaziun da code open source. Ulteriuras infurmaziuns chattais Vus en il link:{url-repo}/tree/main[README] principal.
+
+'''
+
+== Introducziun
+
+=== Finamira e intent
+
+Tenor l'artitgel 9 alinea 1 da la lescha federala dals 17 da mars 2023footnote:[CS 172.019] davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads (EMBAG) ston las autoritads publitgar il code da funtauna dal software ch'ellas sviluppan u fan sviluppar per ademplir lur incumbensas, uschenavant che dretgs da terzas persunas u motivs relevants per la segirezza n'excludan u na restrenschan betg quai. Uschia croda davent l'inscuritad giuridica tar la publicaziun da software tras autoritads federalas.
+
+Ils ultims onns ha mussà che l'impurtanza dal software open source (OSS) en l'administraziun federala è cuntinuadamain creschida.
+
+Questas directivas strategicas descrivan las basas dal software open source e co ch'i vegn tractà cun quel en l'administraziun federala. Il document fixescha sis finamiras e propona nov mesiras per las cuntanscher.
+
+El renviescha ultra da quai ad ulteriuras strategias relevantas dal maun public en il sectur open source.
+
+=== Situaziun da partenza
+
+Il 2005 ha l'Organ da direcziun d'informatica da la Confederaziun (ISB) publitgà l'emprima versiun d'ina strategia OSS per l'administraziun federala. Sco il princip il pli impurtant è vegnida fixada lura la tractanda eguala da l'OSS cun il software closed source tar l'acquist.
+
+Dapi la publicaziun dal 2005 è la derasaziun dal software open source creschida cuntinuadamain. Oz utilisescha, tenor il rapport «Studi Open Source Svizra 2024», ina cler maioritad da las interpresas e da las autoritads software open source en fitg blers secturs differents. En la branscha dal software datti mo fitg paucas interpresas che na lavuran betg cun utensilis e cumponentas open source.
+
+Il 1. da favrer 2019 èn questas Directivas strategicas per software open source en l'administraziun federala sco er la guida pratica entradas en vigur en la versiun 1.0. Cun il relasch da l'EMBAG e las novas obligaziuns tenor l'artitgel 9 è vegnì necessari d'actualisar omadus documents e da crear meds supplementars per las autoritads federalas.
+
+=== Proceder
+
+Per la realisaziun da l'EMBAG èn ils uffizis federals sezs responsabels. Vista l'impurtanza creschenta da l'open source è vegnì decidì da reelavurar la guida pratica _link:em002-1.pdf[Em002-1]_ ensemen cun tuttas gruppas d'interess. Ultra da quai èn vegnids agiuntads meds supplementars per la realisaziun da l'EMBAG.
+
+La guida pratica definescha ils concepts necessaris, exponta las constellaziuns per l'utilisaziun da software open source, mussa nua e co ch'i sa laschan chattar alternativas al software commerzial existent, co che l'open source duai vegnir acquistà, tge models da fatschenta ch'i dat per l'open source e tge models da support ch'èn pussaivels tar l'utilisaziun da l'open source. Ils ulteriurs meds respundan dumondas frequentas e dattan instrucziuns per relaschar software open source tenor l'EMBAG. Els tractan tuttas dumondas davart las licenzas OSS e mussan, co ch'ina communitad po vegnir construida enturn in software. Pliras glistas da controlla per l'orientaziun e la documentaziun stattan era a disposiziun a las autoritads federalas.
+
+Era ils documents davart l'acquist èn vegnids adattads, e i èn vegnids elavurads in fegl d'infurmaziun supplementar [KBB-MB], ina directiva [BBL-WL] sco er ina glista da controlla [BBL-CL].
+
+Inscuritads existentas vegnan eliminadas uschè lunsch sco pussaivel cun questas directivas strategicas, la guida pratica accumpagnanta e las recumandaziuns d'acziun sco er cun ils meds supplementars.
+
+== Relaziun cun autras strategias
+
+Questas Directivas strategicas per software open source en l'administraziun federala èn accordadas cun quatter strategias actualas dal maun public e cun l'EMBAG.footnote:[CS 172.019: https://www.fedlex.admin.ch/eli/cc/2023/682/rm] Quellas cuntegnan ina relaziun directa u indirecta cun il tema dal software open source e cun la collavuraziun informatica tranter instituziuns publicas:
+
+La *Strategia Administraziun federala digitala* [SB001] fixescha otg princips e quatter accents. Cun l'utilisaziun da software open source contribuescha l'administraziun federala a l'accent 4 «Rinforzar la suveranitad digitala». Ina soluziun open source po vegnir reutilisada uschè savens sco ins vul e vegnir adattada als basegns individuals da l'administraziun federala grazia a ses code da funtauna avert.
+
+Il pensier da la persistenza digitala e da la suveranitad digitala vegn era en giu en la **Strategia Administraziun digitala Svizra 2024–2027**footnote:[Strategia Administraziun digitala Svizra 2024–2027: https://www.digital-public-services-switzerland.ch/strategy]. La Confederaziun ed ils chantuns creeschan cundiziuns basicas adattadas per questa utilisaziun multipla. Moduls da basa per il svilup dal cybergovern vegnan «realisads ina giada ed utilisads cuminaivlamain». La tscherna da software open source facilitescha la reutilisaziun da soluziuns informaticas.
+
+Tenor la **Strategia Svizra digitala**footnote:[https://digital.swiss/rm/] è decisiv per il success da la Svizra en il spazi digital da rinforzar la colliaziun dals nivels federals. Attenziun speziala sto perquai vegnir dada a la coordinaziun tranter Confederaziun, chantuns e vischnancas sco er a la collavuraziun tranter las organisaziuns activas en il sectur da la digitalisaziun en tut la Svizra. Il Cussegl federal ha ultra da quai dà ina impurtanza speziala a la suveranitad digitala da la Svizra sco tema d'accent 2023.footnote:[https://digital.swiss/rm/strategia/temas-d-accent/suveranitad-digitala]
+
+En la **Strategia Open Government Data Svizra (2019–2023)**footnote:[Strategia Open Government Data 2019 – 2023] tegna il Cussegl federal en scrit che datas da l'administraziun federala che n'èn betg persunalas e betg criticas per la segirezza duain vegnir publitgadas tenor il princip Open by Default. L'administraziun federala ha lantschà per quai il portal opendata.swiss.footnote:[https://opendata.swiss/rm] Uffizis federals, chantuns, citads ed ulteriuras organisaziuns publicas han publitgà là actualmain passa 11 700 sets da datas.
+
+Il plan directiv Open Government Data 2024–2027footnote:[https://www.bfs.admin.ch/asset/rm/28425806] realisescha il princip Open by Default.
+
+== Governanza e meds
+
+Sch'ins discurra da software open source, sto vegnir distinguì tranter *consuming* (utilisar), *contributing* (contribuir a code existent) e *creating* (pia novs projects).
+
+image::./assets/four-cs/four-cs.rm.svg[Ils 4 C en il context da l'OSS]
+
+Illustraziun 1: Ils 4 C en il context da l'OSS
+
+La *collaboration* è ultra da quai adina imaginabla en il fund. Tar il creating sto ella vegnir inizialisada da l'administraziun federala, tar il contributing exista ella gia, e tar il consuming po ella era esser d'agid (p.ex. gruppa d'utilisaders).
+
+Tar il *consuming* da software open source duai quel vegnir tractà e valità egualmain sco software proprietar.
+
+Tar il *svilup* da software è la relaschada open source fundamentalmain obligatorica, cun resalva da las excepziuns fixadas en l'art. 9 EMBAG (dretgs da terzas persunas e motivs relevants per la segirezza).
+
+Questas excepziuns vegnan tractadas en link:em002-2.pdf[Em002-2 Instrucziuns per publitgar OSS].
+
+Las autoritads federalas, pia las unitads administrativas da l'administraziun federala, èn sezzas responsablas per l'observaziun correcta; i n'exista nagina cumpetenza centrala.
+
+La *publicaziun* porta in plivalur en spezial, sch'ina *communitad* d'interessads nascha e lavura cuminaivlamain al software. Sche la communitad collavura ad in project e sche l'administraziun federala lascha vinavant questas contribuziuns, nascha in profit economic ed effects da sinergia.footnote:[https://test.bitkom.org/sites/main/files/2023-03/BitkomLeitfadenOpenSourceSoftware31.pdf, chapitel 4 (per tudestg)]
+
+En la pratica cumpiglia la relaschada savens betg mo il code da funtauna, mabain era tut ils auters aspects (documentaziun, governanza, instrucziuns da build etc.).
+
+Fundamentalmain n'exista per l'administraziun federala nagina obligaziun da construir communitads; l'incumbensa legala pretenda mo la publicaziun dal code da funtauna. L'administraziun federala duess investir prioritarmain en communitads, nua che il profit per la Confederaziun e per terzas persunas è grond e la lavur uschè pitschna sco pussaivel.
+
+Actualmain n'exista nagina plattafurma cuminaivla da la Confederaziun per il *svilup e la publicaziun da code da funtauna*. Mintga autoritad sto perquai tscherner sezza ina plattafurma (repositori) per la publicaziun. La guida pratica en link:em002-2.pdf[Em002-2 Instrucziuns per publitgar software open source] e las glistas da controlla appartegnentas fixeschan, co ch'i sto vegnir lavurà cun ina plattafurma e tge caracteristicas ch'ella sto ademplir.
+
+La *tscherna da la licenza* vegn tractada en la link:em002-3.pdf[Em002-3 Guida da licenzas OSS]), che preschenta ina selecziun da licenzas standard ed explitgescha lur utilisaziun. Agens texts da licenza duai l'administraziun federala utilisar mo en cas motivads tenor l'art. 9 al. 4 EMBAG.
+
+Tar l'utilisaziun ed il svilup da l'OSS sto il **support**footnote:[Almain durant il ciclus da vita cun agid da contracts u d'ina communitad.] adina vegnir reglà (era sch'ins renunzia ad el). L'unitad administrativa cumpetenta reglescha quai en il process da relaschada u tar la definiziun da la communitad. L'EMBAG na fa naginas prescripziuns davart quai, ed i na vegnan messas a disposiziun naginas ulteriuras finanzas u resursas da persunal per il support. I po esser raschunaivel d'integrar il support ed il svilup vinavant cuminaivel, nua che il profit per las autoritads svizras u per l'economia svizra vegn considerà sco suffizientamain grond (custs d'ecosistem) e/u nua ch'ins aspira ina partiziun dals custs u ina collavuraziun. Sche il furnitur surpiglia quai, pon ses custs da support vegnir purtads dals utilisaders.
+
+L'*acquist da l'OSS* ha lieu via il process d'acquist regular da l'administraziun federala. L'UFCL metta a disposiziun ils documents ed ils meds correspundents.
+
+Supplementarmain stat a disposiziun in _fegl d'infurmaziun davart l'acquist da software e l'art. 9 EMBAG_footnote:[Disponibel qua (per tudestg): https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html e https://perimap.admin.ch/goto_perimap_file_46835_download.html] _[KBB-MB]_ (vesair illustraziun 2).
+
+Reflexiuns giuridicas e praticas mainan a quai che l'obligaziun da relaschar OSS po sut tschertas circumstanzas vegnir transferida ad in furnitur (tar il concurs u durant il manaschi). Ils meds d'acquist ed il process da relaschada determineschan, co ch'i sto vegnir procedì cun il furnitur. Quai vegn cuntanschì per gronda part cun cumplettar ils process, las sbozzas da contract ed ils meds existents.
+
+Il proceder organisatoric è reglà en link:em002-2.pdf[Em002-2 Instrucziuns per publitgar software open source] ed en ils meds appartegnents.
+
+*Dal puncta da vista dal dretg d'acquist vegn l'OSS tractà egualmain sco il software proprietar.* Perquai che per l'OSS, tenor la definiziun da l'Open Source Initiative (OSI), na vegnan incassadas naginas taxas da licenza, po software fundamentalmain vegnir telechargià ed utilisà senza concurs. Mo las prestaziuns che ston vegnir furnidas d'interpresas (p.ex. support, engineering) suttastattan lura al dretg d'acquist e ston vegnir messas a concurs.
+
+Nua ch'igl è necessari vegnan ils aspects relevants dals meds integrads en ils process da management da projects da la Confederaziun (pia HERMES).
+
+L'open development (svilup avert directamain sin in repositori accessibel publicamain) e la participaziun a projects existents (contribution) vegnan era tractads en las explicaziuns en link:em002-4.pdf[Em002-4 Guida da communitads OSS].
+
+=== Survista dals documents OSS
+
+La grafica suandanta dat ina survista dals documents relevants per l'OSS en l'administraziun federala.
+
+include::partials/document-map.rm.adoc[]
+
+Illustraziun 2: Documents en connex cun l'art. 9 EMBAG
+
+== Finamiras
+
+Las suandantas finamiras surordinadas ed a lunga vista mussan, co che l'administraziun federala utilisescha il potenzial dal software open source ed affrunta ils ristgs e las sfidas:
+
+A) Observaziun da las prescripziuns legalas (pia da l'EMBAG):: La relaschada da software open source sa drizza tenor l'artitgel 9 EMBAG. L'observaziun da questa prescripziun legala è in aspect central da questas directivas e dals documents appartegnents. Las autoritads federalas duain observar quest artitgel e maximar il profit per l'administraziun federala e per la Svizra. Per la realisaziun èn las unitads d'organisaziun sezzas responsablas.
+
+B) Augmentar l'innovaziun e l'efficienza:: Il software open source furma oz la basa da l'informatica moderna. Sin la basa dals milliuns da cumponentas e soluziuns disponiblas libramain sa laschan sviluppar e manar rapidamain applicaziuns independentas. Las spargnas da temp e da resursas colliadas cun quai sco er ils princips d'architectura colliads cun il software open source, sco l'interoperabilitad, l'agilitad ed ils microservetschs, augmentan la capacitad d'innovaziun e l'efficienza dal svilup da software. Quai accelerescha puspè la digitalisaziun da l'administraziun federala. Cun relaschar software open source po vegnir accelerada la surpigliada da soluziuns digitalas en il rom federal e pon vegnir utilisads effects da sinergia.
+
+C) Promover ina cultura da la collavuraziun:: Il software open source promova, cun cundivider il code da funtauna, cun ina communicaziun averta e cun praticas dal svilup vinavant cuminaivel, ina cultura da la collavuraziun en l'informatica. Quests princips sa laschan applitgar per rinforzar la collavuraziun en l'informatica entaifer l'administraziun federala, cun ils chantuns e cun ulteriuras instituziuns publicas. Quai rinforza la suveranitad digitala e reducescha las dependenzas da purschiders da software.
+
+D) Crear claritad e reducir ils ristgs:: Infurmaziuns davart licenzas open source utilisadas savens duain pussibilitar a l'administraziun federala da tscherner las licenzas gistas. Quai reducescha ils ristgs giuridics. Recumandaziuns tecnicas e giuridicas abiliteschan l'administraziun federala d'utilisar e da relaschar software open source.
+
+E) Crear ina survista per utilisar sinergias:: Software open source vegn actualmain duvrà en numerus lieus entaifer l'administraziun federala en moda differenta. I dat blera savida ed experientscha, ma las sinergias na sa laschan anc betg utilisar, perquai ch'ina survista da las soluziuns open source duvradas manca. Ina tala survista e l'acquist cuminaivel da prestaziuns pussibiliteschan da meglier exquirir il potenzial dal software open source, quai che spargna resursas e crea sinergias.
+
+F) Augmentar l'attractivitad sco patrun en l'informatica:: Software open source è popular tar bleras persunas spezialisadas en informatica cun ina auta qualificaziun. L'utilisaziun da tecnologias open source modernas e l'applicaziun da metodas da svilup open source motiveschan blers collaboraturs ed augmentan l'attractivitad da l'administraziun federala sco patruna. Per utilisar software open source dovra la Confederaziun persunas spezialisadas cun savida ed experientscha en il sectur dal software open source; tar la reclutaziun da persunas spezialisadas duess ins perquai s'engaschar per ampliar la savida interna davart l'open source.
+
+== Mesiras
+
+Las suandantas mesiras duain contribuir a cuntanscher las finamiras exponidas survart. Las mesiras vegnan cumplettadas u remplazzadas a temp ed adattadas a circumstanzas midadas.
+
+La glista suandanta illustrescha, co che las finamiras èn colliadas cun las mesiras correspundentas. Quellas sustegnan la realisaziun da las finamiras respectivas, ma pon era avair effects sin autras finamiras.
+
+A) Observaziun da las prescripziuns legalas (EMBAG)::
+1) Realisar la _Guida pratica per software open source en l'administraziun federala link:em002-1.pdf[Em002-1]_ +
+2) Realisar las _Instrucziuns per publitgar software open source link:em002-2.pdf[Em002-2]_ ed ils meds che deriveschan da quellas. +
+3) Ils posts d'acquist construeschan savida davart l'open source e sustegnan uschia l'administraziun federala.
+
+B) Augmentar l'innovaziun e l'efficienza::
+1) Realisar la _Guida pratica per software open source en l'administraziun federala link:em002-1.pdf[Em002-1]_ +
+3) Ils posts d'acquist san tractar cun l'open source e sustegnair optimalmain l'art. 9 EMBAG. +
+8) Promover la construcziun da communitads
+
+C) Promover ina cultura da la collavuraziun::
+1) Realisar la _Guida pratica per software open source en l'administraziun federala link:em002-1.pdf[Em002-1]_ +
+4) Promover il barat da savida e d'experientscha +
+8) Promover la construcziun da communitads +
+9) Examinar la pussaivladad d'ina atgna plattafurma da publicaziun; promover l'open development
+
+D) Crear claritad e reducir ils ristgs::
+1) Realisar la _Guida pratica per software open source en l'administraziun federala link:em002-1.pdf[Em002-1]_ +
+2) Realisar las _Instrucziuns per publitgar software open source link:em002-2.pdf[Em002-2]_ ed ils meds che deriveschan da quellas.
+
+E) Crear ina survista per utilisar sinergias::
+6) Realisar l'acquist cuminaivel da prestaziuns +
+7) Crear ina survista dal software open source duvrà, relaschà e co-sviluppà +
+8) Promover la construcziun da communitads
+
+F) Augmentar l'attractivitad sco patrun en l'informatica::
+5) Promover e communitgar ina cultura open source +
+8) Promover la construcziun da communitads
+
+=== Descripziun da las mesiras
+
+Mesira 1: Realisar la _Guida pratica per software open source en l'administraziun federala link:em002-1.pdf[Em002-1]_.::
+Schebain che il term software open source ha gia passa 20 onns, mainan la derasaziun cuntinuanta da software open source ed il svilup permanent da scenaris d'applicaziun adina puspè a novas praticas e dumondas. Novs svilups e svilups vinavant da soluziuns open source furman ultra da quai adina pli savens alternativas cumplainas al software proprietar. Cun l'EMBAG s'agiunta l'obligaziun da publitgar ils agens svilups.
++
+La _Guida pratica per software open source en l'administraziun federala_ dat ina survista ed ina introducziun en il tema, mussa ils avantatgs ed ils dischavantatgs dal software open source ed explitgescha tut ils auters meds. Ella cuntegna ultra da quai best practices, alternativas cumprovadas e recumandaziuns praticas, co che l'administraziun federala duai tractar cun software open source.
++
+Questa guida pratica ed ils ulteriurs meds duain vegnir duvrads e realisads da las autoritads federalas en il tractament da software open source e da relaschadas.
++
+Sco curta introducziun en il tema stattan a disposiziun in _fegl d'infurmaziun davart l'applicaziun da l'art. 9 EMBAG_ sco er link:em002-6.pdf[Em002-6 FAQ davart la publicaziun da l'OSS (OSS-FAQ)].
+
+Mesira 2: Realisar las Instrucziuns per publitgar software open source link:em002-2.pdf[Em002-2] ed ils meds che deriveschan da quellas.::
+L'utilisaziun efficienta da l'OSS en il svilup da software pretenda savens contribuziuns en furma da correcturas da sbagls e d'extensiuns funcziunalas. Cun l'EMBAG exista ultra da quai in'obligaziun da relaschar software creà sez. L'orientaziun necessaria vegn purschida da differents meds.
++
+Las glistas da controlla fan part da las instrucziuns per publitgar OSS. Ellas duain vegnir duvradas supplementarmain a las directivas correspundentas da las unitads administrativas, avant e durant il svilup.
++
+I vegn era tractà il tractament dal code existent tenor l'art. 9 EMBAG. La finamira è da chattar e da realisar soluziuns pragmaticas.
++
+Las licenzas èn spezialmain impurtantas en il rom da l'OSS. Tar la relaschada, l'acquist e l'utilisaziun da software ston las licenzas vegnir accordadas cun quai ch'è giuridicamain pussaivel e cun l'effect giavischà. La savida necessaria e las decisiuns correspundentas duain vegnir documentadas. En quest connex vegnan era mess a disposiziun ils documents supplementars necessaris sco il Contributor Licence Agreement (CLA).
++
+Per facilitar l'applicaziun da l'art. 9 EMBAG vegnan fatgas cumplettaziuns a la metoda da management da projects da la Confederaziun (HERMES). Las unitads administrativas duain chattar ils meds necessaris en il process regular.
+
+Mesira 3: Ils posts d'acquist construeschan savida davart l'open source e sustegnan uschia l'administraziun federala.::
+Per ils aspects d'acquist è vegnì creà il nov link:em002-7.pdf[Em002-7 Aspects strategics da l'acquist ed OSS].
++
+Per garantir ina concurrenza ampla pretenda l'acquist che software open e closed source vegnian tractads egualmain. Las pretensiuns augmentadas en connex cun l'art. 9 EMBAG concernent ils meds da acquistar per la publicaziun da software ston vegnir resguardadas.
++
+Il Center da cumpetenza per l'acquist public da la Confederaziun (CCA) ha publitgà sut il suandant link in fegl d'infurmaziun davart l'acquist da software e l'art. 9 EMBAG [KBB-MB]: link:https://perimap.admin.ch/goto_perimap_file_46835_download.html[https://perimap.admin.ch/goto_perimap_file_46835_download.html].
++
+Ulteriur sustegn stat a disposiziun en l'intranet da l'UFCL (accessibel mo ord la rait da la Confederaziun) cun la link:https://intranet.bbl.admin.ch/bbl_kp/de/home/informatik/beschaffung-buerotechnik-informatik-des-bbl/werkzeugkasten.html[directiva Open Source en l'acquist] [BBL-WL] e la link:https://intranet.bbl.admin.ch/dam/bbl_kp/de/dokumente/informatik/Werkzeugkiste/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx.download.docx/Checkliste%20Integral-Ausnahme%20Art.%209%20EMBAG.docx[glista da controlla excepziun integrala art. 9 EMBAG] [BBL-CL].
+
+Mesira 4: Promover il barat da savida e d'experientscha::
+Il crear e l'utilisar da software open source pretendan ina savida profunda e spezialisada. Al medem temp sa sviluppan las soluziuns open source cuntinuadamain vinavant e novs projects open source vegnan lantschads. Igl è perquai ina sfida da mantegnair ina survista cumplessiva davart las tendenzas e las tecnologias actualas.
++
+Per promover l'utilisaziun professiunala da l'open source e per facilitar il barat da savida e d'experientscha duain infurmaziuns vegnir cundivididas entaifer ina communitad d'interess ampliada ed ils collaboraturs entaifer l'administraziun federala vegnir sustegnids cumpetentamain.
+
+Mesira 5: Promover e communitgar ina cultura open source::
+La digitalisaziun che progredescha ha acutisà ulteriurmain il mancament da persunal qualifitgà en l'informatica. Quai grevescha era als purschiders da prestaziuns da l'administraziun federala la reclutaziun da persunal informatic qualifitgà. L'utilisaziun da software open source e la cultura da sviluppaders colliada cun quai èn sco enconuschent in argument per persunas spezialisadas da sa candidar per tals posts.
++
+Per vegnir percepì en il public sco patrun «amiaivel vers l'open source» duain las differentas mesiras e las soluziuns open source duvradas vegnir communitgadas activamain en furma d'in radar da tecnologia.footnote:[Radars da tecnologia duain vegnir duvrads uschè amplamain sco pussaivel. Quai vul dir, sche pussaivel sin il nivel da las autoritads federalas u schizunt da l'administraziun federala.] Per l'attractivitad dal patrun è ultra da quai impurtant da permetter als emploiads da la Confederaziun da contribuir a software open source existent.
+
+Mesira 6: Realisar l'acquist cuminaivel da prestaziuns::
+La mantenziun ed il support da software open source vegnan actualmain furnids da collaboraturs interns da l'administraziun federala, entant che furniturs externs porschan prestaziuns per tschertas soluziuns open source. Questas prestaziuns vegnan savens acquistadas independentamain dals respectivs uffizis, quai che po manar a dubladuras ed a las perditas finanzialas colliadas cun quai.
++
+L'acquist cuminaivel da prestaziuns per software open source duai augmentar la fidadadad da la mantenziun e dal support en il manaschi e simplifitgar l'utilisaziun da soluziuns open source. Sin la basa dal radar da tecnologia (vesair mesira 5) duain prestaziuns per ils sistems e las tecnologias open source ils pli derasads vegnir acquistads centralmain. Questas prestaziuns pon lura vegnir obtegnidas da tut ils uffizis tenor il basegn.footnote:[Quai pertutga il support per il software duvrà. Il support tras terzas persunas per software relaschà tenor l'EMBAG è pussaivel e po vegnir facturà. Quai vegn tractà en link:em002-4.pdf[Em002-4 Guida da communitads OSS].]
+
+Mesira 7: Crear ina survista dal software open source duvrà, relaschà e co-sviluppà.::
+Perquai che tar l'utilisaziun da software open source na ston vegnir cumpradas naginas licenzas, croda savens davent il process d'acquist custaivel.
++
+Quai grevescha il suandar, nua che l'administraziun federala duvra tge software open source. Uschia na po il potenzial dal software open source – sco l'utilisaziun da sinergias, la furmaziun da communitads per il barat d'experientschas etc. – betg vegnir exquirì cumplainamain.
++
+In radar da tecnologia entaifer l'administraziun federala duai dar ina survista, nua che tge software open source vegn duvrà e tgi che dispona da tge savida.
+
+Mesira 8: Promover la construcziun da communitads::
+La construcziun da e la participaziun a communitads per il svilup da projects èn fitg impurtantas per l'OSS. Da quai resultan sinergias considerablas. I po esser che il project exista gia e che la Confederaziun sa participescha mo, u che la Confederaziun maina il project, u ch'i sa tracta era d'ina collavuraziun. Da renunziar ad ina communitad è era ina decisiun impurtanta. Il svilup direct sin in repositori avert (senza relaschada posteriura) po purtar ulteriurs gudogns d'efficienza e promover il svilup cuminaivel. Em002-4 porscha orientaziun e motivaziun per la construcziun da communitads tras las autoritads federalas.
+
+Mesira 9: Examinar la pussaivladad d'ina atgna plattafurma da publicaziun; promover l'open development::
+La construcziun ed il manaschi d'ina plattafurma da publicaziun interna u svizra vegnan examinads e realisads suenter ina decisiun correspundenta.
++
+La finamira d'ina plattafurma independenta per l'administraziun federala è la mantegnida da la suveranitad e da l'independenza digitala. La collavuraziun vegn simplifitgada ed al medem temp nascha ina survista da las activitads.
++
+Ina collavuraziun federala sur tuttas autoritads da la Svizra (simil ad opencode.de) vegn examinada (p.ex. ADS u eOperations Svizra).
+
+== Agiuntas
+
+=== Midadas envers la versiun precedenta
+
+* Midadas e meglieraziuns redacziunalas pitschnas.
+* Il fegl da fatgs Em002-5 è vegnì remplazzà tras il fegl d'infurmaziun Meds OSS.
+* Nov è s'agiuntà il document «`link:em002-7.pdf[Em002-7 Acquist ed OSS]`».
+* Nova grafica cun ils 4 C en il context da l'OSS (cumplettaziun cun «collaboration»).
+* Novs renviaments a l'UFCL ed al CCA.
+
+=== Referenzas als meds OSS
+
+La glista da referenza suandanta renumbra ils documents da la seria link:em002.pdf[Em002 Meds per software open source] en l'administraziun federala.
+
+NOTE: Ils meds ed en spezial las glistas da controlla sa basan per part sin ils *documents OSS dal chantun Berna*, publitgads sut ina licenza BSD3 (link:https://github.com/kanton-bern/oss[https://github.com/kanton-bern/oss]).
+
+Ils documents Em002 actuals vegnan publitgads sin la pagina Meds OSS da la Chanzlia federala. https://www.bk.admin.ch/bk/de/home/digitale-transformation-ikt-lenkung/bundesarchitektur/open_source_software.html.
+
+Ils documents vegnan ultra da quai publitgads sin GitHub. Là po era vegnir dà in resun. {url-repo}
+
+include::partials/references.rm.adoc[tags=ref-em002-tools]
+
+Survista visuala dals meds OSS:
+
+include::partials/document-map.rm.adoc[]
+
+Illustraziun 3: Documents en connex cun l'art. 9 EMBAG
+
+=== Referenzas generalas
+
+Tuttas referenzas a la seria da documents Em002 sa chattan qua *en Em002 Directivas strategicas [Em002*].
+
+include::partials/references.rm.adoc[tags=ref-em002-general]
+
+=== Abreviaziuns
+
+Questa glista d'abreviaziuns cuntegna tuttas abreviaziuns duvradas en la seria da documents OSS Em002. In glossari sa chatta en link:em002-6.pdf[Em002-6 FAQ davart la publicaziun da l'OSS].
+
+[horizontal]
+include::partials/abbreviations.rm.adoc[tags=abbr-em002]
+endif::[]

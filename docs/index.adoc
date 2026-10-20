@@ -1,0 +1,285 @@
+:lang: en
+ifeval::["{lang}" == "en"]
+= Tools for Publishing Open Source Software
+:title-logo-line1: Federal Chancellery FCh
+:title-logo-line2: Digital Transformation and ICT Steering DTI
+endif::[]
+ifeval::["{lang}" == "de"]
+= Hilfsmittel zur Veröffentlichung von Open-Source-Software
+:title-logo-line1: Bundeskanzlei BK
+:title-logo-line2: Digitale Transformation und IKT-Lenkung DTI
+endif::[]
+ifeval::["{lang}" == "fr"]
+= Outils pour la publication de logiciels open source
+:title-logo-line1: Chancellerie fédérale ChF
+:title-logo-line2: Transformation numérique et gouvernance de l'informatique TNI
+endif::[]
+ifeval::["{lang}" == "it"]
+= Strumenti per la pubblicazione di software open source
+:title-logo-line1: Cancelleria federale CaF
+:title-logo-line2: Trasformazione digitale e governance delle TIC TDT
+endif::[]
+ifeval::["{lang}" == "rm"]
+= Meds per publitgar software open source
+:title-logo-line1: Chanzlia federala ChF
+:title-logo-line2: Transfurmaziun digitala e direcziun da las TIC TDT
+endif::[]
+:govpress-style: report
+// Black, not the colour mark the guidelines carry: this page lists them and is
+// not one of them.
+:title-logo-base: black
+// Deliberately empty: the document carries no classification mark. Omitting the
+// line renders identically -- it is kept so the question is answered rather than
+// left unasked.
+:classification:
+:revnumber: 2.0
+:revdate: 14.09.2026
+// Contents and numbering for the *web* view of this source. open-govpress sets
+// all four itself for `:govpress-style: report` (styles/common.adoc and
+// styles/report.adoc), so they change nothing in the PDF -- GitHub and GitLab
+// render this file with plain Asciidoctor, which does not, and without them the
+// web view loses its contents list and its section numbers.
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+
+ifeval::["{lang}" == "en"]
+Federal agencies are required to disclose the source code of software they develop or have developed to fulfill their duties. They must allow anyone to use, further develop, and distribute the software without charging licensing fees. This requirement is outlined in Article 9 of the Federal Act on the Use of Electronic Means for Fulfilling Administrative Tasks (EMOTA). Responsibility for implementation lies with the individual agencies. The Federal Chancellery provides suitable tools to assist federal agencies in meeting this requirement.
+
+== What is it about?
+
+When publishing open-source software, questions regarding legal matters, licenses, security, organization, and costs need to be addressed. Depending on the specific use case, there are variations and limitations to consider. The level of knowledge required to implement the legal requirement varies within the federal administration based on experience. For this reason, the Federal Chancellery has created tools and checklists to provide support and guidance for decision-making.
+
+== Who is responsible?
+
+The individual agencies are responsible for implementation. The Federal Chancellery provides suitable tools to assist federal agencies in this process.
+
+== What tools are available?
+
+The following tools are available in the form of guidelines, instructions, checklists, fact sheets, and FAQs:
+
+link:em002.pdf[Em002 Strategic Guidelines for Open Source Software in the Federal Administration] (05.05.2026)
+
+link:em002-1.pdf[Em002-1 Practical Guidelines for Open Source Software in the Federal Administration] (05.05.2026)
+
+link:em002-2.pdf[Em002-2 Instructions for Publishing OSS] (05.05.2026)
+
+link:em002-2-1-checklist-oss-preliminary-assessment.pdf[Em002-2.1 Preliminary Assessment Checklist] (05.05.2026)
+
+link:em002-2-2-checklist-oss-analysis-and-preparation.pdf[Em002-2.2 Analysis and Preparation Checklist] (05.05.2026)
+
+link:em002-2-3-checklist-oss-release-and-publication.pdf[Em002-2.3 Release and Publication Checklist] (05.05.2026)
+
+link:em002-3.pdf[Em002-3 OSS Licensing Guidelines] (05.05.2026)
+
+link:em002-4.pdf[Em002-4 OSS Community Guidelines] (05.05.2026)
+
+link:em002-4-1-checklist-oss-community.pdf[Em002-4.1 OSS Community Checklist] (05.05.2026)
+
+link:em002-5.pdf[Em002-5 EMOTA and OSS Factsheet] (06.05.2026)
+
+link:em002-6.pdf[Em002-6 FAQ on OSS and Art. 9 EMOTA] (05.05.2026)
+
+link:em002-7.pdf[Em002-7 OSS Guideline: Applying Article 9 of Federal Act on the Use of Electronic Means for Fulfilling Administrative Tasks (EMOTA)] (05.05.2026)
+
+https://www.bk.admin.ch/dam/bk/de/dokumente/dti/OSS/oss_merkblatt_kbb_beschaffung_artikel9_embag.pdf.download.pdf/Merkblatt_KBB_Beschaffung-Software-Art9-EMBAG_de.pdf[Merkblatt KBB Beschaffung Software Artikel 9 EMBAG] (PDF, 177 kB, 13.08.2025) only available in German, French and Italian
+
+== Further information
+
+https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-98828.html[Federal Act on the Use of Electronic Means to Carry Out Official Tasks EMOTA] only available in German
+
+http://www.opensource.admin.ch/[OSS Catalogue]
+endif::[]
+
+ifeval::["{lang}" == "de"]
+Die Bundesbehörden sind verpflichtet, den Quellcode von Software offenzulegen, die sie zur Erfüllung ihrer Aufgaben entwickeln oder entwickeln lassen. Sie müssen allen erlauben, die Software ohne Lizenzgebühren zu nutzen, weiterzuentwickeln und zu verbreiten. Diese Pflicht ergibt sich aus Artikel 9 des Bundesgesetzes über den Einsatz elektronischer Mittel zur Erfüllung von Behördenaufgaben (EMBAG). Die Verantwortung für die Umsetzung liegt bei den einzelnen Behörden. Die Bundeskanzlei stellt geeignete Hilfsmittel bereit, um die Bundesbehörden bei der Erfüllung dieser Pflicht zu unterstützen.
+
+== Worum geht es?
+
+Bei der Veröffentlichung von Open-Source-Software sind Fragen zu Recht, Lizenzen, Sicherheit, Organisation und Kosten zu klären. Je nach Anwendungsfall bestehen Varianten und Einschränkungen. Der für die Umsetzung der gesetzlichen Vorgabe erforderliche Wissensstand ist innerhalb der Bundesverwaltung je nach Erfahrung unterschiedlich. Aus diesem Grund hat die Bundeskanzlei Hilfsmittel und Checklisten erarbeitet, die Unterstützung und Orientierung bei der Entscheidfindung bieten.
+
+== Wer ist verantwortlich?
+
+Die Verantwortung für die Umsetzung liegt bei den einzelnen Behörden. Die Bundeskanzlei stellt geeignete Hilfsmittel bereit, um die Bundesbehörden dabei zu unterstützen.
+
+== Welche Hilfsmittel stehen zur Verfügung?
+
+Die folgenden Hilfsmittel stehen in Form von Leitlinien, Anleitungen, Checklisten, Merkblättern und FAQ zur Verfügung:
+
+link:em002.pdf[Em002 Strategische Leitlinien für Open-Source-Software in der Bundesverwaltung] (05.05.2026)
+
+link:em002-1.pdf[Em002-1 Praxisleitfaden für Open-Source-Software in der Bundesverwaltung] (05.05.2026)
+
+link:em002-2.pdf[Em002-2 Anleitung zur Veröffentlichung von OSS] (05.05.2026)
+
+link:em002-2-1-checklist-oss-preliminary-assessment.pdf[Em002-2.1 Checkliste OSS-Vorabklärung] (05.05.2026)
+
+link:em002-2-2-checklist-oss-analysis-and-preparation.pdf[Em002-2.2 Checkliste OSS-Analyse und -Vorbereitung] (05.05.2026)
+
+link:em002-2-3-checklist-oss-release-and-publication.pdf[Em002-2.3 Checkliste OSS-Freigabe und -Veröffentlichung] (05.05.2026)
+
+link:em002-3.pdf[Em002-3 Leitfaden OSS-Lizenzierung] (05.05.2026)
+
+link:em002-4.pdf[Em002-4 Leitfaden OSS-Community] (05.05.2026)
+
+link:em002-4-1-checklist-oss-community.pdf[Em002-4.1 Checkliste OSS-Community] (05.05.2026)
+
+link:em002-5.pdf[Em002-5 Merkblatt EMBAG und OSS] (06.05.2026)
+
+link:em002-6.pdf[Em002-6 FAQ zu OSS und Art. 9 EMBAG] (05.05.2026)
+
+link:em002-7.pdf[Em002-7 Leitfaden OSS: Anwendung von Artikel 9 des Bundesgesetzes über den Einsatz elektronischer Mittel zur Erfüllung von Behördenaufgaben (EMBAG)] (05.05.2026)
+
+https://www.bk.admin.ch/dam/bk/de/dokumente/dti/OSS/oss_merkblatt_kbb_beschaffung_artikel9_embag.pdf.download.pdf/Merkblatt_KBB_Beschaffung-Software-Art9-EMBAG_de.pdf[Merkblatt KBB Beschaffung Software Artikel 9 EMBAG] (PDF, 177 kB, 13.08.2025) nur auf Deutsch, Französisch und Italienisch verfügbar
+
+== Weitere Informationen
+
+https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-98828.html[Bundesgesetz über den Einsatz elektronischer Mittel zur Erfüllung von Behördenaufgaben EMBAG] nur auf Deutsch verfügbar
+
+http://www.opensource.admin.ch/[OSS-Katalog]
+endif::[]
+
+ifeval::["{lang}" == "fr"]
+Les autorités fédérales sont tenues de publier le code source des logiciels qu'elles développent ou font développer pour accomplir leurs tâches. Elles doivent permettre à quiconque d'utiliser, de développer et de diffuser ces logiciels sans percevoir de redevance de licence. Cette obligation découle de l'article 9 de la loi fédérale sur l'utilisation des moyens électroniques pour l'exécution des tâches des autorités (LMETA). La responsabilité de la mise en œuvre incombe à chaque autorité. La Chancellerie fédérale met à disposition des outils appropriés pour aider les autorités fédérales à satisfaire à cette obligation.
+
+== De quoi s'agit-il ?
+
+La publication de logiciels open source soulève des questions juridiques, de licences, de sécurité, d'organisation et de coûts. Selon le cas d'application, il existe des variantes et des limites à prendre en compte. Le niveau de connaissances requis pour mettre en œuvre cette exigence légale varie au sein de l'administration fédérale en fonction de l'expérience. C'est pourquoi la Chancellerie fédérale a élaboré des outils et des listes de contrôle qui offrent un soutien et une orientation pour la prise de décision.
+
+== Qui est responsable ?
+
+La responsabilité de la mise en œuvre incombe à chaque autorité. La Chancellerie fédérale met à disposition des outils appropriés pour aider les autorités fédérales dans cette démarche.
+
+== Quels outils sont disponibles ?
+
+Les outils suivants sont disponibles sous forme de lignes directrices, d'instructions, de listes de contrôle, d'aide-mémoire et de FAQ :
+
+link:em002.pdf[Em002 Lignes directrices stratégiques pour les logiciels open source dans l'administration fédérale] (05.05.2026)
+
+link:em002-1.pdf[Em002-1 Guide pratique pour les logiciels open source dans l'administration fédérale] (05.05.2026)
+
+link:em002-2.pdf[Em002-2 Instructions pour la publication d'OSS] (05.05.2026)
+
+link:em002-2-1-checklist-oss-preliminary-assessment.pdf[Em002-2.1 Liste de contrôle Évaluation préalable OSS] (05.05.2026)
+
+link:em002-2-2-checklist-oss-analysis-and-preparation.pdf[Em002-2.2 Liste de contrôle Analyse et préparation OSS] (05.05.2026)
+
+link:em002-2-3-checklist-oss-release-and-publication.pdf[Em002-2.3 Liste de contrôle Validation et publication OSS] (05.05.2026)
+
+link:em002-3.pdf[Em002-3 Guide de licences OSS] (05.05.2026)
+
+link:em002-4.pdf[Em002-4 Guide des communautés OSS] (05.05.2026)
+
+link:em002-4-1-checklist-oss-community.pdf[Em002-4.1 Liste de contrôle Communauté OSS] (05.05.2026)
+
+link:em002-5.pdf[Em002-5 Aide-mémoire LMETA et OSS] (06.05.2026)
+
+link:em002-6.pdf[Em002-6 FAQ sur l'OSS et l'art. 9 LMETA] (05.05.2026)
+
+link:em002-7.pdf[Em002-7 Guide OSS : application de l'article 9 de la loi fédérale sur l'utilisation des moyens électroniques pour l'exécution des tâches des autorités (LMETA)] (05.05.2026)
+
+https://www.bk.admin.ch/dam/bk/de/dokumente/dti/OSS/oss_merkblatt_kbb_beschaffung_artikel9_embag.pdf.download.pdf/Merkblatt_KBB_Beschaffung-Software-Art9-EMBAG_de.pdf[Merkblatt KBB Beschaffung Software Artikel 9 EMBAG] (PDF, 177 kB, 13.08.2025) disponible uniquement en allemand, français et italien
+
+== Informations complémentaires
+
+https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-98828.html[Loi fédérale sur l'utilisation des moyens électroniques pour l'exécution des tâches des autorités LMETA] disponible uniquement en allemand
+
+http://www.opensource.admin.ch/[Catalogue OSS]
+endif::[]
+
+ifeval::["{lang}" == "it"]
+Le autorità federali sono tenute a pubblicare il codice sorgente del software che sviluppano o fanno sviluppare per adempiere i loro compiti. Esse devono consentire a chiunque di utilizzare, sviluppare ulteriormente e diffondere il software senza riscuotere tasse di licenza. Questo obbligo discende dall'articolo 9 della legge federale sull'impiego di mezzi elettronici per l'adempimento dei compiti delle autorità (LMeCA). La responsabilità dell'attuazione spetta alle singole autorità. La Cancelleria federale mette a disposizione strumenti adeguati per sostenere le autorità federali nell'adempimento di questo obbligo.
+
+== Di cosa si tratta?
+
+La pubblicazione di software open source solleva questioni giuridiche, di licenza, di sicurezza, di organizzazione e di costi. A seconda del caso d'applicazione vi sono varianti e limiti da considerare. Il livello di conoscenze necessario per attuare la prescrizione legale varia all'interno dell'Amministrazione federale a seconda dell'esperienza. Per questo motivo la Cancelleria federale ha elaborato strumenti e liste di controllo che offrono sostegno e orientamento nel processo decisionale.
+
+== Chi è responsabile?
+
+La responsabilità dell'attuazione spetta alle singole autorità. La Cancelleria federale mette a disposizione strumenti adeguati per sostenere le autorità federali in questo processo.
+
+== Quali strumenti sono disponibili?
+
+Sono disponibili i seguenti strumenti sotto forma di linee guida, istruzioni, liste di controllo, promemoria e FAQ:
+
+link:em002.pdf[Em002 Linee guida strategiche per il software open source nell'Amministrazione federale] (05.05.2026)
+
+link:em002-1.pdf[Em002-1 Guida pratica per il software open source nell'Amministrazione federale] (05.05.2026)
+
+link:em002-2.pdf[Em002-2 Istruzioni per la pubblicazione di OSS] (05.05.2026)
+
+link:em002-2-1-checklist-oss-preliminary-assessment.pdf[Em002-2.1 Lista di controllo Valutazione preliminare OSS] (05.05.2026)
+
+link:em002-2-2-checklist-oss-analysis-and-preparation.pdf[Em002-2.2 Lista di controllo Analisi e preparazione OSS] (05.05.2026)
+
+link:em002-2-3-checklist-oss-release-and-publication.pdf[Em002-2.3 Lista di controllo Rilascio e pubblicazione OSS] (05.05.2026)
+
+link:em002-3.pdf[Em002-3 Guida alle licenze OSS] (05.05.2026)
+
+link:em002-4.pdf[Em002-4 Guida alle community OSS] (05.05.2026)
+
+link:em002-4-1-checklist-oss-community.pdf[Em002-4.1 Lista di controllo Community OSS] (05.05.2026)
+
+link:em002-5.pdf[Em002-5 Promemoria LMeCA e OSS] (06.05.2026)
+
+link:em002-6.pdf[Em002-6 FAQ sull'OSS e l'art. 9 LMeCA] (05.05.2026)
+
+link:em002-7.pdf[Em002-7 Guida OSS: applicazione dell'articolo 9 della legge federale sull'impiego di mezzi elettronici per l'adempimento dei compiti delle autorità (LMeCA)] (05.05.2026)
+
+https://www.bk.admin.ch/dam/bk/de/dokumente/dti/OSS/oss_merkblatt_kbb_beschaffung_artikel9_embag.pdf.download.pdf/Merkblatt_KBB_Beschaffung-Software-Art9-EMBAG_de.pdf[Merkblatt KBB Beschaffung Software Artikel 9 EMBAG] (PDF, 177 kB, 13.08.2025) disponibile soltanto in tedesco, francese e italiano
+
+== Ulteriori informazioni
+
+https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-98828.html[Legge federale sull'impiego di mezzi elettronici per l'adempimento dei compiti delle autorità LMeCA] disponibile soltanto in tedesco
+
+http://www.opensource.admin.ch/[Catalogo OSS]
+endif::[]
+
+ifeval::["{lang}" == "rm"]
+Las autoritads federalas èn obligadas da publitgar il code da funtauna dal software ch'ellas sviluppan u fan sviluppar per ademplir lur incumbensas. Ellas ston permetter a mintgin d'utilisar, da sviluppar vinavant e da derasar il software senza incassar taxas da licenza. Quest'obligaziun resulta da l'artitgel 9 da la lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads (EMBAG). La responsabladad per la realisaziun sa chatta tar las singulas autoritads. La Chanzlia federala metta a disposiziun meds adattads per sustegnair las autoritads federalas en l'adempliment da questa obligaziun.
+
+== Da tge sa tracta?
+
+Cun publitgar software open source ston vegnir scleridas dumondas giuridicas, da licenzas, da segirezza, d'organisaziun e da custs. Tut tenor il cas d'applicaziun datti variantas e restricziuns da resguardar. Il nivel da savida necessari per realisar la prescripziun legala è different entaifer l'administraziun federala tenor l'experientscha. Perquai ha la Chanzlia federala elavurà meds e glistas da controlla che porschan sustegn ed orientaziun tar il prender da decisiuns.
+
+== Tgi è responsabel?
+
+La responsabladad per la realisaziun sa chatta tar las singulas autoritads. La Chanzlia federala metta a disposiziun meds adattads per sustegnair las autoritads federalas en quest process.
+
+== Tge meds stattan a disposiziun?
+
+Ils suandants meds stattan a disposiziun en furma da directivas, instrucziuns, glistas da controlla, fegls d'infurmaziun e FAQ:
+
+link:em002.pdf[Em002 Directivas strategicas per software open source en l'administraziun federala] (05.05.2026)
+
+link:em002-1.pdf[Em002-1 Guida pratica per software open source en l'administraziun federala] (05.05.2026)
+
+link:em002-2.pdf[Em002-2 Instrucziuns per publitgar OSS] (05.05.2026)
+
+link:em002-2-1-checklist-oss-preliminary-assessment.pdf[Em002-2.1 Glista da controlla Evaluaziun preliminara OSS] (05.05.2026)
+
+link:em002-2-2-checklist-oss-analysis-and-preparation.pdf[Em002-2.2 Glista da controlla Analisa e preparaziun OSS] (05.05.2026)
+
+link:em002-2-3-checklist-oss-release-and-publication.pdf[Em002-2.3 Glista da controlla Relaschada e publicaziun OSS] (05.05.2026)
+
+link:em002-3.pdf[Em002-3 Guida da licenzas OSS] (05.05.2026)
+
+link:em002-4.pdf[Em002-4 Guida da communitads OSS] (05.05.2026)
+
+link:em002-4-1-checklist-oss-community.pdf[Em002-4.1 Glista da controlla Communitad OSS] (05.05.2026)
+
+link:em002-5.pdf[Em002-5 Fegl d'infurmaziun EMBAG ed OSS] (06.05.2026)
+
+link:em002-6.pdf[Em002-6 FAQ davart OSS e l'art. 9 EMBAG] (05.05.2026)
+
+link:em002-7.pdf[Em002-7 Guida OSS: applicaziun da l'artitgel 9 da la lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads (EMBAG)] (05.05.2026)
+
+https://www.bk.admin.ch/dam/bk/de/dokumente/dti/OSS/oss_merkblatt_kbb_beschaffung_artikel9_embag.pdf.download.pdf/Merkblatt_KBB_Beschaffung-Software-Art9-EMBAG_de.pdf[Merkblatt KBB Beschaffung Software Artikel 9 EMBAG] (PDF, 177 kB, 13.08.2025) disponibel mo per tudestg, franzos ed talian
+
+== Ulteriuras infurmaziuns
+
+https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-98828.html[Lescha federala davart l'utilisaziun da meds electronics per ademplir incumbensas d'autoritads EMBAG] disponibel mo per tudestg
+
+http://www.opensource.admin.ch/[Catalog OSS]
+endif::[]

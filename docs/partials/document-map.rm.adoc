@@ -1,0 +1,56 @@
+// Vesair document-map.en.adoc per la motivaziun da questa repartiziun.
+[mermaid,align="center",alt="Survista dals meds OSS en connex cun l'art. 9 EMBAG"]
+....
+flowchart TD
+    subgraph FUND["Basas (sectur TDT)"]
+        EM0025["Em002-5<br/>Fegl d'infurmaziun<br/>EMBAG ed OSS"]
+        EM002["Em002<br/>Directivas<br/>strategicas"]
+        EM0026["Em002-6<br/>FAQ davart OSS<br/>e l'art. 9 EMBAG"]
+    end
+
+    subgraph INTRO["Introducziun e guida (sectur TDT)"]
+        EM0021["Em002-1<br/>Guida<br/>pratica"]
+        EM0023["Em002-3<br/>Guida da<br/>licenzas OSS"]
+        EM0027["Em002-7<br/>Aspects strategics da<br/>l'acquist e da l'OSS"]
+    end
+
+    subgraph PUB["Meds da publicaziun (sectur TDT)"]
+        EM0022["Em002-2<br/>Instrucziuns per<br/>publitgar OSS"]
+        EM0024["Em002-4<br/>Guida da<br/>communitads OSS"]
+        CL21["Em002-2.1<br/>Glista da controlla<br/>Evaluaziun<br/>preliminara OSS"]
+        CL22["Em002-2.2<br/>Glista da controlla<br/>Analisa e<br/>preparaziun OSS"]
+        CL23["Em002-2.3<br/>Glista da controlla<br/>Relaschada e<br/>publicaziun OSS"]
+        CL41["Em002-4.1<br/>Glista da controlla<br/>Communitad OSS"]
+    end
+
+    subgraph PROC["Meds d'acquist (UFCL)"]
+        KBB["Fegl d'infurmaziun CCA<br/>Acquist da software<br/>e l'art. 9 EMBAG"]
+        ORI["Orientaziun<br/>Open source ed<br/>acquist"]
+        CLEX["Glista da controlla<br/>Excepziun generala<br/>art. 9 EMBAG"]
+    end
+
+    HERMES["www.HERMES.admin.ch"]
+    FCHOSS["Internet:<br/>meds OSS<br/>Chanzlia federala"]
+
+    EM002 --> EM0021
+    EM0021 --> EM0023
+    EM0021 --> EM0022
+    EM0022 --> EM0024
+    EM0022 --> CL21
+    CL21 --> CL22
+    CL22 --> CL23
+    EM0024 --> CL41
+    ORI --> CLEX
+    HERMES -->|"referenza"| FCHOSS
+
+    classDef fund fill:#f0f0f0,stroke:#000000,color:#000000
+    classDef intro fill:#dae8fc,stroke:#000000,color:#000000
+    classDef pub fill:#e1d5e7,stroke:#000000,color:#000000
+    classDef check fill:#d5e8d4,stroke:#000000,color:#000000
+    classDef proc fill:#f8cecc,stroke:#000000,color:#000000
+    class EM002,EM0025,EM0026 fund
+    class EM0021,EM0023 intro
+    class EM0022,EM0024 pub
+    class CL21,CL22,CL23,CL41 check
+    class EM0027,KBB,ORI,CLEX proc
+....

@@ -1,0 +1,126 @@
+// Vesair glossary.en.adoc per la motivaziun da questa repartiziun.
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Sectur d'applicaziun::
+Manegiadas èn las categorias dal software d'automatisaziun da biro (BA) tenor [A029] ed ulteriuras classificaziuns.
+
+Branch::
+Ina branca da svilup d'in OSS.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Collavuraziun::
+La noziun «collavuraziun» deriva dal pled latin «collaborare» che munta «lavurar ensemen». +
+Ella descriva ina moda da lavurar, en la quala pliras persunas u teams lavuran ensemen vers ina finamira cuminaivla ed integreschan lur abilitads e resursas. En il center stattan il barat vicendaivel, la transparenza ed il cundivider da savida. +
+Tenor il Gabler Wirtschaftslexikon designescha collavuraziun era la «collavuraziun d'ina interpresa cun ses clients e furniturs, cun utilisar modernas tecnologias d'infurmaziun per integrar process da fatschenta interns ed interinterpresarials».
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+CCA::
+Center da cumpetenza per l'acquist public da la Confederaziun
+
+Collaboration::
+Il term collaboration deriva dal latin «collaborare» e munta «lavurar ensemen».
+El descriva ina moda da lavurar, tar la quala pliras persunas u teams lavuran ensemen vers ina finamira cuminaivla ed inducan lur abilitads e resursas. En il center stattan il barat vicendaivel, la transparenza ed il cundivider da savida. +
+Tenor il Gabler Wirtschaftslexikon designescha collaboration era la «collavuraziun tranter ina interpresa e sias clientas e ses clients e furniturs cun utilisar modernas tecnologias d'infurmaziun per integrar process da fatschenta interns ed interinterpresarials».
+
+Committer::
+In committer è ina persuna che endatescha ina midada da datas en in sistem da gestiun da versiuns.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Contribution::
+Ina contribution OSS è ina contribuziun al svilup ed a la meglieraziun da software open source (OSS). Quai po capitar en furma da code, documentaziun, tests, resuns u auters geners da contribuziuns. (Google AI)
+
+Contributor Licence Agreement (CLA)::
+In Contributor Licence Agreement (CLA), era numnà Contributor Agreement, è in document che fixescha las cundiziuns, sut las qualas proprietad intellectuala dastga vegnir contribuida ad in project u ad ina iniziativa. Per ordinari è manegià cun quai in project da software sut ina licenza open source (Wikipedia).
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Core developer::
+Sviluppadra u sviluppader d'in project OSS cun dretgs d'access sco committer al repositori.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+TDT::
+Sectur Transformaziun digitala e direcziun TIC. Part da la Chanzlia federala ChF
+
+eOperations::
+eOperations Svizra pussibilitescha prestaziuns publicas digitalas cuminaivlas per la Confederaziun, ils chantuns e las vischnancas. https://www.eoperations.ch[www.eoperations.ch]
+
+ISB::
+Organ da direcziun d'informatica da la Confederaziun. Predecessur da ChF-TDT
+
+UFCL::
+Uffizi federal per edifizis e logistica
+
+Ciclus da vita::
+In ciclus da vita da software descriva il process dal svilup da software cun la finamira da metter a disposiziun software al client. Da regla cumenza il ciclus cun in problem renconuschì dal client e sia analisa e finescha da la vart dal client cun la remplazzada dal software tras in successur.
+
+Lock-in::
+L'effect lock-in designescha ina stretga liaziun da la clientella a products/prestaziuns u ad in purschider, che renda difficil per la clientella ina midada da product u da purschider pervia dals custs e d'ulteriuras savas colliadas cun la midada.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Analisa dal martgà::
+Ina analisa dal martgà specifica serva ad eruir ed elavurar infurmaziuns davart il martgà d'acquist actual e potenzial. L'intent da l'analisa dal martgà è d'eruir e da chapir las structuras dal martgà ed en spezial la structura dals purschiders areguard tuttas caracteristicas determinantas: situaziun dals pretschs (auts, bass, fluctuaziuns); grondezza dal martgà; repartiziun geografica dals purschiders potenzials e dals acturs principals etc. (vesair https://perimap.admin.ch/goto_perimap_file_38221_download.html). +
+Funtaunas pussaivlas per software OSS sa chattan en link:em002-1.pdf[Em002-1 Guida pratica OSS] en il chapitel 7.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+OSS::
+Software open source
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Product::
+Qua duvrà sco sinonim per «applicaziun».
++
+La noziun deriva da ITIL. En ITIL (Information Technology Infrastructure Library) è in product ina configuraziun da resursas concepida per purtar valur ad ina clientella u ad ina organisaziun. Cuntrari ad in servetsch ch'è tipicamain in process current ed interactiv, è in product ina unitad statica.
++
+Products pon esser software, hardware, datas u autras resursas messas a disposiziun da l'organisaziun. (Google AI)
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-6[]
+Standardisaziun da products::
+En quest document sa referescha la standardisaziun en emprima lingia a SD120, il servetsch standard TIC per l'automatisaziun da biro, sco era ad ulteriuras standardisaziuns dal sectur TDT.
+
+Subscription::
+Tar il retratg da software en abunament vegn serrada ina subscription. Quai munta che il software na vegn betg cumprà. +
+En ils pli blers cas cumpiglia quai betg mo il permiss dad utilisar il software, mabain era tut las prestaziuns relevantas ed il support.
+
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Standardisaziun dals products::
+En quest document sa referescha la standardisaziun en emprima lingia a SD120, la prestaziun standard TIC per l'automatisaziun da biro, ed ad ulteriuras standardisaziuns dal sectur TDT.
+
+SBOM::
+Ina Software Bill of Materials (SBOM) è ina glista d'inventari da tuttas cumponentas e dependenzas da software che fan part dal svilup e da la messa a disposiziun d'in software.
+
+Abunament::
+Tar l'abunament d'in software vegn concludida ina subscripziun. Quai munta che il software na vegn betg cumprà. +
+En la gronda part dals cas cumpiglia quai betg mo il permiss d'utilisar il software, mabain era tuttas prestaziuns determinantas ed il support.
+
+// end::gloss-em002-7[]
+// tag::gloss-em002-6[]
+// tag::gloss-em002-7[]
+Project upstream::
+Upstream è ina noziun dal svilup da software repartì (savens open source) e designescha la direcziun d'in patch vers sia origin (upstream), pia vers las sviluppadras ed ils sviluppaders resp. maintainers originals dal software u vers il project original. I po sa tractar era da bibliotecas da software.
+
+// end::gloss-em002-7[]
+// end::gloss-em002-6[]
+// tag::gloss-em002-7[]
+ZenDiS::
+ZenDiS è ina societad cun responsabladad limitada (GmbH) en maun public en Germania. Ella sustegna la Confederaziun, ils Länder e las vischnancas en la realisaziun da la suveranitad digitala. Cun opencode.de e container.gov.de porscha ella ina plattafurma per in svilup open source segir. (https://www.zendis.de[www.zendis.de])
+
+Zero-day-exploit::
+In zero-day-exploit designescha l'exploataziun d'ina largia da segirezza, per la quala i n'è anc disponibel nagin patch dal fabricant da la cumponenta.
+
+// end::gloss-em002-7[]

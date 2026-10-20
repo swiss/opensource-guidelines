@@ -2,7 +2,12 @@ name: Render docs
 
 on:
   push:
-    branches: [main]
+    # `on:` is the one block where expressions are not allowed, so this list
+    # cannot itself be driven by PAGES_PUBLISH_BRANCH (see `env:` below). Read
+    # it as the set of branches CI may *run* on; the variable picks which one of
+    # them *publishes*. A branch missing from here triggers nothing at all, so
+    # pointing the variable at a new branch means listing it here as well.
+    branches: [main, develop]
     # Docs releases only. `open-govpress-v*` tags the renderer binary released
     # from this repo (see GOVPRESS_URL below), and must not publish a docs
     # archive of its own -- `v*` excludes it by construction.
@@ -25,6 +30,18 @@ env:
   GOVPRESS_VERSION: "0.0.15"
   GOVPRESS_URL: https://github.com/736-c41-2c1-e464fc974/opensource-guidelines/releases/download/open-govpress-v0.0.15/open-govpress-0.0.15-linux-x64.tar.gz
   GOVPRESS_SHA256: e676d20f57c7376b24e448e01d9783bd31c9b45ee4126e0865b46890d4171ff5
+
+  # Which branch owns the published site. Set the repository variable
+  # PAGES_PUBLISH_BRANCH (Settings -> Secrets and variables -> Actions ->
+  # Variables) to move publishing to another branch without editing this file;
+  # unset means `main`, so the default is the behaviour this workflow has always
+  # had. Tags publish regardless -- a release archives itself whatever branch is
+  # currently the published one.
+  #
+  # Carried into tools/site-publish.sh, which re-checks it rather than trusting
+  # the caller, and on into tools/site-archive.sh, which names the branch on the
+  # archive page.
+  PUBLISH_BRANCH: ${{ vars.PAGES_PUBLISH_BRANCH || 'main' }}
 
 jobs:
   # One job per language. Every document carries all five languages in one
@@ -104,6 +121,10 @@ jobs:
   collect:
     needs: render
     runs-on: ubuntu-latest
+    outputs:
+      # The one publish decision for the whole workflow -- the steps below read
+      # it back, and so does the deploy job.
+      publish: ${{ steps.gate.outputs.publish }}
     permissions:
       # `contents: write` is for pushing the accumulated site to the
       # `site-history` branch. Job-level permissions replace the top-level block
@@ -113,6 +134,32 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v7
+
+      # Decided once, here, instead of as the same three-clause condition
+      # repeated on every publishing step and on the deploy job. Those copies
+      # had to agree with each other and with site-publish.sh's own guard to
+      # mean anything; a single output cannot drift out of step with itself.
+      #
+      # The ref reaches the shell through the environment rather than through
+      # `${{ }}`: branch names may contain characters that would otherwise be
+      # substituted into the script before bash ever sees it.
+      - name: Decide whether this run publishes
+        id: gate
+        env:
+          REF_NAME: ${{ github.ref_name }}
+          REF_TYPE: ${{ github.ref_type }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          publish=false
+          if [ "$EVENT_NAME" = push ]; then
+            # The trigger admits only `v*` tags, so any tag push reaching here
+            # is a docs release and archives itself under tags/ either way.
+            if [ "$REF_TYPE" = tag ] || [ "$REF_NAME" = "$PUBLISH_BRANCH" ]; then
+              publish=true
+            fi
+          fi
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+          echo "publish=$publish (event=$EVENT_NAME $REF_TYPE=$REF_NAME, published branch=$PUBLISH_BRANCH)"
 
       - name: Download every language
         uses: actions/download-artifact@v8
@@ -137,7 +184,7 @@ jobs:
       # means remembering the older one somewhere between runs. That somewhere
       # is the `site-history` branch.
       - name: Overlay this build onto the published site
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        if: steps.gate.outputs.publish == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KEEP_COMMITS: "10"
@@ -148,17 +195,19 @@ jobs:
       # has no business being in the artifact -- dropping it here keeps that
       # guarantee ours rather than the action's.
       - name: Strip the git metadata
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        if: steps.gate.outputs.publish == 'true'
         run: rm -rf .site-history/.git
 
       - name: Upload Pages artifact
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+        if: steps.gate.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
           path: .site-history/
 
   deploy:
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    # Job-level `if:` cannot read the `env` context, which is why the decision
+    # travels as a job output rather than as PUBLISH_BRANCH compared in place.
+    if: needs.collect.outputs.publish == 'true'
     needs: collect
     runs-on: ubuntu-latest
     permissions:

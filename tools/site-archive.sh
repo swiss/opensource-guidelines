@@ -8,16 +8,21 @@
 # still retained:
 #
 #   <dir>/tags/<tag>/          a released version, kept forever
-#   <dir>/commits/<short>/     a build of main, pruned to the newest few
+#   <dir>/commits/<short>/     a build of the published branch, newest few only
 #
 # Each of those carries the `build-meta.txt` that site-publish.sh wrote, and
 # this page is generated purely by reading them back -- so a build that was
 # pruned from the tree disappears from the listing by construction, and no
 # separate bookkeeping file can drift out of sync with what is actually there.
+#
+# Environment:
+#   PUBLISH_BRANCH     the branch `commits/` holds builds of, named in the page
+#                      copy (default main; site-publish.sh passes its own)
 
 set -euo pipefail
 
 dir="${1:?usage: site-archive.sh <dir>}"
+publish_branch="${PUBLISH_BRANCH:-main}"
 
 escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' -e 's/"/\&quot;/g'; }
 
@@ -117,11 +122,17 @@ emit_entries() {
   nav { margin-top: 2.5rem; font-size: .85rem; }
   nav a { color: var(--link); }
 </style>
-<h1>Archived builds</h1>
-<p class="lead">Each entry is the complete set of documents, in all languages, as
-they stood at that point. Released versions are kept permanently; builds of the
-main branch are kept for the most recent commits only.</p>
 HTML
+
+    # Out of the heredoc above because that one is quoted, which is what keeps
+    # the CSS free of accidental expansion. The branch name is a repository
+    # variable rather than a literal, so it goes through escape() like every
+    # other value that reaches the page.
+    branch_html=$(escaped "${publish_branch}")
+
+    printf '<h1>Archived builds</h1>\n'
+    printf '<p class="lead">Each entry is the complete set of documents, in all languages, as\nthey stood at that point. Released versions are kept permanently; builds of the\n%s branch are kept for the most recent commits only.</p>\n' \
+        "${branch_html}"
 
     echo '<h2>Releases</h2>'
     tags=$(emit_entries tags)
@@ -131,7 +142,7 @@ HTML
         echo '<p class="empty">No release has been tagged yet.</p>'
     fi
 
-    echo '<h2>Recent builds of main</h2>'
+    printf '<h2>Recent builds of %s</h2>\n' "${branch_html}"
     commits=$(emit_entries commits)
     if [[ -n "${commits}" ]]; then
         printf '<ul>\n%s\n</ul>\n' "${commits}"

@@ -14,11 +14,16 @@
 #
 # Where the build lands depends on the ref:
 #
-#   refs/tags/<tag>   -> tags/<tag>/       kept forever, root untouched
-#   refs/heads/main   -> commits/<short>/  pruned to $KEEP_COMMITS, and the root
+#   refs/tags/<tag>     -> tags/<tag>/       kept forever, root untouched
+#   the published branch -> commits/<short>/  pruned to $KEEP_COMMITS, and the root
 #
-# The root keeps meaning "current head of main", which is what the site has
-# always meant. A tag archives itself without disturbing it.
+# The root keeps meaning "current head of the published branch", which is what
+# the site has always meant. A tag archives itself without disturbing it.
+#
+# Which branch that is comes from $PUBLISH_BRANCH, defaulting to main. Any other
+# branch is refused rather than published: this script replaces the site root,
+# and the workflow's own gate is a condition in a YAML file that a future edit
+# could get wrong. Two independent checks on the same variable is the point.
 #
 # Environment:
 #   GITHUB_REPOSITORY  owner/repo, used to build the push URL
@@ -27,7 +32,8 @@
 #   GITHUB_SHA         commit being published
 #   GITHUB_RUN_ID      recorded in build-meta.txt, for tracing a build back
 #   GH_TOKEN           token with contents:write
-#   KEEP_COMMITS       how many main builds to retain (default 10)
+#   PUBLISH_BRANCH     the branch that owns the site root (default main)
+#   KEEP_COMMITS       how many branch builds to retain (default 10)
 #   SITE_REMOTE        override the push URL (tests point this at a bare repo)
 #   SITE_BRANCH        override the accumulator branch (default site-history)
 #
@@ -46,6 +52,7 @@ here=$(cd "${here}" && pwd)
 : "${GITHUB_SHA:?GITHUB_SHA is required}"
 
 branch="${SITE_BRANCH:-site-history}"
+publish_branch="${PUBLISH_BRANCH:-main}"
 keep="${KEEP_COMMITS:-10}"
 run="${GITHUB_RUN_ID:-unknown}"
 
@@ -78,8 +85,8 @@ case "${GITHUB_REF_TYPE}" in
         update_root=0
         ;;
     branch)
-        [[ "${GITHUB_REF_NAME}" = "main" ]] || {
-            echo "site-publish.sh: refusing to publish branch '${GITHUB_REF_NAME}'" >&2; exit 1; }
+        [[ "${GITHUB_REF_NAME}" = "${publish_branch}" ]] || {
+            echo "site-publish.sh: refusing to publish branch '${GITHUB_REF_NAME}'; PUBLISH_BRANCH is '${publish_branch}'" >&2; exit 1; }
         slot="commits/${short}"
         update_root=1
         ;;
@@ -138,7 +145,7 @@ printf '%s\t%s\n' \
     run     "${run}" \
     > "${work}/${slot}/build-meta.txt"
 
-# Prune main builds to the newest $keep. Tags are never pruned: a release needs
+# Prune branch builds to the newest $keep. Tags are never pruned: a release needs
 # a URL that keeps working. Ordering is by the recorded commit date, since the
 # directory names are hashes and sort arbitrarily.
 if [[ -d "${work}/commits" ]]; then
@@ -168,7 +175,9 @@ if [[ -d "${work}/commits" ]]; then
     done
 fi
 
-"${here}/site-archive.sh" "${work}"
+# Passed on so the archive page names the branch it is actually listing builds
+# of, rather than saying "main" on a site published from somewhere else.
+PUBLISH_BRANCH="${publish_branch}" "${here}/site-archive.sh" "${work}"
 
 # Regenerate the chooser so it picks up the archive link. Skipped when the root
 # is still empty, which happens if a tag is pushed before main has ever built --

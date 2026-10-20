@@ -2,7 +2,9 @@ name: Lint
 
 on:
   push:
-    branches: [main]
+    # Kept in step with render-docs.yml's trigger list: a branch worth rendering
+    # is a branch worth linting. Nothing here depends on which branch publishes.
+    branches: [main, develop]
   pull_request:
 
 permissions:
